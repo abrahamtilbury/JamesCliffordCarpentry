@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jamescliffordcarpentry.com.au/sitemap.xml
