@@ -9,18 +9,21 @@
 
 :root {
     /* Base palette */
-    --bg: #e7e3dc;
-    --surface: #f1eee8;
-    --surface-2: #d8d2c8;
-
-    --text: #1b1a18;
-    --text-muted: #67635d;
-    --text-dim: #89837a;
-
+   --line: rgba(27, 26, 24, .14);
+   --line-strong: rgba(27, 26, 24, .24); 
+   --bg: #e7e3dc;
+   --surface: #f1eee8;
+   --surface-2: #d8d2c8;
+   /* Structural construction language */
+   --beam: rgba(27, 26, 24, .38);
+   --beam-inverse: rgba(255, 255, 255, .52);
+   --joint-size: 8px;
+   --text: #1b1a18;
+   --text-muted: #67635d;
+   --text-dim: #89837a;
     /* Brand */
-    --accent: #737373;
-    --accent-bright: #858585;
-
+   --accent: #737373;
+   --accent-bright: #858585;
     /* Structural lines */
     --line: rgba(27, 26, 24, .14);
     --line-strong: rgba(27, 26, 24, .24);
@@ -267,6 +270,47 @@ textarea {
     padding-block: var(--section-space);
 }
 
+/* ==========================
+   Structural section rails
+   Container edges become posts
+========================== */
+
+.beam-section {
+    position: relative;
+    isolation: isolate;
+}
+
+.beam-section::before,
+.beam-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--line);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.beam-section::before {
+    left: max(
+        var(--page-padding),
+        calc((100vw - var(--max-width)) / 2)
+    );
+}
+
+.beam-section::after {
+    right: max(
+        var(--page-padding),
+        calc((100vw - var(--max-width)) / 2)
+    );
+}
+
+.beam-section > * {
+    position: relative;
+    z-index: 1;
+}
+
 #approach,
 #services,
 #projects,
@@ -275,7 +319,6 @@ textarea {
 #contact {
     scroll-margin-top: 100px;
 }
-
 
 /* =========================================================
    HEADER
@@ -655,15 +698,40 @@ textarea {
 ========================================================= */
 
 .section-eyebrow {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 10px;
     margin: 0 0 15px;
-
     color: var(--accent);
-
     font-size: 10px;
     font-weight: 800;
-
     letter-spacing: .14em;
     text-transform: uppercase;
+}
+
+.section-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    flex: 0 0 auto;
+    background: currentColor;
+    opacity: .8;
+}
+
+.section-eyebrow::after {
+    content: "";
+    width: 64px;
+    height: 7px;
+    flex: 0 0 auto;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            currentColor 0 1px,
+            transparent 1px 8px
+        );
+
+    opacity: .32;
 }
 
 
@@ -673,39 +741,65 @@ textarea {
 
 .hero {
     position: relative;
-
     padding:
         clamp(24px, 3vw, 48px)
         var(--page-padding)
         clamp(40px, 6vw, 80px);
-
     background: var(--bg);
-
     overflow: hidden;
 }
 
 .hero-frame {
-    position: relative;
+   position: relative;
+   width: min(100%, 1500px);
+   height: min(78vh, 760px);
+   min-height: 560px;
+   margin-inline: auto;
+   overflow: hidden;
+   background: var(--surface-2);
+   box-shadow:
+        0 0 0 1px var(--line-strong);
+}
 
-    width: min(100%, 1500px);
+.hero-frame::before,
+.hero-frame::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    z-index: var(--z-elevated);
+}
 
-    height: min(78vh, 760px);
-    min-height: 560px;
+/* Carpenter's-square / set-out corner */
+.hero-frame::before {
+    top: 22px;
+    left: 22px;
+    width: 72px;
+    height: 72px;
+    border-top: 2px solid var(--beam-inverse);
+    border-left: 2px solid var(--beam-inverse);
+    opacity: .7;
+}
 
-    margin-inline: auto;
-
-    overflow: hidden;
-
-    background: var(--surface-2);
+/* Measurement ticks */
+.hero-frame::after {
+    left: 22px;
+    right: 22px;
+    bottom: 18px;
+    height: 7px;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            var(--beam-inverse) 0 1px,
+            transparent 1px 24px
+        );
+    opacity: .48;
 }
 
 .hero-image {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
     object-position: center;
-
     transform: scale(1.001);
 }
 
@@ -727,33 +821,38 @@ textarea {
 }
 
 .hero-content {
+   position: absolute;
+   left:
+     max(
+         var(--page-padding),
+         calc((100vw - var(--max-width)) / 2)
+     );
+   bottom: clamp(65px, 9vh, 105px)
+   z-index: var(--z-elevated);
+   width: min(780px, calc(100% - 40px));
+   color: #fff;
+   padding-left: 24px;
+   z-index: var(--z-floating);
+}
+
+.hero-content::before {
+    content: "";
     position: absolute;
-
-    left:
-        max(
-            var(--page-padding),
-            calc((100vw - var(--max-width)) / 2)
-        );
-
-    bottom: clamp(65px, 9vh, 105px);
-
-    z-index: var(--z-elevated);
-
-    width: min(780px, calc(100% - 40px));
-
-    color: #fff;
+    top: 2px;
+    bottom: 2px;
+    left: 0;
+    width: 2px;
+    background: var(--beam-inverse);
+    opacity: .65;
 }
 
 .hero-eyebrow {
-    margin-bottom: 18px;
-
-    color: rgba(255,255,255,.82);
-
-    font-size: 10px;
-    font-weight: 700;
-
-    letter-spacing: .15em;
-    text-transform: uppercase;
+   margin-bottom: 18px;
+   color: rgba(255,255,255,.82);
+   font-size: 10px;
+   font-weight: 700;
+   letter-spacing: .15em;
+   text-transform: uppercase;
 }
 
 .hero h1 {
@@ -944,37 +1043,41 @@ textarea {
 
 .about-features {
     grid-column: 1 / -1;
-
     display: grid;
-
     grid-template-columns:
         repeat(4, minmax(0, 1fr));
-
-    gap: 30px;
-
-    padding-top: 12px;
-
-    border-top: 1px solid var(--line);
+    gap: 1px;
+    padding: 1px;
+    background: var(--line-strong);
 }
 
 .about-features article {
     position: relative;
-
-    padding-top: 22px;
+    padding:
+        30px
+        clamp(20px, 2.2vw, 34px)
+        28px;
+    background: var(--surface);
 }
 
 .about-features article::before {
-    content: "";
+   content: "";
+   position: absolute;
+   top: 11px;
+   right: 11px;
+   width: var(--joint-size);
+   height: var(--joint-size);
+   border: 1px solid var(--line-strong);
+   background: transparent;
+   transition:
+        background-color .3s ease,
+        border-color .3s ease;
+}
 
-    position: absolute;
-
-    top: -1px;
-    left: 0;
-
-    width: 38px;
-    height: 2px;
-
-    background: var(--accent);
+.about-feature-number,
+.service-number,
+.project-meta span {
+    font-variant-numeric: tabular-nums;
 }
 
 .about-feature-number {
@@ -1019,20 +1122,24 @@ textarea {
 }
 
 .service-feature {
+    position: relative;
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     min-height: 500px;
-
-    margin-bottom: 20px;
-
+    margin-bottom: 0;
     background: var(--surface);
-
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-
+    border:
+        1px solid var(--line);
+    border-bottom: 0;
     overflow: hidden;
+    transition:
+        border-color .3s ease;
+}
+
+.service-feature:last-child {
+    margin-bottom: 0;
+    border-bottom:
+        1px solid var(--line);
 }
 
 .service-feature:last-child {
@@ -1041,11 +1148,8 @@ textarea {
 
 .service-image {
     position: relative;
-
     min-height: 500px;
-
     overflow: hidden;
-
     background: var(--surface-2);
 }
 
@@ -1064,57 +1168,116 @@ textarea {
 }
 
 .service-content {
-    display: flex;
+   position: relative;
+   border-left:
+     1px solid var(--line-strong);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding:
+     clamp(40px, 6vw, 85px)
+     clamp(30px, 5vw, 70px);
+}
 
-    flex-direction: column;
+.service-content::before,
+.service-content::after {
+    content: "";
+    position: absolute;
+    left: calc(var(--joint-size) / -2);
+    width: var(--joint-size);
+    height: var(--joint-size);
+    background: var(--surface);
+    border:
+        1px solid var(--line-strong);
+    z-index: 2;
+    transition:
+        background-color .3s ease,
+        border-color .3s ease;
+}
 
-    justify-content: center;
+.service-content::before {
+    top: 28px;
+}
 
-    padding:
-        clamp(40px, 6vw, 85px)
-        clamp(30px, 5vw, 70px);
+.service-content::after {
+    bottom: 28px;
 }
 
 .service-number {
     display: block;
-
     margin-bottom: 20px;
-
     color: var(--accent);
-
     font-size: 10px;
     font-weight: 800;
-
     letter-spacing: .13em;
 }
 
 .service-content h3 {
     margin: 0 0 20px;
-
     font-family:
         Georgia,
         "Times New Roman",
         serif;
-
     font-size: clamp(40px, 4.5vw, 66px);
-
     line-height: .9;
-
     font-weight: 600;
-
     letter-spacing: -.045em;
 }
 
 .service-content p {
     max-width: 530px;
-
     margin: 0 0 25px;
-
     color: var(--text-muted);
-
     font-size: 16px;
-
     line-height: 1.7;
+}
+
+.service-feature:nth-of-type(even) .service-image {
+    order: 2;
+}
+
+.service-feature:nth-of-type(even) .service-content {
+    order: 1;
+
+    border-left: 0;
+
+    border-right:
+        1px solid var(--line-strong);
+}
+
+.service-feature:nth-of-type(even)
+.service-content::before,
+.service-feature:nth-of-type(even)
+.service-content::after {
+    left: auto;
+
+    right:
+        calc(var(--joint-size) / -2);
+}
+
+.service-image::after {
+    content: "";
+
+    position: absolute;
+
+    left: 20px;
+    bottom: 18px;
+
+    width: min(220px, 52%);
+    height: 7px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(255,255,255,.72) 0 1px,
+            transparent 1px 16px
+        );
+
+    opacity: .42;
+
+    pointer-events: none;
+
+    z-index: 1;
 }
 
 
@@ -1130,29 +1293,23 @@ textarea {
 
 .project-grid {
     display: grid;
-
     grid-template-columns:
         repeat(3, minmax(0, 1fr));
-
-    gap: 20px;
+    gap: 1px;
+    padding: 1px;
+    background: var(--line-strong);
 }
 
 .project-card {
+    position: relative;
     overflow: hidden;
-
-    background: var(--bg);
-
-    border: 1px solid var(--line);
-
-    transition:
-        transform .5s var(--ease),
-        border-color .3s ease;
+    background: var(--surface);
+    border: 0;
+    transition: none;
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
-
-    border-color: var(--line-strong);
+    transform: none;
 }
 
 .project-image {
@@ -1180,7 +1337,26 @@ textarea {
 }
 
 .project-meta {
-    padding: 20px 20px 24px;
+    position: relative;
+    padding:
+        22px
+        22px
+        26px;
+    border-top:
+        1px solid var(--line);
+}
+
+.project-meta::before {
+    content: "";
+    position: absolute;
+    top:
+        calc(var(--joint-size) / -2);
+    left: 22px;
+    width: var(--joint-size);
+    height: var(--joint-size);
+    background: var(--surface);
+    border:
+        1px solid var(--line-strong);
 }
 
 .project-meta span {
@@ -1679,8 +1855,60 @@ textarea {
    RESPONSIVE — 900px
 ========================================================= */
 
+@media (min-width: 901px) {
+
+    .section-intro .section-description {
+        padding-left:
+            clamp(28px, 4vw, 54px);
+
+        border-left:
+            1px solid var(--line-strong);
+    }
+
+    .location-container > div:last-child {
+        padding-left:
+            clamp(28px, 4vw, 54px);
+
+        border-left:
+            1px solid var(--line-strong);
+    }
+
+}
+
 @media (max-width: 900px) {
 
+       .service-feature .service-image,
+    .service-feature:nth-of-type(even) .service-image {
+        order: 1;
+    }
+
+    .service-feature .service-content,
+    .service-feature:nth-of-type(even) .service-content {
+        order: 2;
+
+        border-left: 0;
+        border-right: 0;
+
+        border-top:
+            1px solid var(--line-strong);
+    }
+
+    .service-content::before,
+    .service-feature:nth-of-type(even)
+    .service-content::before {
+        top:
+            calc(var(--joint-size) / -2);
+
+        bottom: auto;
+
+        left: 28px;
+        right: auto;
+    }
+
+    .service-content::after {
+        display: none;
+    }
+   
     .section-intro,
     .location-container,
     .about-james-container {
@@ -1962,8 +2190,7 @@ textarea {
 
     .about-features {
         grid-template-columns: 1fr;
-
-        gap: 34px;
+        gap: 1px;
     }
 
     .about-features article {
@@ -2145,7 +2372,45 @@ textarea {
 
 }
 
+@media (hover: hover) and (pointer: fine) {
 
+    .service-feature:hover {
+        border-color:
+            var(--line-strong);
+    }
+
+    .service-feature:hover
+    .service-content::before,
+    .service-feature:hover
+    .service-content::after {
+        background:
+            var(--accent);
+
+        border-color:
+            var(--accent);
+    }
+
+    .about-features article:hover::before {
+        background:
+            var(--accent);
+
+        border-color:
+            var(--accent);
+    }
+
+    .service-feature:hover
+    .service-image img {
+        transform:
+            scale(1.018);
+    }
+
+    .project-card:hover
+    .project-image img {
+        transform:
+            scale(1.025);
+    }
+
+}
 /* =========================================================
    VERY SMALL PHONES
 ========================================================= */
