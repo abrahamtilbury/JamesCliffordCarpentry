@@ -658,6 +658,38 @@ textarea {
     transform: translateY(-2px);
 }
 
+/* =========================================================
+   DESIGN REFINEMENT — CUT / BEVEL GEOMETRY
+========================================================= */
+
+.button,
+.header-cta,
+.header-phone {
+    --button-bevel: 9px;
+
+    clip-path:
+        polygon(
+            0 0,
+            calc(100% - var(--button-bevel)) 0,
+            100% var(--button-bevel),
+            100% 100%,
+            var(--button-bevel) 100%,
+            0 calc(100% - var(--button-bevel))
+        );
+}
+
+.header-phone {
+    --button-bevel: 6px;
+}
+
+
+/* Remove remaining rounded service-image corners */
+
+.service-feature .service-image,
+.service-feature:nth-of-type(odd) .service-image,
+.service-feature:nth-of-type(even) .service-image {
+    border-radius: 0;
+}
 
 /* =========================================================
    TEXT LINKS
@@ -897,7 +929,9 @@ textarea {
     flex-wrap: wrap;
 }
 
-
+.hero-eyebrow {
+    display: none;
+}
 /* =========================================================
    SECTION INTRO
 ========================================================= */
@@ -3736,6 +3770,67 @@ and (orientation: landscape) {
 
 }
 
+@media (max-width: 720px) {
+
+    .hero-frame {
+        min-height: min(680px, 84svh);
+        height: min(680px, 84svh);
+    }
+
+    .hero-content {
+        inset: 0;
+
+        width: auto;
+
+        padding:
+            58px
+            22px
+            34px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        color: #fff;
+    }
+
+    .hero-content::before {
+        display: none;
+    }
+
+    .hero h1 {
+        max-width: 8.8ch;
+
+        margin: 0;
+
+        font-size:
+            clamp(48px, 13vw, 64px);
+
+        line-height: .88;
+    }
+
+    .hero-text {
+        max-width: 34ch;
+
+        margin:
+            auto
+            0
+            20px;
+
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .hero-actions {
+        width: 100%;
+    }
+    
+    .hero-frame::before,
+    .hero-frame::after {
+        display: none;
+    }
+
+}
 
 /* =========================================================
    Reduced Motion
