@@ -301,7 +301,7 @@ textarea {
 .beam-section::before {
     left: max(
         var(--page-padding),
-        calc((100vw - var(--max-width)) / 2)
+        calc((100% - var(--max-width)) / 2)
     );
     transform: translateX(-50%);
 }
@@ -309,7 +309,7 @@ textarea {
 .beam-section::after {
     right: max(
         var(--page-padding),
-        calc((100vw - var(--max-width)) / 2)
+        calc((100% - var(--max-width)) / 2)
     );
     transform: translateX(50%);
 }
@@ -747,6 +747,12 @@ textarea {
     font-weight: 800;
     letter-spacing: .14em;
     text-transform: uppercase;
+}
+
+.section-eyebrow,
+.hero-eyebrow,
+.service-number {
+    display: none;
 }
 
 .section-eyebrow::before {
@@ -1248,6 +1254,7 @@ textarea {
     transition:
         background-color .3s ease,
         border-color .3s ease;
+    display: none;
 }
 
 .service-content::before {
@@ -2463,6 +2470,9 @@ textarea {
         1px solid var(--line-strong);
 }
 
+.service-detail-marker small {
+    display: none;
+}
 
 .service-detail:nth-of-type(even) {
     background:
@@ -2578,9 +2588,10 @@ textarea {
 
 
 .scope-items {
-    display: flex;
+    display: grid;
 
-    flex-wrap: wrap;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
     margin-top: 30px;
 
@@ -2588,6 +2599,10 @@ textarea {
         var(--beam-size)
         solid
         var(--beam);
+
+    border-left:
+        1px solid
+        var(--line-strong);
 }
 
 
@@ -3284,19 +3299,22 @@ a.contact-method:hover .contact-method-arrow {
 
     .header-inner {
         min-height: 76px;
-
+    
         grid-template-columns:
-            1fr
+            minmax(0, 1fr)
             auto
             auto;
-
-        gap: 10px;
+    
+        gap: 8px;
     }
 
     .site-logo {
         font-size: 18px;
 
         padding: 8px 10px;
+        min-width: 0;
+
+        max-width: 100%;
     }
 
     .desktop-nav {
@@ -3828,6 +3846,20 @@ and (orientation: landscape) {
     .hero-frame::before,
     .hero-frame::after {
         display: none;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .header-phone {
+        display: none;
+    }
+
+    .header-inner {
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto;
     }
 
 }
