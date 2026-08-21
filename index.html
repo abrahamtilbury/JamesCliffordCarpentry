@@ -154,15 +154,23 @@
         ========================== -->
         <section class="hero">
             <div class="hero-frame">
-                <img
-                    src="images/hero-index.webp"
-                    alt="Carpentry work by James Clifford Carpentry in Bundaberg"
-                    class="hero-image"
-                    width="1920"
-                    height="1200"
-                    fetchpriority="high"
-                    decoding="async"
-                />
+                <picture class="hero-picture">
+                    <source
+                        media="(max-width: 720px)"
+                        srcset="images/hero-index-mobile.webp"
+                        width="900"
+                        height="1200"
+                    >
+                    <img
+                        src="images/hero-index.webp"
+                        alt="Carpentry work by James Clifford Carpentry in Bundaberg"
+                        class="hero-image"
+                        width="1206"
+                        height="662"
+                        fetchpriority="high"
+                        decoding="async"
+                    />
+                </picture>
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <p class="hero-eyebrow">
