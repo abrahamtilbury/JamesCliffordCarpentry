@@ -20,7 +20,7 @@
 
     <meta
         name="description"
-        content="Contact James Clifford Carpentry for commercial carpentry projects across Bundaberg and surrounds, including framing, fix out, cladding, fences and maintenance."
+        content="Contact James Clifford Carpentry for commercial framing, fix out, cladding, fencing and maintenance work across Bundaberg and surrounding areas."
     />
 
 
@@ -35,7 +35,7 @@
 
     <meta
         property="og:description"
-        content="Discuss commercial carpentry work across Bundaberg and surrounding areas."
+        content="Contact James Clifford Carpentry for commercial framing, fix out, cladding, fencing and maintenance work across Bundaberg and surrounding areas."
     />
 
     <meta
@@ -75,7 +75,7 @@
     
     <meta
         name="theme-color"
-        content="#e7e3dc"
+        content="#f3f2ef"
     />
 
 
@@ -140,11 +140,18 @@
             "addressRegion": "QLD",
             "addressCountry": "AU"
         },
+        "sameAs": [
+            "https://www.facebook.com/people/James-Clifford-Carpentry/61583661757642/"
+        ],
         "url": "https://jamescliffordcarpentry.com.au",
         "description": "Commercial carpentry across Bundaberg and surrounding areas, including framing, fix out, cladding, fencing and commercial maintenance."
     }
     </script>
-
+<script
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    async
+    defer
+></script>
 </head>
 
 
@@ -165,8 +172,20 @@
             <a
                 href="index.html"
                 class="site-logo"
+                aria-label="James Clifford Carpentry home"
             >
-                James Clifford Carpentry
+            <img
+                src="images/logo-mark-grey.webp"
+                class="site-logo-mark"
+                alt=""
+                width="380"
+                height="380"
+            >
+
+            <span class="site-logo-type">
+                <strong>James Clifford</strong>
+                <span>Carpentry</span>
+            </span>
             </a>
 
 
@@ -209,7 +228,6 @@
                 <a
                     href="contact.html"
                     class="header-cta"
-                    aria-current="page"
                 >
                     Discuss a Project
                 </a>
@@ -297,14 +315,251 @@
                             Email project details
                             <span>↗</span>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- =================================================
+             PROJECT BRIEF
+        ================================================== -->
+        <section
+            id="project-enquiry"
+            class="project-brief section beam-section"
+        >
+            <div class="container project-brief-grid">
+                <!-- HEADING -->
+                <div class="project-brief-heading">
+                    <h2>
+                        Project
+                        <span>enquiry.</span>
+                    </h2>
+                    <p>
+                        Share what you know about the job.
+                        The project location, works required and timing
+                        are enough to get started.
+                    </p>
+                </div>
+                <!-- BRIEF ITEMS -->
+                <form
+                    class="project-enquiry-form"
+                    action="https://formspree.io/f/mppanjnw"
+                    method="post"
+                >
+                    <div class="form-grid">
+
+                        <label class="form-field">
+                            <span>Name *</span>
+                            <input
+                                type="text"
+                                name="name"
+                                autocomplete="name"
+                                required
+                            >
+                        </label>
+
+                        <label class="form-field">
+                            <span>Company / builder</span>
+                            <input
+                                type="text"
+                                name="company"
+                                autocomplete="organization"
+                            >
+                        </label>
+
+                        <label class="form-field">
+                            <span>Email *</span>
+                            <input
+                                type="email"
+                                name="email"
+                                autocomplete="email"
+                                required
+                            >
+                        </label>
+
+                        <label class="form-field">
+                            <span>Phone *</span>
+                            <input
+                                type="tel"
+                                name="phone"
+                                autocomplete="tel"
+                                required
+                            >
+                        </label>
+
+                        <label class="form-field form-field-full">
+                            <span>Project location *</span>
+                            <input
+                                type="text"
+                                name="project_location"
+                                placeholder="Suburb or project address"
+                                required
+                            >
+                        </label>
 
                     </div>
 
-                </div>
+                    <fieldset class="form-fieldset">
+
+                        <legend>
+                            Carpentry required
+                        </legend>
+
+                        <div class="form-options">
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="carpentry[]"
+                                    value="Framing"
+                                >
+                                Framing
+                            </label>
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="carpentry[]"
+                                    value="Fix Out"
+                                >
+                                Fix Out
+                            </label>
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="carpentry[]"
+                                    value="Cladding"
+                                >
+                                Cladding
+                            </label>
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="carpentry[]"
+                                    value="Fencing"
+                                >
+                                Fencing
+                            </label>
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="carpentry[]"
+                                    value="Maintenance"
+                                >
+                                Maintenance
+                            </label>
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="carpentry[]"
+                                    value="Other"
+                                >
+                                Other
+                            </label>
+
+                        </div>
+
+                    </fieldset>
+
+                    <div class="form-grid">
+
+                        <label class="form-field">
+                            <span>Project type</span>
+
+                            <select name="project_type">
+                                <option value="">
+                                    Select project type
+                                </option>
+                                <option>New commercial build</option>
+                                <option>Refurbishment</option>
+                                <option>Fit-out</option>
+                                <option>Existing property</option>
+                                <option>Maintenance</option>
+                                <option>Other</option>
+                            </select>
+                        </label>
+
+                        <label class="form-field">
+                            <span>Project stage</span>
+
+                            <select name="project_stage">
+                                <option value="">
+                                    Select current stage
+                                </option>
+                                <option>Planning</option>
+                                <option>Tendering / quoting</option>
+                                <option>Approved / scheduled</option>
+                                <option>Already on site</option>
+                                <option>Maintenance required</option>
+                            </select>
+                        </label>
+
+                        <label class="form-field">
+                            <span>When is the work required?</span>
+                            <input
+                                type="text"
+                                name="required_date"
+                                placeholder="e.g. October 2026"
+                            >
+                        </label>
+
+                        <label class="form-field">
+                            <span>Plans / drawings link</span>
+                            <input
+                                type="url"
+                                name="plans_link"
+                                placeholder="Google Drive, Dropbox, OneDrive etc."
+                            >
+                        </label>
+
+                    </div>
+
+                    <label class="form-field form-field-full">
+                        <span>Project details *</span>
+
+                        <textarea
+                            name="project_details"
+                            rows="7"
+                            minlength="40"
+                            placeholder="Tell James about the work required, the project and anything else that will help understand the job."
+                            required
+                        ></textarea>
+                    </label>
+                    <div class="form-verification">
+                        <div
+                            class="cf-turnstile"
+                            data-sitekey="0x4AAAAAAEYZz0V6XRjm7z3y"
+                            data-size="flexible"
+                        ></div>
+                    </div>
+                    <div class="project-enquiry-submit">
+
+                        <button
+                            type="submit"
+                            class="button button-primary"
+                        >
+                            Send Project Enquiry
+                        </button>
+
+                        <p>
+                            For urgent site matters, call James on
+                            <a href="tel:0411313432">
+                                0411 313 432
+                            </a>.
+                        </p>
+
+                    </div>
+
+                </form>
 
 
             </div>
+
         </section>
+
         <!-- =================================================
              CONTACT DETAILS
         ================================================== -->
@@ -329,9 +584,6 @@
                             01
                         </span>
                         <div>
-                            <small>
-                                Phone
-                            </small>
                             <strong>
                                 0411 313 432
                             </strong>
@@ -342,176 +594,45 @@
                         >
                             ↗
                         </span>
-
                     </a>
-
-
                     <!-- EMAIL -->
-
                     <a
                         href="mailto:admin@jamescliffordcarpentry.com.au?subject=Commercial%20Project%20Enquiry"
                         class="contact-method"
                     >
-
                         <span class="contact-method-number">
                             02
                         </span>
-
                         <div>
-
-                            <small>
-                                Email
-                            </small>
-
                             <strong>
                                 admin@jamescliffordcarpentry.com.au
                             </strong>
-
                         </div>
-
                         <span
                             class="contact-method-arrow"
                             aria-hidden="true"
                         >
                             ↗
                         </span>
-
                     </a>
-
-
                     <!-- SERVICE AREA -->
-
                     <div class="contact-method">
 
                         <span class="contact-method-number">
                             03
                         </span>
-
                         <div>
-
-                            <small>
-                                Service area
-                            </small>
-
                             <strong>
-                                Bundaberg & surrounds
+                                Bundaberg and surrounding areas
                             </strong>
-
                         </div>
-
                     </div>
-
-
                 </div>
-
-
             </div>
-
         </section>
-        <!-- =================================================
-             PROJECT BRIEF
-        ================================================== -->
-        <section class="project-brief section beam-section">
-            <div class="container project-brief-grid">
-                <!-- HEADING -->
-                <div class="project-brief-heading">
-                    <h2>
-                        What helps
-                        <span>us understand the job.</span>
-                    </h2>
-                    <p>
-                        You don't need to have every detail sorted.
-                        A few basic project details are enough to
-                        start the conversation.
-                    </p>
-                </div>
-                <!-- BRIEF ITEMS -->
-                <div class="project-brief-list">
-                    <!-- ITEM 01 -->
-                    <div class="project-brief-item">
-                        <span class="project-brief-number">
-                            01
-                        </span>
-                        <div>
-                            <h3>
-                                Scope
-                            </h3>
-                            <p>
-                                What carpentry work is required and
-                                which parts of the project you need
-                                assistance with.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- ITEM 02 -->
-                    <div class="project-brief-item">
-                        <span class="project-brief-number">
-                            02
-                        </span>
-                        <div>
-                            <h3>
-                                Location
-                            </h3>
-                            <p>
-                                Where the project or commercial
-                                property is located.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- ITEM 03 -->
-                    <div class="project-brief-item">
-                        <span class="project-brief-number">
-                            03
-                        </span>
 
-                        <div>
+        
 
-                            <h3>
-                                Timing
-                            </h3>
-
-                            <p>
-                                The current stage of the project
-                                and when the carpentry work is
-                                expected to be required.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- ITEM 04 -->
-
-                    <div class="project-brief-item">
-
-                        <span class="project-brief-number">
-                            04
-                        </span>
-
-                        <div>
-
-                            <h3>
-                                Project information
-                            </h3>
-
-                            <p>
-                                Relevant plans, drawings, photos
-                                or other information that helps
-                                communicate the work required.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-        </section>
         <!-- =================================================
              SERVICE SCOPE
         ================================================== -->
@@ -520,20 +641,20 @@
                 <div class="section-intro">
                     <div class="section-heading">
                         <h2>
-                            What do you
-                            <span>need done?</span>
+                            Commercial carpentry
+                            <span>services.</span>
                         </h2>
                     </div>
                     <div class="section-description">
                         <p>
-                            James Clifford Carpentry works across
-                            five core commercial carpentry scopes.
+                            Services covering framing, fix out,
+                            cladding, fencing and maintenance.
                         </p>
                         <a
                             href="services.html"
                             class="text-link"
                         >
-                            View services
+                            View service details
                             <span>↗</span>
                         </a>
                     </div>
@@ -545,24 +666,14 @@
                 >
                     <!-- FRAMING -->
                     <a href="services.html#framing">
-
                         <span>
                             01
                         </span>
-
                         <strong>
                             Framing
                         </strong>
-
-                        <small>
-                            Frame
-                        </small>
-
                     </a>
-
-
                     <!-- FIX OUT -->
-
                     <a href="services.html#fix-out">
 
                         <span>
@@ -572,131 +683,69 @@
                         <strong>
                             Fix Out
                         </strong>
-
-                        <small>
-                            Finish
-                        </small>
-
                     </a>
-
-
                     <!-- CLADDING -->
-
                     <a href="services.html#cladding">
-
                         <span>
                             03
                         </span>
-
                         <strong>
                             Cladding
                         </strong>
-
-                        <small>
-                            Clad
-                        </small>
-
                     </a>
-
-
                     <!-- FENCES -->
-
                     <a href="services.html#fences">
-
                         <span>
                             04
                         </span>
-
                         <strong>
                             Fences
                         </strong>
-
-                        <small>
-                            Boundary
-                        </small>
-
                     </a>
-
-
                     <!-- MAINTENANCE -->
-
                     <a href="services.html#maintenance">
-
                         <span>
                             05
                         </span>
-
                         <strong>
                             Maintenance
                         </strong>
-
-                        <small>
-                            Maintain
-                        </small>
-
                     </a>
-
-
                 </nav>
-
-
             </div>
         </section>
         <!-- =================================================
              LOCATION / SERVICE AREA
         ================================================== -->
-        <section class="contact-area section beam-section">
-            <div class="container contact-area-grid">
-                <div class="contact-area-heading">
+        <section class="contact-map section beam-section">
+            <div class="container contact-map-grid">
+                <div class="contact-map-copy">
                     <h2>
-                        Bundaberg
-                        <span>& surrounds.</span>
+                        Based in
+                        <span>Bundaberg.</span>
                     </h2>
-                </div>
-                <div class="contact-area-copy">
                     <p>
-                        Commercial carpentry for businesses,
-                        commercial properties, refurbishments,
-                        fit-outs and larger projects across
-                        Bundaberg and surrounding areas.
+                        Commercial carpentry across Bundaberg
+                        and surrounding areas.
                     </p>
                     <a
-                        href="tel:0411313432"
+                        href="https://maps.app.goo.gl/mJMgHLS1NRdBwtBN9"
                         class="text-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
-                        Call to discuss your location
+                        View Google profile
                         <span>↗</span>
                     </a>
                 </div>
-            </div>
-        </section>
-        <!-- =================================================
-             FINAL CONTACT CTA
-        ================================================== -->
-        <section class="contact section">
-            <div class="contact-content">
-                <h2>
-                    Send through
-                    <span>the project details.</span>
-                </h2>
-                <p>
-                    Tell us what work is required,
-                    where the project is located
-                    and when the work is needed.
-                </p>
-                <div class="contact-actions">
-                    <a
-                        href="mailto:admin@jamescliffordcarpentry.com.au?subject=Commercial%20Project%20Enquiry"
-                        class="button button-primary"
-                    >
-                        Email Project Details
-                    </a>
-                    <a
-                        href="tel:0411313432"
-                        class="button button-secondary"
-                    >
-                        0411 313 432
-                    </a>
+                <div class="contact-map-frame">
+                    <iframe
+                        title="James Clifford Carpentry on Google Maps"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27943746.622099902!2d141.07601094339418!3d-31.245602805312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b427375184e4253%3A0x9b3a0849b9dc6675!2sJames%20Clifford%20Carpentry!5e0!3m2!1sen!2sau!4v1787420649612!5m2!1sen!2sau"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="strict-origin-when-cross-origin"
+                    ></iframe>
                 </div>
             </div>
         </section>
@@ -711,8 +760,20 @@
                 <a
                     href="index.html"
                     class="site-logo"
+                    aria-label="James Clifford Carpentry home"
                 >
-                    James Clifford Carpentry
+                    <img
+                        src="images/logo-mark-grey.webp"
+                        class="site-logo-mark"
+                        alt=""
+                        width="380"
+                        height="380"
+                    >
+
+                    <span class="site-logo-type">
+                        <strong>James Clifford</strong>
+                        <span>Carpentry</span>
+                    </span>
                 </a>
                 <p>
                     Commercial carpentry across Bundaberg
@@ -726,53 +787,33 @@
                     <strong>
                         Phone
                     </strong>
-
                     <br>
-
                     <a href="tel:0411313432">
                         0411 313 432
                     </a>
-
                 </p>
-
-
                 <p>
-
                     <strong>
                         Email
                     </strong>
-
                     <br>
-
                     <a href="mailto:admin@jamescliffordcarpentry.com.au">
                         admin@jamescliffordcarpentry.com.au
                     </a>
-
                 </p>
-
-
                 <p>
-
                     <strong>
-                        Area
+                        Service area
                     </strong>
-
                     <br>
-
-                    Bundaberg & surrounds
-
+                    Bundaberg and surrounding areas
                 </p>
-
             </div>
-
-
             <!-- FOOTER NAV -->
-
             <nav
                 class="footer-links"
                 aria-label="Footer navigation"
             >
-
                 <a href="index.html">
                     Home
                 </a>
@@ -786,6 +827,13 @@
                     aria-current="page"
                 >
                     Contact
+                </a>
+                <a
+                    href="https://www.facebook.com/people/James-Clifford-Carpentry/61583661757642/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Facebook
                 </a>
 
             </nav>
@@ -815,19 +863,6 @@
         src="script.js"
         defer
     ></script>
-
-
-    <!-- =====================================================
-         MOBILE CALL CTA
-    ====================================================== -->
-
-    <a
-        href="tel:0411313432"
-        class="sticky-call"
-        aria-label="Call James Clifford Carpentry"
-    >
-        Call James
-    </a>
 
 
 </body>
