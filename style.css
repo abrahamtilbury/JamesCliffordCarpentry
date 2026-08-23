@@ -210,7 +210,7 @@ body > * {
    Native UI
 ========================== */
 
-input,
+input:not([type="checkbox"]):not([type="radio"]),
 textarea,
 select {
     width: 100%;
@@ -1225,8 +1225,16 @@ textarea {
     cursor: pointer;
 }
 
-.form-options input {
-    width: auto;
+.form-options input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    flex:
+        0
+        0
+        17px;
+    margin: 0;
+    accent-color: var(--text);
+    cursor: pointer;
 }
 
 .project-enquiry-submit {
@@ -1429,34 +1437,6 @@ textarea {
 /* =========================================================
    ABOUT JAMES
 ========================================================= */
-
-.about-james {
-    background: var(--bg);
-
-    border-top: 1px solid var(--line);
-}
-
-.about-james-container {
-    display: grid;
-
-    grid-template-columns:
-        minmax(320px, .8fr)
-        minmax(0, 1.2fr);
-
-    gap:
-        clamp(40px, 7vw, 110px);
-
-    align-items: center;
-}
-
-.about-james-image {
-    aspect-ratio: 5 / 6;
-
-    overflow: hidden;
-
-    background: var(--surface-2);
-}
-
 .about-james-image img {
     width: 100%;
     height: 100%;
@@ -1466,9 +1446,6 @@ textarea {
     object-position: center;
 }
 
-.about-james-content {
-    max-width: 650px;
-}
 
 .about-james-content h2 {
     margin: 0 0 28px;
@@ -1509,25 +1486,6 @@ textarea {
 /* =========================================================
    LOCATION
 ========================================================= */
-
-.location {
-    background: var(--surface);
-
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-}
-
-.location-container {
-    display: grid;
-
-    grid-template-columns:
-        1.1fr
-        .9fr;
-
-    gap: 50px;
-
-    align-items: end;
-}
 
 .location h2 {
     max-width: 800px;
@@ -1901,21 +1859,6 @@ textarea {
            1px solid var(--line);
    }
    
-   
-   .reviews-grid {
-       display: grid;
-   
-       grid-template-columns:
-           1fr
-           .9fr;
-   
-       gap:
-           clamp(40px, 8vw, 110px);
-   
-       align-items: end;
-   }
-   
-   
    .reviews-heading h2 {
        font-family:
            Georgia,
@@ -1940,78 +1883,6 @@ textarea {
    }
    
    
-   .google-review-panel {
-       padding:
-           clamp(28px, 4vw, 48px);
-   
-       border-top:
-           var(--beam-size)
-           solid
-           var(--beam);
-   
-       border-right:
-           1px solid var(--line-strong);
-   
-       border-bottom:
-           1px solid var(--line-strong);
-   
-       border-left:
-           1px solid var(--line-strong);
-   }
-   
-   
-   .google-rating {
-       display: flex;
-   
-       align-items: flex-end;
-   
-       gap:
-           clamp(18px, 3vw, 32px);
-   
-       padding-bottom: 26px;
-   
-       margin-bottom: 26px;
-   
-       border-bottom:
-           1px solid var(--line-strong);
-   }
-   
-   
-   .google-rating-score {
-       font-family:
-           Georgia,
-           "Times New Roman",
-           serif;
-   
-       font-size:
-           clamp(58px, 7vw, 92px);
-   
-       font-weight: 600;
-   
-       line-height: .72;
-   
-       letter-spacing: -.06em;
-   }
-   
-   
-   .google-rating-meta {
-       padding-bottom: 2px;
-   }
-   
-   
-   .google-stars {
-       margin-bottom: 6px;
-   
-       color: var(--accent-ink);
-   
-       font-size: 18px;
-   
-       line-height: 1;
-   
-       letter-spacing: .08em;
-   }
-   
-   
    .google-rating-meta p {
        color: var(--text-muted);
    
@@ -2020,19 +1891,6 @@ textarea {
        font-weight: 700;
    
        letter-spacing: .04em;
-   }
-   
-   
-   .google-review-copy {
-       max-width: 480px;
-   
-       margin-bottom: 22px;
-   
-       color: var(--text-muted);
-   
-       font-size: 15px;
-   
-       line-height: 1.7;
    }
 
 /* =========================================================
@@ -2054,31 +1912,6 @@ textarea {
 .google-review-panel,
 .facebook-panel {
     grid-column: 2;
-}
-
-.facebook-panel {
-    position: relative;
-
-    padding:
-        24px
-        clamp(28px, 4vw, 48px);
-
-    display: grid;
-
-    gap: 8px;
-
-    border:
-        1px solid
-        var(--line-strong);
-
-    border-top:
-        var(--beam-size)
-        solid
-        var(--beam);
-
-    background: var(--surface);
-
-    overflow: hidden;
 }
 
 .facebook-panel::before {
@@ -2106,17 +1939,6 @@ textarea {
     width: 100%;
 }
 
-.facebook-panel-label {
-    font-size: 10px;
-    font-weight: 800;
-
-    letter-spacing: .12em;
-
-    text-transform: uppercase;
-
-    color: var(--accent-ink);
-}
-
 .facebook-panel strong {
     font-family:
         Georgia,
@@ -2128,117 +1950,94 @@ textarea {
 
     line-height: 1.15;
 }
-
-.facebook-panel-link {
-    margin-top: 6px;
-
-    font-size: 11px;
-    font-weight: 800;
-
-    letter-spacing: .08em;
-
-    text-transform: uppercase;
-}
-
 /* =========================================================
-   REVIEWS — FINAL LAYOUT
+   REVIEWS — COMPACT TRUST MODULE
 ========================================================= */
+
+.reviews {
+    background: var(--bg);
+}
 
 .reviews-shell {
     display: grid;
-
     grid-template-columns:
-        minmax(260px, .68fr)
-        minmax(0, 1.32fr);
-
-    gap:
-        clamp(42px, 7vw, 90px);
-
+        minmax(240px, .62fr)
+        minmax(0, 1.38fr);
+    gap: clamp(42px, 7vw, 90px);
     align-items: start;
 }
 
+
+/* Left */
+
 .reviews-left {
     display: grid;
+    gap: 28px;
+}
 
-    gap: 34px;
+.reviews-label {
+    display: block;
+    margin-bottom: 12px;
+
+    color: var(--accent-ink);
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
 }
 
 .reviews-title-block h2 {
-    margin: 0 0 24px;
+    margin: 0 0 18px;
 
     font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-    font-size:
-        clamp(46px, 6vw, 82px);
-
+    font-size: clamp(42px, 4.8vw, 64px);
     font-weight: 600;
 
-    line-height: .9;
-
-    letter-spacing: -.055em;
+    line-height: .92;
+    letter-spacing: -.05em;
 }
 
 .reviews-title-block h2 span {
     display: block;
-
     color: var(--text-muted);
 }
 
 .reviews-title-block > p {
-    max-width: 420px;
+    max-width: 360px;
 
     color: var(--text-muted);
 
-    font-size: 16px;
-
-    line-height: 1.7;
-}
-
-.reviews-label,
-.testimonial-source {
-    display: block;
-
-    margin-bottom: 14px;
-
-    color: var(--accent-ink);
-
-    font-size: 10px;
-    font-weight: 800;
-
-    letter-spacing: .12em;
-
-    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 1.65;
 }
 
 
-/* Profile */
+/* James */
 
 .reviews-profile {
     display: grid;
-
     grid-template-columns:
-        112px
+        82px
         minmax(0, 1fr);
 
-    gap: 20px;
-
+    gap: 16px;
     align-items: center;
 
-    padding-top: 24px;
+    padding-top: 20px;
 
     border-top:
-        var(--beam-size)
-        solid
-        var(--beam);
+        1px solid
+        var(--line-strong);
 }
 
 .reviews-profile img {
-    width: 112px;
-
-    aspect-ratio: 4 / 5;
+    width: 82px;
+    height: 96px;
 
     object-fit: cover;
 }
@@ -2249,34 +2048,31 @@ textarea {
 }
 
 .reviews-profile strong {
-    margin-bottom: 5px;
-
-    font-size: 18px;
+    margin-bottom: 3px;
+    font-size: 16px;
 }
 
 .reviews-profile span {
-    margin-bottom: 9px;
+    margin-bottom: 6px;
 
     color: var(--accent-ink);
 
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 800;
 
-    letter-spacing: .09em;
-
+    letter-spacing: .08em;
     text-transform: uppercase;
 }
 
 .reviews-profile p {
     color: var(--text-muted);
 
-    font-size: 14px;
-
-    line-height: 1.55;
+    font-size: 13px;
+    line-height: 1.5;
 }
 
 
-/* Review content */
+/* Right */
 
 .reviews-proof {
     border-top:
@@ -2286,57 +2082,16 @@ textarea {
 }
 
 .reviews-rating-row {
-    display: grid;
+    min-height: 84px;
 
-    grid-template-columns:
-        auto
-        minmax(0, 1fr)
-        auto;
-
-    gap: 22px;
-
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
 
     padding:
-        22px
-        0
-        26px;
-
-    border-bottom:
-        1px solid
-        var(--line-strong);
-}
-
-.reviews-rating-score {
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:
-        clamp(52px, 6vw, 72px);
-
-    line-height: .8;
-}
-
-.reviews-stars {
-    color: var(--accent-ink);
-
-    font-size: 17px;
-
-    letter-spacing: .07em;
-}
-
-.reviews-rating-row > div > span {
-    color: var(--text-muted);
-
-    font-size: 11px;
-    font-weight: 700;
-}
-
-.testimonial-card {
-    padding:
-        clamp(28px, 4vw, 42px)
+        18px
         0;
 
     border-bottom:
@@ -2344,60 +2099,137 @@ textarea {
         var(--line-strong);
 }
 
-.testimonial-card blockquote,
-.testimonial-more blockquote {
-    white-space: pre-line;
-
-    color: var(--text);
-
-    font-size:
-        clamp(17px, 1.55vw, 21px);
-
-    line-height: 1.62;
+.reviews-rating {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
-.testimonial-card cite {
-    display: block;
+.reviews-stars,
+.review-summary-stars {
+    color: var(--accent-ink);
+    letter-spacing: .06em;
+}
 
-    margin-top: 22px;
+.reviews-stars {
+    font-size: 18px;
+}
+
+.reviews-rating strong,
+.reviews-rating span {
+    display: block;
+}
+
+.reviews-rating strong {
+    font-size: 14px;
+}
+
+.reviews-rating span {
+    margin-top: 1px;
 
     color: var(--text-muted);
 
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 700;
+    font-size: 11px;
 }
 
-.testimonial-more {
+
+/* Reviews */
+
+.reviews-list {
     border-bottom:
         1px solid
         var(--line-strong);
 }
 
-.testimonial-more summary {
+.review-item {
+    border-bottom:
+        1px solid
+        var(--line-strong);
+}
+
+.review-item:last-child {
+    border-bottom: 0;
+}
+
+.review-item summary {
+    min-height: 72px;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto
+        24px;
+
+    gap: 18px;
+    align-items: center;
+
     padding:
-        20px
+        15px
         0;
 
     cursor: pointer;
 
-    font-size: 12px;
-    font-weight: 800;
+    list-style: none;
+}
+
+.review-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.review-summary-copy strong,
+.review-summary-copy small {
+    display: block;
+}
+
+.review-summary-copy strong {
+    margin-bottom: 2px;
+
+    font-size: 14px;
+}
+
+.review-summary-copy small {
+    color: var(--text-muted);
+
+    font-size: 10px;
+    font-weight: 700;
 
     letter-spacing: .08em;
-
     text-transform: uppercase;
 }
 
-.testimonial-more blockquote {
+.review-summary-stars {
+    font-size: 13px;
+}
+
+.review-summary-toggle {
+    font-size: 20px;
+    line-height: 1;
+
+    transition:
+        transform .3s var(--ease);
+}
+
+.review-item[open] .review-summary-toggle {
+    transform: rotate(45deg);
+}
+
+.review-body {
+    max-width: 720px;
+
     padding:
-        4px
-        0
-        28px;
+        2px
+        42px
+        24px
+        0;
+}
+
+.review-body blockquote {
+    margin-bottom: 16px;
 
     color: var(--text-muted);
 
-    font-size: 16px;
+    font-size: clamp(15px, 1.3vw, 17px);
+    line-height: 1.65;
 }
 
 .reviews-facebook-link {
@@ -2405,16 +2237,60 @@ textarea {
 
     gap: 10px;
 
-    margin-top: 24px;
+    margin-top: 20px;
 
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 800;
 
     letter-spacing: .08em;
-
     text-transform: uppercase;
 }
 
+
+/* Reviews responsive */
+
+@media (max-width: 900px) {
+
+    .reviews-shell {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .reviews-title-block h2 {
+        max-width: 9ch;
+    }
+
+}
+
+@media (max-width: 520px) {
+
+    .reviews-rating-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .review-item summary {
+        grid-template-columns:
+            minmax(0, 1fr)
+            22px;
+    }
+
+    .review-summary-stars {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .review-summary-toggle {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+    .review-body {
+        padding-right: 0;
+    }
+
+}
 /* =========================================================
    INNER PAGE STRUCTURAL SYSTEM
 ========================================================= */
@@ -2850,75 +2726,6 @@ textarea {
 
 
 /* =========================================================
-   SERVICES CONTEXT / CONTACT AREA
-========================================================= */
-
-.service-context {
-    background: var(--surface-2);
-}
-
-.service-context-grid,
-.contact-area-grid {
-    display: grid;
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(320px, .8fr);
-    gap:
-        clamp(40px, 8vw, 110px);
-    align-items: start;
-}
-
-.service-context-heading h2,
-.contact-area-heading h2 {
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:
-        clamp(42px, 5vw, 72px);
-
-    font-weight: 600;
-
-    line-height: .95;
-
-    letter-spacing: -.045em;
-}
-
-
-.service-context-heading h2 span,
-.contact-area-heading h2 span {
-    display: block;
-
-    color: var(--accent);
-}
-
-
-.service-context-copy,
-.contact-area-copy {
-    padding-top: 24px;
-
-    border-top:
-        var(--beam-size)
-        solid
-        var(--beam);
-}
-
-
-.service-context-copy p,
-.contact-area-copy p {
-    margin-bottom: 24px;
-
-    color: var(--text-muted);
-
-    font-size:
-        clamp(16px, 1.4vw, 19px);
-
-    line-height: 1.75;
-}
-
-
-/* =========================================================
    CONTACT DETAILS
 ========================================================= */
 
@@ -3078,31 +2885,6 @@ a.contact-method:hover .contact-method-arrow {
             clamp(17px, 1.5vw, 20px);
     line-height: 1.7;
 }
-
-
-.project-brief-list {
-    border-top:
-        var(--beam-size)
-        solid
-        var(--beam);
-}
-
-
-.project-brief-item {
-    display: grid;
-
-    grid-template-columns:
-        52px
-        1fr;
-
-    gap: 18px;
-
-    padding: 24px 0;
-
-    border-bottom:
-        1px solid var(--line-strong);
-}
-
 
 .project-brief-item h3 {
     margin-bottom: 5px;
@@ -3275,15 +3057,6 @@ a.contact-method:hover .contact-method-arrow {
     background: var(--bg);
 }
 
-.contact-area {
-    background: var(--surface-2);
-
-    border-top:
-        var(--beam-size)
-        solid
-        var(--beam);
-}
-
 /* =========================================================
    RESPONSIVE — 1100px
 ========================================================= */
@@ -3337,11 +3110,6 @@ a.contact-method:hover .contact-method-arrow {
         grid-column: 2;
     }
    
-   .values-grid {
-       grid-template-columns:
-           repeat(2, minmax(0, 1fr));
-   }
-   
     .header-inner {
         column-gap: 24px;
     }
@@ -3355,11 +3123,6 @@ a.contact-method:hover .contact-method-arrow {
     }
 
     .about-features {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-    .project-grid {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
     }
@@ -3512,12 +3275,6 @@ a.contact-method:hover .contact-method-arrow {
    .service-feature:nth-of-type(even) .service-image {
         order: 1;
     }
-
-   .values-intro {
-       grid-template-columns: 1fr;
-   
-       gap: 30px;
-   }
    
     .service-feature .service-content,
     .service-feature:nth-of-type(even) .service-content {
@@ -4212,20 +3969,6 @@ a.contact-method:hover .contact-method-arrow {
             clamp(40px, 12vw, 58px);
     }
 
-
-    /* ==========================
-      720px Projects
-    ========================== */
-
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project-image {
-        aspect-ratio: 4 / 3;
-    }
-
-
     /* ==========================
        720px About James
     ========================== */
@@ -4478,6 +4221,22 @@ a.contact-method:hover .contact-method-arrow {
 (max-width: 950px)
 and (orientation: landscape) {
 
+    .home-page .hero {
+        padding:
+            0
+            0
+            32px;
+
+        background: var(--dark);
+    }
+
+    .home-page .hero-frame {
+        width: 100%;
+        max-width: none;
+
+        margin-inline: 0;
+    }
+    
     .hero-frame {
         min-height: 600px;
         height: 100svh;
