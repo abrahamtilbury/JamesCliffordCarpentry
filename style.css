@@ -1977,6 +1977,14 @@ textarea {
     overflow: clip;
 }
 
+.contact-profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap:
+        12px
+        24px;
+}
+
 /* =========================================================
    INNER PAGE HERO
 ========================================================= */
