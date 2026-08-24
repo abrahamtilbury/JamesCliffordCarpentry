@@ -2330,8 +2330,7 @@ textarea {
    FIVE-BAY SERVICE REGISTER
 ========================================================= */
 
-.scope-register,
-.contact-scope-register {
+.scope-register {
     display: grid;
     grid-template-columns:
         repeat(5, 1fr);
@@ -2345,8 +2344,7 @@ textarea {
         1px solid var(--line-strong);
 }
 
-.scope-register a,
-.contact-scope-register a {
+.scope-register a {
     position: relative;
     min-height: 150px;
     padding: 22px;
@@ -2361,8 +2359,7 @@ textarea {
         1px solid var(--line-strong);
 }
 
-.scope-register a::before,
-.contact-scope-register a::before {
+.scope-register a::before {
     content: "";
     position: absolute;
     top: 0;
@@ -2374,21 +2371,18 @@ textarea {
         width .35s var(--ease);
 }
 
-.scope-register a:hover::before,
-.contact-scope-register a:hover::before {
+.scope-register a:hover::before {
     width: 100%;
 }
 
-.scope-register-number,
-.contact-scope-register a > span:first-child {
+.scope-register-number {
     color: var(--accent-ink);
     font-size: 10px;
     font-weight: 800;
     letter-spacing: .14em;
 }
 
-.scope-register strong,
-.contact-scope-register strong {
+.scope-register strong {
     font-family:
         Georgia,
         "Times New Roman",
@@ -2399,8 +2393,7 @@ textarea {
     letter-spacing: -.03em;
 }
 
-.scope-register small,
-.contact-scope-register small {
+.scope-register small {
     color: var(--text-dim);
     font-size: 9px;
     font-weight: 800;
@@ -2591,16 +2584,6 @@ textarea {
    CONTACT DETAILS
 ========================================================= */
 
-.contact-details {
-    padding-block:
-        clamp(60px, 8vw, 110px);
-
-    background: var(--bg);
-
-    border-bottom:
-        1px solid var(--line-strong);
-}
-
 
 .contact-details-grid,
 .project-brief-grid {
@@ -2702,27 +2685,6 @@ textarea {
     color: var(--accent);
 }
 
-.contact-methods {
-    border-top:
-        var(--beam-size)
-        solid
-        var(--beam);
-}
-
-.contact-method {
-    min-height: 100px;
-    display: grid;
-    grid-template-columns:
-        52px
-        minmax(0, 1fr)
-        auto;
-    gap: 18px;
-    align-items: center;
-    padding: 20px 0;
-    border-bottom:
-        1px solid var(--line-strong);
-}
-
 .contact-method-number,
 .project-brief-number {
     color: var(--accent-ink);
@@ -2741,39 +2703,12 @@ textarea {
     text-transform: uppercase;
 }
 
-
-.contact-method strong {
-    overflow-wrap: anywhere;
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-    font-size:
-        clamp(20px, 2vw, 28px);
-    line-height: 1.15;
-}
-
-
-.contact-method-arrow {
-    font-size: 20px;
-
-    transition:
-        transform .3s var(--ease);
-}
-
-
-a.contact-method:hover .contact-method-arrow {
-    transform:
-        translate(4px, -4px);
-}
-
-
 /* =========================================================
    PROJECT BRIEF
 ========================================================= */
 
 .project-brief {
-    background: var(--surface);
+    background: var(--bg);
 }
 
 
@@ -2883,53 +2818,6 @@ a.contact-method:hover .contact-method-arrow {
     justify-content: flex-start;
 }
 
-.contact-map-grid {
-    display: grid;
-
-    grid-template-columns:
-        minmax(260px, .7fr)
-        minmax(0, 1.3fr);
-
-    gap:
-        clamp(40px, 7vw, 100px);
-
-    align-items: center;
-}
-
-.contact-map-copy h2 {
-    margin-bottom: 24px;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:
-        clamp(42px, 5vw, 72px);
-
-    line-height: .95;
-
-    letter-spacing: -.045em;
-}
-
-.contact-map-copy h2 span {
-    display: block;
-
-    color: var(--accent);
-}
-
-.contact-map-copy p {
-    max-width: 460px;
-
-    margin-bottom: 24px;
-
-    color: var(--text-muted);
-
-    font-size: 17px;
-
-    line-height: 1.7;
-}
-
 .contact-map-frame {
     min-height: 380px;
 
@@ -2948,14 +2836,6 @@ a.contact-method:hover .contact-method-arrow {
     min-height: 380px;
 
     border: 0;
-}
-
-/* =========================================================
-   CONTACT SCOPE / AREA
-========================================================= */
-
-.contact-scope {
-    background: var(--bg);
 }
 
 /* =========================================================
@@ -2982,8 +2862,7 @@ a.contact-method:hover .contact-method-arrow {
 
 @media (max-width: 1100px) {
 
-   .scope-register,
-   .contact-scope-register {
+   .scope-register {
        grid-template-columns:
            repeat(5, minmax(150px, 1fr));
    
@@ -3074,10 +2953,6 @@ a.contact-method:hover .contact-method-arrow {
 
     .reviews-title-block h2 {
         max-width: 9ch;
-    }
-   
-   .contact-map-grid {
-        grid-template-columns: 1fr;
     }
 
    .contact-rail-inner {
@@ -3552,8 +3427,7 @@ a.contact-method:hover .contact-method-arrow {
 
     }
     
-    .scope-register,
-    .contact-scope-register {
+    .scope-register {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
         gap: 10px;
@@ -3562,8 +3436,7 @@ a.contact-method:hover .contact-method-arrow {
         border: 0;
     }
 
-    .scope-register a,
-    .contact-scope-register a {
+    .scope-register a {
         min-height: 98px;
         padding: 15px;
         background: var(--surface);
@@ -3571,14 +3444,12 @@ a.contact-method:hover .contact-method-arrow {
         border-radius: 12px;
     }
 
-    .scope-register a:last-child,
-    .contact-scope-register a:last-child {
+    .scope-register a:last-child {
         grid-column: 1 / -1;
         min-height: 78px;
     }
 
-    .scope-register strong,
-    .contact-scope-register strong {
+    .scope-register strong {
         font-size: 20px;
     }
 
@@ -3850,17 +3721,12 @@ a.contact-method:hover .contact-method-arrow {
         gap: 24px;
     }
 
-    .scope-register,
-    .contact-scope-register {
+    .scope-register {
         margin-top: 30px;
     }
 
     .service-detail {
         padding-block: 44px;
-    }
-
-    .contact-details {
-        padding-block: 52px;
     }
 
     .about {
@@ -4495,18 +4361,6 @@ a.contact-method:hover .contact-method-arrow {
        width: 100%;
    }
    
-   
-   .contact-method {
-       grid-template-columns:
-           32px
-           minmax(0, 1fr);
-   }
-   
-   
-   .contact-method-arrow {
-       display: none;
-   }
-      
    .google-rating {
        align-items: flex-start;
    
