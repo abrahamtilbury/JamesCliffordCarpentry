@@ -2355,181 +2355,214 @@ textarea {
 }
 
 /* =========================================================
-   SERVICE DETAIL SECTIONS
+   SERVICE DETAILS — COMPACT ALTERNATING
 ========================================================= */
 
 .service-detail {
     padding-block:
-        clamp(48px, 5.5vw, 78px);
+        clamp(42px, 4.5vw, 60px);
+
     border-bottom:
-        1px solid var(--line-strong);
+        1px solid
+        var(--line-strong);
+
+    background: var(--surface);
 }
 
-.service-detail-marker small {
-    display: none;
-}
+
+/* Alternate section tone */
 
 .service-detail:nth-of-type(even) {
-    background:
-        rgba(255, 255, 255, .16);
+    background: var(--bg);
 }
 
+
+/* Main layout */
 
 .service-detail-grid {
     display: grid;
 
     grid-template-columns:
-        84px
-        minmax(220px, .72fr)
-        minmax(320px, 1fr);
+        minmax(280px, .9fr)
+        minmax(340px, 1.1fr);
 
     gap:
-        clamp(28px, 5vw, 80px);
+        clamp(40px, 6vw, 84px);
 
-    align-items: start;
+    align-items: center;
 }
 
 
-.service-detail-marker {
-    min-height: 190px;
+/* =================================
+   Copy
+================================= */
 
-    padding-top: 8px;
+.service-detail-main {
+    grid-column: 1;
+    grid-row: 1;
 
-    border-right:
-        var(--beam-size)
-        solid
-        var(--beam);
+    max-width: 560px;
+}
 
+
+.service-detail-main h2 {
     display: flex;
 
-    flex-direction: column;
+    align-items: baseline;
 
-    justify-content: space-between;
-}
+    gap: 14px;
 
+    margin:
+        0
+        0
+        18px;
 
-.service-detail-marker span {
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 42px;
-
-    line-height: 1;
-}
-
-
-.service-detail-marker small {
-    margin-bottom: 4px;
-
-    writing-mode: vertical-rl;
-
-    transform: rotate(180deg);
-
-    color: var(--text-dim);
-
-    font-size: 9px;
-
-    font-weight: 800;
-
-    letter-spacing: .16em;
-}
-
-
-.service-detail-heading h2 {
     font-family:
         Georgia,
         "Times New Roman",
         serif;
 
     font-size:
-        clamp(48px, 6vw, 84px);
+        clamp(40px, 4vw, 56px);
 
     font-weight: 600;
 
-    line-height: .9;
+    line-height: .94;
 
-    letter-spacing: -.045em;
+    letter-spacing: -.04em;
 }
 
 
-.service-detail-copy {
-    max-width: 680px;
+.service-detail-number {
+    color: var(--accent-ink);
 
-    padding-top: 8px;
+    font-family:
+        "DM Sans",
+        system-ui,
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: .14em;
 }
 
 
-.service-detail-lead {
-    margin-bottom: 18px;
+.service-detail-main > p {
+    max-width: 520px;
 
-    color: var(--text);
+    margin:
+        0
+        0
+        22px;
 
-    font-size:
-        clamp(19px, 1.8vw, 24px);
-
-    line-height: 1.55;
-}
-
-
-.service-detail-copy > p:not(.service-detail-lead) {
     color: var(--text-muted);
 
-    font-size: 15px;
+    font-size: 16px;
 
-    line-height: 1.75;
+    line-height: 1.65;
 }
 
 
+/* =================================
+   Scope tags
+================================= */
+
 .scope-items {
-    display: grid;
+    display: flex;
 
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+    flex-wrap: wrap;
 
-    margin-top: 30px;
+    gap: 8px;
 
-    border-top:
-        var(--beam-size)
-        solid
-        var(--beam);
+    margin: 0;
 
-    border-left:
-        1px solid
-        var(--line-strong);
+    border: 0;
 }
 
 
 .scope-items span {
     padding:
-        10px 13px;
-    border-right:
-        1px solid var(--line-strong);
-    border-bottom:
-        1px solid var(--line-strong);
-    color: var(--text-muted);
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-}
+        8px
+        11px;
 
-.service-detail-image {
-    margin-top: 28px;
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
     border:
         1px solid
         var(--line-strong);
+
+    border-radius: 0;
+
+    background: transparent;
+
+    color: var(--text-muted);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
 }
+
+
+/* =================================
+   Image
+================================= */
+
+.service-detail-image {
+    grid-column: 2;
+    grid-row: 1;
+
+    justify-self: end;
+
+    width:
+        min(100%, 520px);
+
+    margin: 0;
+
+    aspect-ratio: 3 / 2;
+
+    overflow: hidden;
+
+    border: 0;
+
+    box-shadow:
+        7px
+        7px
+        0
+        var(--dark);
+}
+
 
 .service-detail-image img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     transition:
-        transform .5s var(--ease);
+        transform .5s
+        var(--ease);
+}
+
+
+/* =================================
+   Alternate image / copy
+================================= */
+
+.service-detail:nth-of-type(even)
+.service-detail-main {
+    grid-column: 2;
+}
+
+
+.service-detail:nth-of-type(even)
+.service-detail-image {
+    grid-column: 1;
+
+    justify-self: start;
 }
 
 
@@ -2793,24 +2826,6 @@ textarea {
    RESPONSIVE — 1100px
 ========================================================= */
 
-@media (min-width: 1241px) {
-
-    .service-detail-grid {
-        grid-template-columns:
-            72px
-            minmax(180px, .48fr)
-            minmax(0, 1.52fr);
-
-        gap:
-            clamp(28px, 4vw, 64px);
-    }
-
-    .service-detail-copy {
-        max-width: none;
-    }
-
-}
-
 @media (max-width: 1100px) {
 
    .scope-register {
@@ -2821,25 +2836,6 @@ textarea {
    
        overscroll-behavior-inline: contain;
    }
-   
-   
-   .service-detail-grid {
-        grid-template-columns:
-            52px
-            minmax(0, 1fr);
-
-        gap: 28px;
-    }
-
-    .service-detail-marker {
-        grid-row:
-            1 / span 2;
-    }
-
-    .service-detail-heading,
-    .service-detail-copy {
-        grid-column: 2;
-    }
    
     .header-inner {
         column-gap: 24px;
@@ -2882,6 +2878,33 @@ textarea {
         grid-template-columns: 1fr;
 
         gap: 24px;
+    }
+
+   .service-detail-grid {
+        grid-template-columns: 1fr;
+
+        gap: 24px;
+    }
+
+
+    .service-detail-main,
+    .service-detail:nth-of-type(even)
+    .service-detail-main {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+
+    .service-detail-image,
+    .service-detail:nth-of-type(even)
+    .service-detail-image {
+        grid-column: 1;
+        grid-row: 2;
+
+        justify-self: start;
+
+        width:
+            min(100%, 620px);
     }
 
     .contact-details-grid,
@@ -2934,12 +2957,6 @@ textarea {
         grid-row: auto;
     }
 
-   .service-detail-grid {
-       grid-template-columns:
-           52px
-           1fr;
-   }
-
    .reviews-shell {
         grid-template-columns: 1fr;
 
@@ -2955,16 +2972,6 @@ textarea {
     .reviews-rating-row .text-link {
         grid-column: 1 / -1;
     }
-   
-   
-   .service-detail-copy {
-       grid-column: 2;
-   }
-   
-   .service-detail-marker {
-       grid-row:
-           1 / span 2;
-   }
    
    .reviews-grid {
        grid-template-columns: 1fr;
@@ -3426,6 +3433,55 @@ textarea {
         --section-space: 48px;
     }
 
+   .service-detail {
+        padding-block: 34px;
+    }
+
+
+    .service-detail-main h2 {
+        font-size: 38px;
+    }
+
+
+    .scope-items {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 7px;
+    }
+
+
+    .scope-items span {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        min-height: 42px;
+
+        padding:
+            7px
+            6px;
+
+        text-align: center;
+    }
+
+
+    .service-detail-image {
+        width:
+            calc(100% - 5px);
+
+        aspect-ratio: 16 / 10;
+
+        box-shadow:
+            5px
+            5px
+            0
+            var(--dark);
+    }
+   
    .services-hero-stage {
        height: 520px;
        border-bottom-width: 6px;
@@ -3508,12 +3564,6 @@ textarea {
     .service-detail-heading h2 {
         font-size: 38px;
         line-height: .95;
-    }
-
-    .service-detail-image {
-        border-radius: 12px;
-        overflow: hidden;
-
     }
     
     .scope-register {
@@ -4460,50 +4510,6 @@ and (orientation: landscape) {
         max-width: 560px;
 
         font-size: 14px;
-    }
-
-}
-
-/* =========================================================
-   SERVICE DETAILS — SMALL DESKTOP / LAPTOP
-========================================================= */
-
-@media (min-width: 901px) and (max-width: 1240px) {
-
-    .service-detail-grid {
-        grid-template-columns:
-            56px
-            minmax(0, 1fr);
-
-        gap: 30px;
-    }
-
-    .service-detail-marker {
-        grid-column: 1;
-        grid-row: 1 / span 2;
-
-        min-height: 0;
-
-        align-self: stretch;
-    }
-
-    .service-detail-heading,
-    .service-detail-copy {
-        grid-column: 2;
-    }
-
-    .service-detail-heading {
-        margin-bottom: 2px;
-    }
-
-    .service-detail-copy {
-        max-width: none;
-
-        padding-top: 0;
-    }
-
-    .service-detail-image {
-        margin-top: 24px;
     }
 
 }
