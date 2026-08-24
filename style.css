@@ -1043,7 +1043,7 @@ textarea {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns:
-        repeat(4, minmax(0, 1fr));
+        repeat(5, minmax(0, 1fr));
     gap: 0;
     padding: 0;
     background: transparent;
