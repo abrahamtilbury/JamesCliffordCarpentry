@@ -2035,16 +2035,17 @@ textarea {
 
 .services-page-hero-grid {
     position: relative;
-
     z-index: 2;
-
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.12fr)
+        minmax(300px, .88fr);
+    gap:
+        clamp(40px, 8vw, 120px);
     height: 100%;
-
     align-items: end;
-
     padding-bottom:
         clamp(38px, 5vw, 58px);
-
     color: #fff;
 }
 
@@ -3432,19 +3433,14 @@ textarea {
    
    
    .services-page-hero-grid {
-       position: relative;
-       z-index: 2;
-       display: grid;
-       grid-template-columns:
-           minmax(0, 1.12fr)
-           minmax(300px, .88fr);
-       gap:
-           clamp(40px, 8vw, 120px);
-       height: 100%;
-       align-items: end;
-       padding-bottom:
-           clamp(38px, 5vw, 58px);
-       color: #fff;
+       grid-template-columns: 1fr;
+       gap: 20px;
+       width: 100%;
+       padding:
+           0
+           var(--page-padding)
+           30px;
+       align-content: end;
    }
    
    .services-page-hero-heading h1 {
