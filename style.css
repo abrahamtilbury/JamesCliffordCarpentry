@@ -1057,6 +1057,26 @@ textarea {
         var(--line-strong);
 }
 
+.about-feature-link {
+
+    display: block;
+
+    height: 100%;
+
+    color: inherit;
+
+}
+
+.about-services-link {
+
+    grid-column: 1 / -1;
+
+    justify-self: start;
+
+    margin-top: 18px;
+
+}
+
 .about-features article {
     position: relative;
     padding:
@@ -3555,6 +3575,98 @@ a.contact-method:hover .contact-method-arrow {
         --section-space: 48px;
     }
     
+     .home-page .about {
+
+        padding-block: 40px 42px;
+
+    }
+
+    .home-page .about-container {
+
+        row-gap: 22px;
+
+    }
+
+    .home-page .about-heading h2 {
+
+        font-size: clamp(38px, 10.5vw, 46px);
+
+        line-height: .94;
+
+    }
+
+    .home-page .about-intro {
+
+        font-size: 15px;
+
+        line-height: 1.55;
+
+    }
+
+    .home-page .about-intro p {
+
+        margin-bottom: 0;
+
+    }
+
+    .home-page .about-features {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+
+        border: 0;
+
+    }
+
+    .home-page .about-features article {
+
+        min-height: 118px;
+
+        padding: 16px;
+
+        border: 1px solid var(--line-strong);
+
+        border-radius: var(--radius-md);
+
+        background: var(--surface);
+
+    }
+
+    .home-page .about-features article::before {
+
+        display: none;
+
+    }
+
+    .home-page .about-features article:last-child {
+
+        grid-column: 1 / -1;
+
+        min-height: 88px;
+
+    }
+
+    .home-page .about-features p {
+
+        display: none;
+
+    }
+
+    .home-page .about-feature-number {
+
+        margin-bottom: 20px;
+
+    }
+
+    .home-page .about-features h3 {
+
+        margin: 0;
+
+        font-size: 19px;
+
+    }
+
     .beam-section::before,
     .beam-section::after {
         display: none;
