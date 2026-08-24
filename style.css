@@ -1,8 +1,3 @@
-/* =========================================================
-   JAMES CLIFFORD CARPENTRY
-   First-pass design system
-========================================================= */
-
 /* ==========================
    Design Tokens
 ========================== */
@@ -1427,174 +1422,6 @@ textarea {
 }
 
 /* =========================================================
-   ABOUT JAMES
-========================================================= */
-.about-james-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.about-james-content h2 {
-    margin: 0 0 28px;
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-    font-size: clamp(44px, 5vw, 70px);
-    line-height: .9;
-    font-weight: 600;
-    letter-spacing: -.05em;
-}
-
-.about-james-content h2 span {
-    display: block;
-    color: var(--text-muted);
-}
-
-.about-james-content > p:not(.section-eyebrow) {
-    max-width: 560px;
-    margin: 0 0 20px;
-    color: var(--text-muted);
-    font-size: 16px;
-    line-height: 1.7;
-}
-
-/* =========================================================
-    LOCATION
-========================================================= */
-
-.location h2 {
-    max-width: 800px;
-    margin: 0;
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-    font-size: clamp(43px, 5.6vw, 76px);
-    line-height: .92;
-    font-weight: 600;
-    letter-spacing: -.05em;
-}
-
-.location h2 span {
-    display: block;
-    color: var(--text-muted);
-}
-
-.location-container > div:last-child {
-    max-width: 520px;
-}
-
-.location-container > div:last-child p {
-    margin: 0 0 24px;
-
-    color: var(--text-muted);
-
-    font-size: 16px;
-
-    line-height: 1.7;
-}
-
-/* =========================================================
-   CONTACT CTA
-========================================================= */
-
-.contact {
-    position: relative;
-    padding-block:
-        clamp(75px, 9vw, 125px);
-    background: var(--text);
-    color: #fff;
-    text-align: center;
-    overflow: hidden;
-}
-
-/*
-   Subtle structural line at top and bottom.
-   Less decorative than Tile Edge, more architectural.
-*/
-
-.contact::before,
-.contact::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: var(--beam-size);
-    background: var(--beam-inverse);
-    opacity: .35;
-}
-.contact::before {
-    top: 0;
-}
-
-.contact::after {
-    bottom: 0;
-}
-
-.contact-content {
-    max-width: 850px;
-
-    margin-inline: auto;
-
-    padding-inline: var(--page-padding);
-}
-
-.contact .section-eyebrow {
-    color: #aaa;
-}
-
-.contact h2 {
-    margin: 0 0 20px;
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-    font-size: clamp(45px, 6vw, 82px);
-    line-height: .9;
-    font-weight: 600;
-    letter-spacing: -.055em;
-}
-
-.contact-content > p:not(.section-eyebrow) {
-    max-width: 560px;
-    margin: 0 auto 32px;
-    color: rgba(255,255,255,.72);
-    font-size: 17px;
-    line-height: 1.65;
-}
-
-.contact-actions {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.contact .button-primary {
-    background: var(--accent);
-    border-color: var(--accent);
-}
-
-.contact .button-primary:hover {
-    background: #878787;
-    border-color: #878787;
-}
-
-.contact .button-secondary {
-    border-color: rgba(255,255,255,.3);
-}
-
-.contact .button-secondary:hover {
-    background: #fff;
-    border-color: #fff;
-    color: var(--text);
-}
-
-
-/* =========================================================
    FOOTER
 ========================================================= */
 
@@ -1751,162 +1578,6 @@ textarea {
     font-size: 12px;
 }
 
-   /* =========================================================
-      PROFILE PHOTO
-   ========================================================= */
-
-   .reviews-person {
-        display: grid;
-        grid-template-columns:
-            120px
-            minmax(0, 1fr);
-        gap: 22px;
-        align-items: center;
-        align-self: end;
-        padding-top: 24px;
-        border-top:
-            var(--beam-size)
-            solid
-            var(--beam);
-    }
-    
-    .reviews-profile img {
-        border-radius: 50%;
-    }
-
-    .reviews-person img {
-        width: 120px;
-        aspect-ratio: 4 / 5;
-        object-fit: cover;
-    }
-
-    .reviews-person strong,
-    .reviews-person span {
-        display: block;
-    }
-
-    .reviews-person strong {
-        margin-bottom: 5px;
-        font-size: 18px;
-    }
-
-    .reviews-person span {
-        margin-bottom: 10px;
-        color: var(--accent-ink);
-        font-size: 10px;
-        font-weight: 800;
-        letter-spacing: .09em;
-        text-transform: uppercase;
-    }
-
-    .reviews-person p {
-        color: var(--text-muted);
-        font-size: 14px;
-        line-height: 1.55;
-    }
-
-   /* =========================================================
-      GOOGLE REVIEWS
-   ========================================================= */
-   
-   .reviews {
-       background: var(--bg);
-   
-       border-bottom:
-           1px solid var(--line);
-   }
-   
-   .reviews-heading h2 {
-       font-family:
-           Georgia,
-           "Times New Roman",
-           serif;
-   
-       font-size:
-           clamp(46px, 6vw, 82px);
-   
-       line-height: .9;
-   
-       font-weight: 600;
-   
-       letter-spacing: -.055em;
-   }
-   
-   
-   .reviews-heading h2 span {
-       display: block;
-   
-       color: var(--text-muted);
-   }
-   
-   
-   .google-rating-meta p {
-       color: var(--text-muted);
-   
-       font-size: 12px;
-   
-       font-weight: 700;
-   
-       letter-spacing: .04em;
-   }
-
-/* =========================================================
-    FACEBOOK
-========================================================= */
-
-.reviews-grid {
-    column-gap:
-        clamp(40px, 8vw, 110px);
-
-    row-gap: 18px;
-}
-
-.reviews-heading {
-    grid-row:
-        1 / span 2;
-}
-
-.google-review-panel,
-.facebook-panel {
-    grid-column: 2;
-}
-
-.facebook-panel::before {
-    content: "";
-
-    position: absolute;
-
-    inset:
-        0
-        auto
-        0
-        0;
-
-    width: 0;
-
-    background: var(--accent);
-
-    opacity: .08;
-
-    transition:
-        width .35s var(--ease);
-}
-
-.facebook-panel:hover::before {
-    width: 100%;
-}
-
-.facebook-panel strong {
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:
-        clamp(20px, 2vw, 28px);
-
-    line-height: 1.15;
-}
 /* =========================================================
    REVIEWS — COMPACT TRUST MODULE
 ========================================================= */
@@ -3113,61 +2784,14 @@ a.contact-method:hover .contact-method-arrow {
             1px solid var(--line-strong);
     }
 
-    .location-container > div:last-child {
-        padding-left:
-            clamp(28px, 4vw, 54px);
-
-        border-left:
-            1px solid var(--line-strong);
-    }
-
-    .reviews-grid {
-        grid-template-columns:
-            minmax(0, .8fr)
-            minmax(360px, 1fr);
-
-        grid-template-areas:
-            "heading google"
-            "person facebook";
-
-        align-items: start;
-
-        row-gap: 18px;
-    }
-
-    .reviews-heading {
-        grid-area: heading;
-
-        grid-row: auto;
-    }
-
-    .reviews-person {
-        grid-area: person;
-    }
-
-    .google-review-panel {
-        grid-area: google;
-
-        grid-column: auto;
-    }
-
-    .facebook-panel {
-        grid-area: facebook;
-
-        grid-column: auto;
-    }
-
 }
 
 @media (max-width: 900px) {
    .services-page-hero-grid,
    .contact-page-hero-grid,
-   .service-context-grid,
-   .contact-area-grid,
    .contact-details-grid,
    .project-brief-grid {
        grid-template-columns: 1fr;
-   
        gap: 32px;
    }
 
@@ -3177,7 +2801,6 @@ a.contact-method:hover .contact-method-arrow {
 
    .contact-rail-inner {
         grid-template-columns: 1fr;
-
         gap: 30px;
     }
 
@@ -3186,9 +2809,7 @@ a.contact-method:hover .contact-method-arrow {
             26px
             0
             0;
-
         border-left: 0;
-
         border-top:
             1px solid
             rgba(255,255,255,.26);
@@ -3227,7 +2848,6 @@ a.contact-method:hover .contact-method-arrow {
    .service-detail-copy {
        grid-column: 2;
    }
-   
    
    .service-detail-marker {
        grid-row:
@@ -3274,12 +2894,10 @@ a.contact-method:hover .contact-method-arrow {
         display: none;
     }
    
-    .section-intro,
-    .location-container,
-    .about-james-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
+    .section-intro {
+       grid-template-columns: 1fr;
+       gap: 30px;
+   }
 
     .section-intro {
         margin-bottom: 40px;
@@ -3314,16 +2932,6 @@ a.contact-method:hover .contact-method-arrow {
 
     .about-features {
         grid-column: auto;
-    }
-
-    .about-james-image {
-        max-width: 520px;
-
-        aspect-ratio: 4 / 5;
-    }
-
-    .about-james-content {
-        max-width: 700px;
     }
 
     .footer-inner {
@@ -3753,7 +3361,6 @@ a.contact-method:hover .contact-method-arrow {
     .reviews-profile img {
         width: 72px;
         height: 72px;
-        border-radius: 50%;
     }
 
     .reviews-proof {
@@ -4242,9 +3849,8 @@ a.contact-method:hover .contact-method-arrow {
        720px General typography
     ========================== */
 
-    .section-heading h2,
-    .about-heading h2,
-    .location h2 {
+   .section-heading h2,
+   .about-heading h2 {
         font-size:
             clamp(42px, 12vw, 60px);
     }
@@ -4295,27 +3901,6 @@ a.contact-method:hover .contact-method-arrow {
     }
 
     /* ==========================
-       720px About James
-    ========================== */
-
-    .about-james-image {
-        width: 100%;
-        max-width: none;
-
-        aspect-ratio: 4 / 5;
-    }
-
-
-    /* ==========================
-       720px Location
-    ========================== */
-
-    .location-container {
-        gap: 28px;
-    }
-
-
-    /* ==========================
        720px Contact
     ========================== */
 
@@ -4329,11 +3914,6 @@ a.contact-method:hover .contact-method-arrow {
         font-size:
             clamp(44px, 12vw, 62px);
     }
-
-    .contact-content > p:not(.section-eyebrow) {
-        font-size: 15px;
-    }
-
 
     /* ==========================
        720px Footer
