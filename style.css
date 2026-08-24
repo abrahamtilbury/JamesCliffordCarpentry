@@ -1265,32 +1265,6 @@ textarea {
     margin-top: 24px;
 }
 
-@media (max-width: 720px) {
-
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .form-field-full {
-        grid-column: auto;
-    }
-
-    .form-options {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-    .project-enquiry-submit {
-        align-items: stretch;
-
-        flex-direction: column;
-    }
-
-    .project-enquiry-submit .button {
-        width: 100%;
-    }
-}
-
 /* =========================================================
    SERVICES
 ========================================================= */
@@ -1339,9 +1313,7 @@ textarea {
 .service-image img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     transition:
         transform .9s var(--ease);
 }
@@ -1440,75 +1412,54 @@ textarea {
 .about-james-image img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     object-position: center;
 }
 
-
 .about-james-content h2 {
     margin: 0 0 28px;
-
     font-family:
         Georgia,
         "Times New Roman",
         serif;
-
     font-size: clamp(44px, 5vw, 70px);
-
     line-height: .9;
-
     font-weight: 600;
-
     letter-spacing: -.05em;
 }
 
 .about-james-content h2 span {
     display: block;
-
     color: var(--text-muted);
 }
 
 .about-james-content > p:not(.section-eyebrow) {
     max-width: 560px;
-
     margin: 0 0 20px;
-
     color: var(--text-muted);
-
     font-size: 16px;
-
     line-height: 1.7;
 }
 
-
 /* =========================================================
-   LOCATION
+    LOCATION
 ========================================================= */
 
 .location h2 {
     max-width: 800px;
-
     margin: 0;
-
     font-family:
         Georgia,
         "Times New Roman",
         serif;
-
     font-size: clamp(43px, 5.6vw, 76px);
-
     line-height: .92;
-
     font-weight: 600;
-
     letter-spacing: -.05em;
 }
 
 .location h2 span {
     display: block;
-
     color: var(--text-muted);
 }
 
@@ -1526,23 +1477,17 @@ textarea {
     line-height: 1.7;
 }
 
-
 /* =========================================================
    CONTACT CTA
 ========================================================= */
 
 .contact {
     position: relative;
-
     padding-block:
         clamp(75px, 9vw, 125px);
-
     background: var(--text);
-
     color: #fff;
-
     text-align: center;
-
     overflow: hidden;
 }
 
@@ -1583,40 +1528,28 @@ textarea {
 
 .contact h2 {
     margin: 0 0 20px;
-
     font-family:
         Georgia,
         "Times New Roman",
         serif;
-
     font-size: clamp(45px, 6vw, 82px);
-
     line-height: .9;
-
     font-weight: 600;
-
     letter-spacing: -.055em;
 }
 
 .contact-content > p:not(.section-eyebrow) {
     max-width: 560px;
-
     margin: 0 auto 32px;
-
     color: rgba(255,255,255,.72);
-
     font-size: 17px;
-
     line-height: 1.65;
 }
 
 .contact-actions {
     display: flex;
-
     justify-content: center;
-
     gap: 12px;
-
     flex-wrap: wrap;
 }
 
@@ -3617,12 +3550,39 @@ a.contact-method:hover .contact-method-arrow {
 ========================================================= */
 
 @media (max-width: 720px) {
-
-        :root {
+     :root {
         --page-padding: 20px;
-        --section-space: 56px;
+        --section-space: 48px;
+    }
+    
+    .beam-section::before,
+    .beam-section::after {
+        display: none;
     }
 
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-field-full {
+        grid-column: auto;
+    }
+
+    .form-options {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .project-enquiry-submit {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .project-enquiry-submit .button {
+        width: 100%;
+    }
+       
     .services-page-hero,
     .contact-page-hero {
         padding-block:
@@ -4113,6 +4073,131 @@ a.contact-method:hover .contact-method-arrow {
     .hero-actions {
         width: 100%;
     }
+
+    .header-inner {
+        min-height: 68px;
+        grid-template-columns: minmax(0, 1fr) 44px;
+    }
+
+    .site-logo {
+        grid-column: 1;
+        justify-self: start;
+    }
+
+    .menu-button {
+        grid-column: 2;
+        justify-self: end;
+    }
+
+    .home-page .site-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: transparent;
+        border-bottom: 0;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    .home-page .header-inner {
+        border-bottom: 1px solid rgba(255, 255, 255, .28);
+    }
+
+    .home-page .site-header .site-logo {
+        color: #fff;
+    }
+
+    .home-page .site-header .site-logo-mark {
+        filter: brightness(0) invert(1);
+        opacity: .92;
+    }
+
+    .home-page .site-header .site-logo-type > span {
+        color: rgba(255, 255, 255, .68);
+    }
+
+    .home-page .menu-button {
+        color: #fff;
+    }
+
+    .home-page .hero {
+        padding: 0;
+        background: var(--dark);
+    }
+
+    .home-page .hero-frame {
+        width: 100%;
+        max-width: none;
+        height: clamp(560px, 76svh, 650px);
+        min-height: 0;
+        margin: 0;
+    }
+
+    .home-page .hero-frame::after {
+        display: none;
+    }
+
+    .home-page .hero-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0,0,0,.38) 0%,
+                rgba(0,0,0,.08) 28%,
+                rgba(0,0,0,.18) 52%,
+                rgba(0,0,0,.76) 100%
+            );
+    }
+
+    .home-page .hero-content {
+        inset: auto var(--page-padding) 28px;
+
+        width: auto;
+        padding: 0;
+
+        display: block;
+    }
+
+    .home-page .hero h1 {
+        max-width: 10ch;
+
+        margin: 0 0 16px;
+
+        font-size: clamp(40px, 11.5vw, 52px);
+        line-height: .94;
+    }
+
+    .home-page .hero-text {
+        max-width: 33ch;
+
+        margin: 0 0 18px;
+
+        font-size: 14px;
+        line-height: 1.45;
+    }
+
+    .home-page .hero-actions {
+        gap: 8px;
+    }
+
+    .home-page .hero-actions .button {
+        min-height: 46px;
+        padding-inline: 14px;
+        font-size: 9.5px;
+    }
+
+    .home-page .hero .button-primary {
+        background: #fff;
+        border-color: #fff;
+        color: var(--dark);
+    }
+
+    .home-page .hero .button-secondary {
+        background: rgba(0, 0, 0, .16);
+        border-color: rgba(255, 255, 255, .55);
+        color: #fff;
+    }
+}
 }
 
 @media (hover: hover) and (pointer: fine) {
