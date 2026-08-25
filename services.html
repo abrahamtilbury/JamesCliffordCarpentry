@@ -14,7 +14,7 @@
     </title>
     <meta
         name="description"
-        content="Commercial carpentry services across Bundaberg and surrounding areas, including framing, fix out, cladding, fencing and maintenance for commercial projects, refurbishments and fit-outs."
+        content="Commercial carpentry services across Bundaberg and surrounding areas, including framing, fix out, cladding, timber and metal fencing and maintenance for commercial projects, refurbishments and fit-outs."
     />
     <!-- =========================
          OPEN GRAPH
@@ -25,7 +25,7 @@
     />
     <meta
         property="og:description"
-        content="Commercial carpentry services across Bundaberg and surrounding areas, including framing, fix out, cladding, fencing and maintenance for commercial projects."
+        content="Commercial carpentry services across Bundaberg and surrounding areas, including framing, fix out, cladding, timber and metal fencing and maintenance for commercial projects."
     />
     <meta
         property="og:image"
@@ -113,10 +113,15 @@
         "@context": "https://schema.org",
         "@type": "HomeAndConstructionBusiness",
         "name": "James Clifford Carpentry",
+        "legalName": "TILBURY, JAMES CLIFFORD",
+        "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "QBCC Act Licence No",
+            "value": "15508119"
+        },
         "@id": "https://jamescliffordcarpentry.com.au/#business",
         "image": "https://jamescliffordcarpentry.com.au/images/og-image.jpg",
         "logo": "https://jamescliffordcarpentry.com.au/images/logo-mark-grey.webp",
-        "telephone": "+61-411-313-432",
         "email": "admin@jamescliffordcarpentry.com.au",
         "areaServed": {
             "@type": "City",
@@ -132,7 +137,7 @@
             "https://www.facebook.com/people/James-Clifford-Carpentry/61583661757642/"
         ],
         "url": "https://jamescliffordcarpentry.com.au",
-        "description": "Commercial carpentry across Bundaberg and surrounding areas, including framing, fix out, cladding, fencing and commercial maintenance."
+        "description": "Commercial carpentry across Bundaberg and surrounding areas, including framing, fix out, cladding, timber and metal fencing and commercial maintenance."
     }
     </script>
 </head>
@@ -182,31 +187,14 @@
                 </a>
 
             </nav>
-
-
             <!-- HEADER ACTIONS -->
-
-            <div class="header-actions">
-
-                <a
-                    href="tel:0411313432"
-                    class="header-phone"
-                >
-                    0411 313 432
-                </a>
-
-                <a
-                    href="contact.html"
-                    class="header-cta"
-                >
-                    Discuss a Project
-                </a>
-
-            </div>
-
-
+            <a
+                href="contact.html#project-enquiry"
+                class="header-cta"
+            >
+                Send Project Enquiry
+            </a>
             <!-- MOBILE MENU BUTTON -->
-
             <button
                 class="menu-button"
                 type="button"
@@ -218,18 +206,13 @@
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </button>
-
         </div>
-
-
         <!-- MOBILE NAV -->
-
         <nav
             id="mobile-menu"
             class="mobile-menu"
             aria-label="Mobile navigation"
         >
-
             <a href="index.html">
                 Home
             </a>
@@ -297,7 +280,7 @@
                     </div>
                     <div class="services-page-hero-intro">
                         <p>
-                            Framing, fix out, cladding, fencing and maintenance
+                            Framing, fix out, cladding, timber and metal fencing and maintenance
                             for commercial projects, refurbishments, fit-outs and
                             ongoing property work across Bundaberg and surrounding areas.
                         </p>
@@ -311,7 +294,9 @@
         ================================================== -->
         <article
             id="framing"
-            class="service-detail"
+            class="service-detail service-detail--gallery service-feature--gallery is-gallery-open"
+            data-service-gallery
+            data-gallery-always-open
         >
             <div class="container service-detail-grid">
         
@@ -345,18 +330,91 @@
         
                 </div>
         
-                <figure class="service-detail-image">
-        
-                    <img
-                        src="images/service-framing-detail.webp"
-                        alt="Commercial framing work by James Clifford Carpentry"
-                        width="1200"
-                        height="900"
-                        loading="lazy"
-                        decoding="async"
-                    >
-        
-                </figure>
+                <figure class="service-detail-image service-gallery">
+
+                <div
+                    id="services-framing-gallery-track"
+                    class="service-gallery-track"
+                    data-gallery-track
+                    role="region"
+                    aria-label="Framing project gallery"
+                    tabindex="0"
+                >
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/framing-gallery-01.webp"
+                            alt="Indoor framing project by James Clifford Carpentry"
+                            width="1084"
+                            height="813"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/framing-gallery-02.webp"
+                            alt="Close-up of framing work"
+                            width="1600"
+                            height="1200"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/framing-gallery-03.webp"
+                            alt="Blue steel framing project"
+                            width="1195"
+                            height="897"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/framing-gallery-04.webp"
+                            alt="Framing project on permanent concrete floor"
+                            width="1600"
+                            height="1200"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                </div>
+
+                <div
+                    class="service-gallery-counter"
+                    aria-live="polite"
+                >
+                    <span data-gallery-current>1</span>
+                    /
+                    <span data-gallery-total>4</span>
+                </div>
+
+                <button
+                    type="button"
+                    class="service-gallery-arrow service-gallery-arrow--prev"
+                    data-gallery-prev
+                    aria-label="Previous framing photo"
+                >
+                    ←
+                </button>
+
+                <button
+                    type="button"
+                    class="service-gallery-arrow service-gallery-arrow--next"
+                    data-gallery-next
+                    aria-label="Next framing photo"
+                >
+                    →
+                </button>
+
+            </figure>
         
             </div>
         </article>
@@ -365,7 +423,9 @@
         ================================================== -->
         <article
             id="fix-out"
-            class="service-detail"
+            class="service-detail service-detail--gallery service-feature--gallery is-gallery-open"
+            data-service-gallery
+            data-gallery-always-open
         >
             <div class="container service-detail-grid">
         
@@ -397,17 +457,91 @@
         
                 </div>
         
-                <figure class="service-detail-image">
-        
-                    <img
-                        src="images/service-fix-out-detail.webp"
-                        alt="Internal fix out work by James Clifford Carpentry"
-                        width="1200"
-                        height="900"
-                        loading="lazy"
-                        decoding="async"
-                    >
-                </figure>
+                <figure class="service-detail-image service-gallery">
+
+                <div
+                    id="services-fix-out-gallery-track"
+                    class="service-gallery-track"
+                    data-gallery-track
+                    role="region"
+                    aria-label="Fix out project gallery"
+                    tabindex="0"
+                >
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/fix-out-gallery-01.webp"
+                            alt="Plastering fix out project by James Clifford Carpentry"
+                            width="1600"
+                            height="1200"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/fix-out-gallery-02.webp"
+                            alt="Fix out project with trimming"
+                            width="1600"
+                            height="1200"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/fix-out-gallery-03.webp"
+                            alt="New door integrated with fix out project"
+                            width="1600"
+                            height="1200"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/fix-out-gallery-04.webp"
+                            alt="Internal double-glazed window"
+                            width="1600"
+                            height="1200"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                </div>
+
+                <div
+                    class="service-gallery-counter"
+                    aria-live="polite"
+                >
+                    <span data-gallery-current>1</span>
+                    /
+                    <span data-gallery-total>4</span>
+                </div>
+
+                <button
+                    type="button"
+                    class="service-gallery-arrow service-gallery-arrow--prev"
+                    data-gallery-prev
+                    aria-label="Previous fix out photo"
+                >
+                    ←
+                </button>
+
+                <button
+                    type="button"
+                    class="service-gallery-arrow service-gallery-arrow--next"
+                    data-gallery-next
+                    aria-label="Next fix out photo"
+                >
+                    →
+                </button>
+
+            </figure>
             </div>
         </article>
         <!-- =================================================
@@ -415,7 +549,9 @@
         ================================================== -->
         <article
             id="cladding"
-            class="service-detail"
+            class="service-detail service-detail--gallery service-feature--gallery is-gallery-open"
+            data-service-gallery
+            data-gallery-always-open
         >
             <div class="container service-detail-grid">
                 <div class="service-detail-main">
@@ -440,17 +576,91 @@
                         <span>Property work</span>
                     </div>
                 </div>
-                <figure class="service-detail-image">
-                    <img
-                        src="images/service-cladding-detail.webp"
-                        alt="Commercial cladding work by James Clifford Carpentry"
-                        width="1200"
-                        height="900"
-                        loading="lazy"
-                        decoding="async"
-                    >
-        
-                </figure>
+                <figure class="service-detail-image service-gallery">
+
+                <div
+                    id="services-cladding-gallery-track"
+                    class="service-gallery-track"
+                    data-gallery-track
+                    role="region"
+                    aria-label="Cladding project gallery"
+                    tabindex="0"
+                >
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/cladding-gallery-01.webp"
+                            alt="Polished roof cladding"
+                            width="1600"
+                            height="1200"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/cladding-gallery-02.webp"
+                            alt="Back deck cladding"
+                            width="1600"
+                            height="1200"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/cladding-gallery-03.webp"
+                            alt="Cladding project on Bundaberg soil"
+                            width="1600"
+                            height="1200"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/cladding-gallery-04.webp"
+                            alt="Silver cladding project"
+                            width="1600"
+                            height="1200"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                </div>
+
+                <div
+                    class="service-gallery-counter"
+                    aria-live="polite"
+                >
+                    <span data-gallery-current>1</span>
+                    /
+                    <span data-gallery-total>4</span>
+                </div>
+
+                <button
+                    type="button"
+                    class="service-gallery-arrow service-gallery-arrow--prev"
+                    data-gallery-prev
+                    aria-label="Previous cladding photo"
+                >
+                    ←
+                </button>
+
+                <button
+                    type="button"
+                    class="service-gallery-arrow service-gallery-arrow--next"
+                    data-gallery-next
+                    aria-label="Next cladding photo"
+                >
+                    →
+                </button>
+
+            </figure>
         
             </div>
         </article>
@@ -459,7 +669,9 @@
         ================================================== -->
         <article
             id="fences"
-            class="service-detail"
+            class="service-detail service-detail--gallery service-feature--gallery is-gallery-open"
+            data-service-gallery
+            data-gallery-always-open
         >
             <div class="container service-detail-grid">
                 <div class="service-detail-main">
@@ -473,27 +685,103 @@
                         Fences
                     </h2>
                     <p>
-                        Commercial fencing for businesses, commercial properties and sites, either independently or as part of wider carpentry work.
+                        Timber and metal fencing for businesses, commercial properties and sites,
+                        either independently or as part of wider carpentry work.
                     </p>
                     <div
                         class="scope-items"
                         aria-label="Fencing scope"
                     >
-                        <span>Businesses</span>
-                        <span>Commercial properties</span>
-                        <span>Sites</span>
+                        <span>Timber fencing</span>
+                        <span>Metal fencing</span>
+                        <span>Commercial sites</span>
                     </div>
                 </div>
-                <figure class="service-detail-image">
-                    <img
-                        src="images/service-fencing-detail.webp"
-                        alt="Commercial fencing work by James Clifford Carpentry"
-                        width="1200"
-                        height="900"
-                        loading="lazy"
-                        decoding="async"
-                    >
-                </figure>
+                <figure class="service-detail-image service-gallery">
+
+                <div
+                    id="services-fences-gallery-track"
+                    class="service-gallery-track"
+                    data-gallery-track
+                    role="region"
+                    aria-label="Fencing project gallery"
+                    tabindex="0"
+                >
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/fencing-gallery-01.webp"
+                            alt="Steel fencing project on external yard"
+                            width="971"
+                            height="727"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/fencing-gallery-02.webp"
+                            alt="Wooden fencing project in yard"
+                            width="1024"
+                            height="768"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/fencing-gallery-03.webp"
+                            alt="Beams for timber fencing project"
+                            width="912"
+                            height="684"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/fencing-gallery-04.webp"
+                            alt="Tennis court fencing project by James Clifford Carpentry"
+                            width="1193"
+                            height="895"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                </div>
+
+                <div
+                    class="service-gallery-counter"
+                    aria-live="polite"
+                >
+                    <span data-gallery-current>1</span>
+                    /
+                    <span data-gallery-total>4</span>
+                </div>
+
+                <button
+                    type="button"
+                    class="service-gallery-arrow service-gallery-arrow--prev"
+                    data-gallery-prev
+                    aria-label="Previous fencing photo"
+                >
+                    ←
+                </button>
+
+                <button
+                    type="button"
+                    class="service-gallery-arrow service-gallery-arrow--next"
+                    data-gallery-next
+                    aria-label="Next fencing photo"
+                >
+                    →
+                </button>
+
+            </figure>
             </div>
         </article>
         <!-- =================================================
@@ -501,7 +789,9 @@
         ================================================== -->
         <article
             id="maintenance"
-            class="service-detail"
+            class="service-detail service-detail--gallery service-feature--gallery is-gallery-open"
+            data-service-gallery
+            data-gallery-always-open
         >
             <div class="container service-detail-grid">
         
@@ -533,18 +823,91 @@
         
                 </div>
         
-                <figure class="service-detail-image">
-        
-                    <img
-                        src="images/service-maintenance-detail.webp"
-                        alt="Commercial maintenance work by James Clifford Carpentry"
-                        width="1200"
-                        height="900"
-                        loading="lazy"
-                        decoding="async"
-                    >
-        
-                </figure>
+                <figure class="service-detail-image service-gallery">
+
+                <div
+                    id="services-maintenance-gallery-track"
+                    class="service-gallery-track"
+                    data-gallery-track
+                    role="region"
+                    aria-label="Maintenance project gallery"
+                    tabindex="0"
+                >
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/maintenance-gallery-01.webp"
+                            alt="Bathroom door commercial maintenance project"
+                            width="1180"
+                            height="885"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/maintenance-gallery-02.webp"
+                            alt="Yard gate commercial maintenance project"
+                            width="1172"
+                            height="879"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/maintenance-gallery-03.webp"
+                            alt="Jewellery store roof maintenance callout"
+                            width="1158"
+                            height="868"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                    <figure class="service-gallery-slide">
+                        <img
+                            src="images/maintenance-gallery-04.webp"
+                            alt="External rear fence replacement"
+                            width="1201"
+                            height="901"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+
+                </div>
+
+                <div
+                    class="service-gallery-counter"
+                    aria-live="polite"
+                >
+                    <span data-gallery-current>1</span>
+                    /
+                    <span data-gallery-total>4</span>
+                </div>
+
+                <button
+                    type="button"
+                    class="service-gallery-arrow service-gallery-arrow--prev"
+                    data-gallery-prev
+                    aria-label="Previous maintenance photo"
+                >
+                    ←
+                </button>
+
+                <button
+                    type="button"
+                    class="service-gallery-arrow service-gallery-arrow--next"
+                    data-gallery-next
+                    aria-label="Next maintenance photo"
+                >
+                    →
+                </button>
+
+            </figure>
         
             </div>
         </article>
@@ -568,36 +931,22 @@
                         Need carpentry
                         <span>on a commercial project?</span>
                     </h2>
-        
                 </div>
-        
                 <div class="contact-rail-details">
-        
                     <p>
-                        Send James the project location,
-                        work required and timing.
+                        Send James the project location, work required and timing.
+                        He'll review the enquiry and follow up by email.
                     </p>
-        
+
                     <div class="contact-actions">
-        
                         <a
-                            href="contact.html"
+                            href="contact.html#project-enquiry"
                             class="button button-primary"
                         >
-                            Discuss a Project
+                            Send Project Enquiry
                         </a>
-        
-                        <a
-                            href="tel:0411313432"
-                            class="button button-secondary"
-                        >
-                            0411 313 432
-                        </a>
-        
                     </div>
-        
                 </div>
-        
             </div>
         </section>
     </main>
@@ -635,19 +984,10 @@
             <div class="footer-contact">
                 <p>
                     <strong>
-                        Phone
+                        Project enquiries
                     </strong>
                     <br>
-                    <a href="tel:0411313432">
-                        0411 313 432
-                    </a>
-                </p>
-                <p>
-                    <strong>
-                        Email
-                    </strong>
-                    <br>
-                    <a href="mailto:admin@jamescliffordcarpentry.com.au">
+                    <a href="mailto:admin@jamescliffordcarpentry.com.au?subject=Commercial%20Project%20Enquiry">
                         admin@jamescliffordcarpentry.com.au
                     </a>
                 </p>
@@ -672,6 +1012,13 @@
             </nav>
         </div>
         <div class="footer-bottom">
+            <p class="footer-licence">
+                <strong>QBCC Act Licence No: 15508119</strong>
+                <br>
+                Licensee: TILBURY, JAMES CLIFFORD
+                <br>
+                Trading as James Clifford Carpentry
+            </p>
             <p class="copyright">
                 © 2026 James Clifford Carpentry.
                 All rights reserved.
