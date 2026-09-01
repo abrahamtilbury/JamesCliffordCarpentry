@@ -180,11 +180,11 @@ p {
 @font-face {
     font-family: "Afacad Flux";
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-display: swap;
 
     src:
-        url("fonts/afacad-flux-latin-600-normal.woff2")
+        url("fonts/afacad-flux-latin-500-normal.woff2")
         format("woff2");
 }
 
@@ -901,7 +901,7 @@ textarea {
     font-family: var(--font-display);
     font-size:
         clamp(72px, 6.4vw, 102px);
-   font-weight: 600; 
+   font-weight: 500; 
    line-height: .88;
    letter-spacing: -.04em;
 }
@@ -1509,7 +1509,7 @@ textarea {
     font-family: var(--font-display);
     font-size:
         clamp(62px, 5.4vw, 86px);
-    font-weight: 600;
+    font-weight: 500;
     line-height: .88;
     letter-spacing: -.04em;
 }
@@ -1975,7 +1975,7 @@ textarea {
     font-family: var(--font-display);
     font-size:
         clamp(58px, 5.2vw, 80px);
-    font-weight: 600;
+    font-weight: 500;
     line-height: .88;
     letter-spacing: -.04em;
 }
@@ -3165,11 +3165,10 @@ and (max-width: 900px) {
     
     .contact-hero-copy h1 {
         font-family: var(--font-display);
-        font-size:
-            clamp(48px, 12.5vw, 60px);
-        font-weight: 600;
-        line-height: .89;
-        letter-spacing: -.035em;
+        font-size: clamp(46px, 12vw, 56px);
+        font-weight: 500;
+        line-height: .90;
+        letter-spacing: -.025em;
     }
 
     .services-page-body .site-header {
@@ -3246,11 +3245,10 @@ and (max-width: 900px) {
         max-width: 10ch;
 
         font-family: var(--font-display);
-        font-size:
-            clamp(50px, 13vw, 62px);
-        font-weight: 600;
-        line-height: .88;
-        letter-spacing: -.035em;
+        font-size: clamp(47px, 12.5vw, 57px);
+        font-weight: 500;
+        line-height: .90;
+        letter-spacing: -.025em;
     }
 
     .services-page-body
@@ -4120,15 +4118,14 @@ and (max-width: 900px) {
     }
 
     .home-page .hero h1 {
-        max-width: 9.4ch;
+         max-width: 9.6ch;
         margin-bottom: 18px;
 
         font-family: var(--font-display);
-        font-size:
-            clamp(52px, 14.4vw, 66px);
-        font-weight: 600;
-        line-height: .88;
-        letter-spacing: -.035em;
+        font-size: clamp(49px, 13.5vw, 59px);
+        font-weight: 500;
+        line-height: .90;
+        letter-spacing: -.025em;
     }
 
     .home-page .hero-text {
