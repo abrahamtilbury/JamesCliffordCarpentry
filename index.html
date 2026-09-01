@@ -221,29 +221,297 @@
                 </div>
             </div>
         </section>
-        <!-- =========================
-             POSITIONING
+                <!-- =========================
+             CLIENT TESTIMONIALS
         ========================== -->
         <section
-            id="approach"
-            class="about section beam-section"
+            id="reviews"
+            class="reviews-marquee-section beam-section"
+            aria-labelledby="reviews-title"
         >
-            <div class="container about-container">
-        
-                <div class="about-heading">
-        
-                    <h2>
-                        Commercial carpentry
-                        <span>across Bundaberg.</span>
-                    </h2>
+            <h2
+                id="reviews-title"
+                class="sr-only"
+            >
+                Client feedback
+            </h2>
+
+            <div class="container">
+
+                <div
+                    class="reviews-marquee"
+                    data-testimonial-marquee
+                >
+
+                    <div class="reviews-marquee-track">
+
+                        <!-- ACCESSIBLE ORIGINAL SET -->
+                        <div class="reviews-marquee-group">
+
+                            <!-- REVIEW 01 -->
+                            <article class="review-marquee-card">
+
+                                <div class="review-marquee-top">
+
+                                    <span class="review-marquee-source">
+                                        Google review
+                                    </span>
+
+                                    <span
+                                        class="review-marquee-stars"
+                                        aria-label="5 out of 5 stars"
+                                    >
+                                        ★★★★★
+                                    </span>
+
+                                </div>
+
+                                <blockquote>
+                                    “James has recently done a large job for us at our
+                                    commercial site in Bundaberg… James is not only a
+                                    highly skilled carpenter, he is also very professional,
+                                    and extremely reliable.”
+                                </blockquote>
+
+                                <div class="review-marquee-footer">
+
+                                    <strong>
+                                        FJS Discount Tools
+                                    </strong>
+
+                                    <a
+                                        href="https://maps.app.goo.gl/mJMgHLS1NRdBwtBN9"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        View on Google
+                                        <span aria-hidden="true">↗</span>
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- REVIEW 02 -->
+                            <article class="review-marquee-card">
+
+                                <div class="review-marquee-top">
+
+                                    <span class="review-marquee-source">
+                                        Google review
+                                    </span>
+
+                                    <span
+                                        class="review-marquee-stars"
+                                        aria-label="5 out of 5 stars"
+                                    >
+                                        ★★★★★
+                                    </span>
+
+                                </div>
+
+                                <blockquote>
+                                    “James was the only qualified carpenter that actually
+                                    listened to what we could afford and time frames and
+                                    what we were trying to achieve… fast but professional
+                                    and considerate.”
+                                </blockquote>
+
+                                <div class="review-marquee-footer">
+
+                                    <strong>
+                                        Rick
+                                    </strong>
+
+                                    <a
+                                        href="https://maps.app.goo.gl/mJMgHLS1NRdBwtBN9"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        View on Google
+                                        <span aria-hidden="true">↗</span>
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- REVIEW 03 -->
+                            <article class="review-marquee-card">
+
+                                <div class="review-marquee-top">
+
+                                    <span class="review-marquee-source">
+                                        Localsearch review
+                                    </span>
+
+                                    <span
+                                        class="review-marquee-stars"
+                                        aria-label="5 out of 5 stars"
+                                    >
+                                        ★★★★★
+                                    </span>
+
+                                </div>
+
+                                <blockquote>
+                                    “His response to inquiries and turning up when he
+                                    said he would were 10/10. He did an impeccably clean
+                                    and neat job… I cannot recommend James enough.”
+                                </blockquote>
+
+                                <div class="review-marquee-footer">
+
+                                    <strong>
+                                        Sian
+                                    </strong>
+
+                                    <span class="review-marquee-source-note">
+                                        Localsearch
+                                    </span>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+
+                        <!-- VISUAL DUPLICATE FOR SEAMLESS LOOP -->
+                        <div
+                            class="reviews-marquee-group"
+                            aria-hidden="true"
+                        >
+
+                            <!-- REVIEW 01 DUPLICATE -->
+                            <article class="review-marquee-card">
+
+                                <div class="review-marquee-top">
+
+                                    <span class="review-marquee-source">
+                                        Google review
+                                    </span>
+
+                                    <span class="review-marquee-stars">
+                                        ★★★★★
+                                    </span>
+
+                                </div>
+
+                                <blockquote>
+                                    “James has recently done a large job for us at our
+                                    commercial site in Bundaberg… James is not only a
+                                    highly skilled carpenter, he is also very professional,
+                                    and extremely reliable.”
+                                </blockquote>
+
+                                <div class="review-marquee-footer">
+
+                                    <strong>
+                                        FJS Discount Tools
+                                    </strong>
+
+                                    <a
+                                        href="https://maps.app.goo.gl/mJMgHLS1NRdBwtBN9"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        tabindex="-1"
+                                    >
+                                        View on Google
+                                        <span aria-hidden="true">↗</span>
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- REVIEW 02 DUPLICATE -->
+                            <article class="review-marquee-card">
+
+                                <div class="review-marquee-top">
+
+                                    <span class="review-marquee-source">
+                                        Google review
+                                    </span>
+
+                                    <span class="review-marquee-stars">
+                                        ★★★★★
+                                    </span>
+
+                                </div>
+
+                                <blockquote>
+                                    “James was the only qualified carpenter that actually
+                                    listened to what we could afford and time frames and
+                                    what we were trying to achieve… fast but professional
+                                    and considerate.”
+                                </blockquote>
+
+                                <div class="review-marquee-footer">
+
+                                    <strong>
+                                        Rick
+                                    </strong>
+
+                                    <a
+                                        href="https://maps.app.goo.gl/mJMgHLS1NRdBwtBN9"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        tabindex="-1"
+                                    >
+                                        View on Google
+                                        <span aria-hidden="true">↗</span>
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- REVIEW 03 DUPLICATE -->
+                            <article class="review-marquee-card">
+
+                                <div class="review-marquee-top">
+
+                                    <span class="review-marquee-source">
+                                        Localsearch review
+                                    </span>
+
+                                    <span class="review-marquee-stars">
+                                        ★★★★★
+                                    </span>
+
+                                </div>
+
+                                <blockquote>
+                                    “His response to inquiries and turning up when he
+                                    said he would were 10/10. He did an impeccably clean
+                                    and neat job… I cannot recommend James enough.”
+                                </blockquote>
+
+                                <div class="review-marquee-footer">
+
+                                    <strong>
+                                        Sian
+                                    </strong>
+
+                                    <span class="review-marquee-source-note">
+                                        Localsearch
+                                    </span>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </div>
+
                 </div>
-                <div class="about-intro">
-                        <p>
-                            Framing, fix out, cladding, timber and metal fencing and maintenance
-                            for commercial projects, refurbishments, fit-outs and
-                            ongoing property work across Bundaberg and surrounding areas.
-                        </p>
-                </div>
+
             </div>
         </section>
         <!-- =========================
@@ -936,212 +1204,6 @@
                         </a>
                     </div>
                 </article>
-            </div>
-        </section>
-        <!-- =========================
-             GOOGLE REVIEWS
-        ========================== -->
-        <section
-            id="reviews"
-            class="reviews section beam-section"
-            aria-labelledby="reviews-title"
-        >
-            <div class="container reviews-shell">
-                <div class="reviews-left">
-                    <div class="reviews-title-block">
-                        <span class="reviews-label">
-                            Client feedback
-                        </span>
-                        <h2 id="reviews-title">
-                            Trusted by
-                            <span>our clients.</span>
-                        </h2>
-                        <p>
-                            Feedback from clients who have worked
-                            directly with James.
-                        </p>
-                    </div>
-                    <div class="reviews-profile">
-                        <img
-                            src="images/james-profile.webp"
-                            alt="James Clifford"
-                            width="640"
-                            height="800"
-                            loading="lazy"
-                            decoding="async"
-                        >
-                        <div>
-                            <strong>James Clifford</strong>
-                            <span>
-                                14+ years industry experience
-                            </span>
-                            <p>
-                                Commercial carpentry across Bundaberg
-                                and surrounding areas.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="reviews-proof">
-                    <div class="reviews-rating-row">
-                        <div class="reviews-rating">
-                            <div
-                                class="reviews-stars"
-                                aria-label="5 out of 5 stars"
-                            >
-                                ★★★★★
-                            </div>
-                            <div>
-                                <strong>5.0 on Google</strong>
-                                <span>2 reviews</span>
-                            </div>
-                        </div>
-                        <a
-                            href="https://maps.app.goo.gl/mJMgHLS1NRdBwtBN9"
-                            class="text-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            View Google profile
-                            <span>↗</span>
-                        </a>
-                    </div>
-                    <div class="reviews-list">
-                        <details
-                            class="review-item"
-                            name="client-reviews"
-                            open
-                        >
-                            <summary>
-                                <span class="review-summary-copy">
-                                    <strong>FJS Discount Tools</strong>
-                                    <small>Google review</small>
-                                </span>
-                                <span
-                                    class="review-summary-stars"
-                                    aria-label="5 out of 5 stars"
-                                >
-                                    ★★★★★
-                                </span>
-                                <span
-                                    class="review-summary-toggle"
-                                    aria-hidden="true"
-                                >
-                                    +
-                                </span>
-                            </summary>
-                            <div class="review-body">
-                                <blockquote>
-                                    “James has recently done a large job for us at our
-                                    commercial site in Bundaberg… James is not only a
-                                    highly skilled carpenter, he is also very professional,
-                                    and extremely reliable.”
-                                </blockquote>
-                                <a
-                                    href="https://maps.app.goo.gl/mJMgHLS1NRdBwtBN9"
-                                    class="text-link"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    View on Google
-                                    <span>↗</span>
-                                </a>
-                            </div>
-                        </details>
-                        <details
-                            class="review-item"
-                            name="client-reviews"
-                        >
-                            <summary>
-                                <span class="review-summary-copy">
-                                    <strong>Rick</strong>
-                                    <small>Google review</small>
-                                </span>
-
-                                <span
-                                    class="review-summary-stars"
-                                    aria-label="5 out of 5 stars"
-                                >
-                                    ★★★★★
-                                </span>
-                                <span
-                                    class="review-summary-toggle"
-                                    aria-hidden="true"
-                                >
-                                    +
-                                </span>
-                            </summary>
-                            <div class="review-body">
-                                <blockquote>
-                                    “James was the only qualified carpenter that actually
-                                    listened to what we could afford and time frames and
-                                    what we were trying to achieve… fast but professional
-                                    and considerate.”
-                                </blockquote>
-                                <a
-                                    href="https://maps.app.goo.gl/mJMgHLS1NRdBwtBN9"
-                                    class="text-link"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    View on Google
-                                    <span>↗</span>
-                                </a>
-                            </div>
-                        </details>
-                        <details
-                            class="review-item"
-                            name="client-reviews"
-                        >
-                            <summary>
-                                <span class="review-summary-copy">
-                                    <strong>Sian</strong>
-                                    <small>Localsearch review</small>
-                                </span>
-                                <span
-                                    class="review-summary-stars"
-                                    aria-label="5 out of 5 stars"
-                                >
-                                    ★★★★★
-                                </span>
-                                <span
-                                    class="review-summary-toggle"
-                                    aria-hidden="true"
-                                >
-                                    +
-                                </span>
-                            </summary>
-                            <div class="review-body">
-                                <blockquote>
-                                    “His response to inquiries and turning up when he
-                                    said he would were 10/10. He did an impeccably clean
-                                    and neat job… I cannot recommend James enough.”
-                                </blockquote>
-                            </div>
-                        </details>
-                    </div>
-                    <a
-                        href="https://www.facebook.com/people/James-Clifford-Carpentry/61583661757642/"
-                        class="reviews-facebook-card"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <span>
-                            <small>
-                                Facebook
-                            </small>
-                            <strong>
-                                Current work & project updates
-                            </strong>
-                        </span>
-                        <span
-                            class="reviews-facebook-arrow"
-                            aria-hidden="true"
-                        >
-                            ↗
-                        </span>
-                    </a>
-                </div>
             </div>
         </section>
         <!-- =========================
