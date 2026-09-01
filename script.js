@@ -664,17 +664,6 @@
         return;
     }
 
-
-    /*
-     * Reduced-motion preference.
-     */
-
-    const reducedMotion =
-        window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        );
-
-
     /*
      * Remove generated copies.
      */
@@ -710,22 +699,6 @@
 
 
         removeClones();
-
-
-        /*
-         * If reduced motion is requested,
-         * leave only the original static row.
-         */
-
-        if (reducedMotion.matches) {
-
-            marquee.style.removeProperty(
-                "--reviews-marquee-offset"
-            );
-
-            return;
-        }
-
 
         const groupWidth =
             Math.ceil(
@@ -905,39 +878,6 @@
         );
 
     }
-
-
-    /*
-     * React immediately if the OS
-     * motion preference changes.
-     */
-
-    const handleMotionChange = () => {
-
-        buildMarquee();
-
-    };
-
-
-    if (
-        typeof reducedMotion
-            .addEventListener ===
-        "function"
-    ) {
-
-        reducedMotion.addEventListener(
-            "change",
-            handleMotionChange
-        );
-
-    } else {
-
-        reducedMotion.addListener(
-            handleMotionChange
-        );
-
-    }
-
 
     /*
      * First build.
