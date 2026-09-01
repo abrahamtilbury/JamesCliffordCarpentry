@@ -1159,7 +1159,7 @@ textarea {
 ========================== */
 
 .reviews-marquee-section {
-    --reviews-marquee-duration: 72s;
+    --reviews-marquee-duration: 84s;
     --reviews-marquee-offset: -1344px;
 
     position: relative;
@@ -1524,7 +1524,7 @@ textarea {
 ========================== */
 
 .review-marquee-card {
-    width: 448px;
+    width: 424px;
 
     min-height: 320px;
 
@@ -1564,7 +1564,7 @@ textarea {
         var(--space-24);
 
     margin-bottom:
-        var(--space-24);
+        var(--space-16);
 }
 
 
@@ -1606,16 +1606,16 @@ textarea {
     margin:
         0
         0
-        var(--space-24);
+        var(--space-16);
 
     color:
         var(--text);
 
-    font-size: 17px;
+    font-size: 16px;
 
     font-weight: 500;
 
-    line-height: 1.6;
+    line-height: 1.55;
 
     text-wrap: pretty;
 }
@@ -1713,9 +1713,9 @@ textarea {
 
 
     .review-marquee-card {
-        width: 416px;
+        width: 392px;
 
-        flex-basis: 416px;
+        flex-basis: 392px;
 
         padding:
             var(--space-24);
@@ -1725,10 +1725,10 @@ textarea {
 
 
 /* ==========================
-   ≤900px
+   ≤760px
 ========================== */
 
-@media (max-width: 900px) {
+@media (max-width: 760px) {
 
     .reviews-layout {
         grid-template-columns:
@@ -1787,7 +1787,7 @@ textarea {
 @media (max-width: 700px) {
 
     .reviews-marquee-section {
-        --reviews-marquee-duration: 72s;
+        --reviews-marquee-duration: 84s;
 
         padding-block:
             var(--space-32);
@@ -1832,21 +1832,19 @@ textarea {
 
     .reviews-marquee {
         -webkit-mask-image:
-            linear-gradient(
-                90deg,
-                transparent 0,
-                #000 16px,
-                #000 calc(100% - 16px),
-                transparent 100%
-            );
+          linear-gradient(
+              90deg,
+              #000 0,
+              #000 calc(100% - 40px),
+              transparent 100%
+          );
 
         mask-image:
             linear-gradient(
-                90deg,
-                transparent 0,
-                #000 16px,
-                #000 calc(100% - 16px),
-                transparent 100%
+               90deg,
+               #000 0,
+               #000 calc(100% - 40px),
+               transparent 100%
             );
     }
 
@@ -4697,25 +4695,10 @@ and (orientation: landscape) {
         scroll-behavior: auto !important;
     }
 
-         .reviews-marquee-track {
-        width: 100%;
-
-        display: block;
-
+          .reviews-marquee-track {
         animation: none !important;
-
         transform: none !important;
     }
-
-
-    .reviews-marquee-group {
-        width: 100%;
-
-        display: grid;
-
-        grid-template-columns: 1fr;
-    }
-
 
     .reviews-marquee-group[
         data-marquee-clone
@@ -4723,32 +4706,17 @@ and (orientation: landscape) {
         display: none;
     }
 
-
     .reviews-marquee {
-        overflow: hidden;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scrollbar-width: none;
 
         -webkit-mask-image: none;
-
         mask-image: none;
     }
 
-
-    .review-marquee-card {
-        width: 100%;
-
-        min-height: 0;
-
-        flex-basis: auto;
-
-        border-right: 0;
-
-        border-bottom:
-            1px solid
-            var(--line-strong);
-    }
-
-
-    .review-marquee-card:last-child {
-        border-bottom: 0;
+    .reviews-marquee::-webkit-scrollbar {
+        display: none;
     }
 }
