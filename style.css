@@ -4697,7 +4697,7 @@ and (orientation: landscape) {
         scroll-behavior: auto !important;
     }
 
-       .reviews-marquee-track {
+         .reviews-marquee-track {
         width: 100%;
 
         display: block;
@@ -4717,7 +4717,9 @@ and (orientation: landscape) {
     }
 
 
-    .reviews-marquee-group[aria-hidden="true"] {
+    .reviews-marquee-group[
+        data-marquee-clone
+    ] {
         display: none;
     }
 
@@ -4735,6 +4737,8 @@ and (orientation: landscape) {
         width: 100%;
 
         min-height: 0;
+
+        flex-basis: auto;
 
         border-right: 0;
 
