@@ -221,7 +221,7 @@
                 </div>
             </div>
         </section>
-                <!-- =========================
+        <!-- =========================
              CLIENT TESTIMONIALS
         ========================== -->
         <section
@@ -229,15 +229,68 @@
             class="reviews-marquee-section beam-section"
             aria-labelledby="reviews-title"
         >
-            <h2
-                id="reviews-title"
-                class="sr-only"
-            >
-                Client feedback
-            </h2>
+            <div class="container reviews-layout">
 
-            <div class="container">
+                <!-- =========================
+                     TRUST / PROFILE PANEL
+                ========================== -->
+                <aside class="reviews-overview">
 
+                    <div class="reviews-overview-copy">
+
+                        <span class="reviews-label">
+                            Client feedback
+                        </span>
+
+                        <h2 id="reviews-title">
+                            Trusted by
+                            <span>our clients.</span>
+                        </h2>
+
+                        <p>
+                            Feedback from clients who have worked
+                            directly with James.
+                        </p>
+
+                    </div>
+
+
+                    <div class="reviews-profile">
+
+                        <img
+                            src="images/james-profile.webp"
+                            alt="James Clifford"
+                            width="640"
+                            height="800"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+                        <div class="reviews-profile-copy">
+
+                            <strong>
+                                James Clifford
+                            </strong>
+
+                            <span>
+                                14+ years industry experience
+                            </span>
+
+                            <p>
+                                Commercial carpentry across Bundaberg
+                                and surrounding areas.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- =========================
+                     INFINITE REVIEW RAIL
+                ========================== -->
                 <div
                     class="reviews-marquee"
                     data-testimonial-marquee
@@ -245,7 +298,11 @@
 
                     <div class="reviews-marquee-track">
 
-                        <!-- ACCESSIBLE ORIGINAL SET -->
+                        <!--
+                            Only ONE review group is written in HTML.
+                            JavaScript makes an exact duplicate for
+                            the seamless infinite loop.
+                        -->
                         <div class="reviews-marquee-group">
 
                             <!-- REVIEW 01 -->
@@ -279,14 +336,9 @@
                                         FJS Discount Tools
                                     </strong>
 
-                                    <a
-                                        href="https://maps.app.goo.gl/mJMgHLS1NRdBwtBN9"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        View on Google
-                                        <span aria-hidden="true">↗</span>
-                                    </a>
+                                    <span>
+                                        Google
+                                    </span>
 
                                 </div>
 
@@ -324,14 +376,9 @@
                                         Rick
                                     </strong>
 
-                                    <a
-                                        href="https://maps.app.goo.gl/mJMgHLS1NRdBwtBN9"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        View on Google
-                                        <span aria-hidden="true">↗</span>
-                                    </a>
+                                    <span>
+                                        Google
+                                    </span>
 
                                 </div>
 
@@ -368,137 +415,7 @@
                                         Sian
                                     </strong>
 
-                                    <span class="review-marquee-source-note">
-                                        Localsearch
-                                    </span>
-
-                                </div>
-
-                            </article>
-
-                        </div>
-
-
-                        <!-- VISUAL DUPLICATE FOR SEAMLESS LOOP -->
-                        <div
-                            class="reviews-marquee-group"
-                            aria-hidden="true"
-                        >
-
-                            <!-- REVIEW 01 DUPLICATE -->
-                            <article class="review-marquee-card">
-
-                                <div class="review-marquee-top">
-
-                                    <span class="review-marquee-source">
-                                        Google review
-                                    </span>
-
-                                    <span class="review-marquee-stars">
-                                        ★★★★★
-                                    </span>
-
-                                </div>
-
-                                <blockquote>
-                                    “James has recently done a large job for us at our
-                                    commercial site in Bundaberg… James is not only a
-                                    highly skilled carpenter, he is also very professional,
-                                    and extremely reliable.”
-                                </blockquote>
-
-                                <div class="review-marquee-footer">
-
-                                    <strong>
-                                        FJS Discount Tools
-                                    </strong>
-
-                                    <a
-                                        href="https://maps.app.goo.gl/mJMgHLS1NRdBwtBN9"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        tabindex="-1"
-                                    >
-                                        View on Google
-                                        <span aria-hidden="true">↗</span>
-                                    </a>
-
-                                </div>
-
-                            </article>
-
-
-                            <!-- REVIEW 02 DUPLICATE -->
-                            <article class="review-marquee-card">
-
-                                <div class="review-marquee-top">
-
-                                    <span class="review-marquee-source">
-                                        Google review
-                                    </span>
-
-                                    <span class="review-marquee-stars">
-                                        ★★★★★
-                                    </span>
-
-                                </div>
-
-                                <blockquote>
-                                    “James was the only qualified carpenter that actually
-                                    listened to what we could afford and time frames and
-                                    what we were trying to achieve… fast but professional
-                                    and considerate.”
-                                </blockquote>
-
-                                <div class="review-marquee-footer">
-
-                                    <strong>
-                                        Rick
-                                    </strong>
-
-                                    <a
-                                        href="https://maps.app.goo.gl/mJMgHLS1NRdBwtBN9"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        tabindex="-1"
-                                    >
-                                        View on Google
-                                        <span aria-hidden="true">↗</span>
-                                    </a>
-
-                                </div>
-
-                            </article>
-
-
-                            <!-- REVIEW 03 DUPLICATE -->
-                            <article class="review-marquee-card">
-
-                                <div class="review-marquee-top">
-
-                                    <span class="review-marquee-source">
-                                        Localsearch review
-                                    </span>
-
-                                    <span class="review-marquee-stars">
-                                        ★★★★★
-                                    </span>
-
-                                </div>
-
-                                <blockquote>
-                                    “His response to inquiries and turning up when he
-                                    said he would were 10/10. He did an impeccably clean
-                                    and neat job… I cannot recommend James enough.”
-                                </blockquote>
-
-                                <div class="review-marquee-footer">
-
-                                    <strong>
-                                        Sian
-                                    </strong>
-
-                                    <span class="review-marquee-source-note">
+                                    <span>
                                         Localsearch
                                     </span>
 
