@@ -649,59 +649,132 @@
 
         }
 
-        /* =========================================
-   TESTIMONIAL MARQUEE — TOUCH PAUSE
+    });
+
+})();
+
+/* =========================================
+   TESTIMONIAL MARQUEE
 ========================================= */
 
-const testimonialMarquee =
-    document.querySelector(
-        "[data-testimonial-marquee]"
+(() => {
+
+    const marquee =
+        document.querySelector(
+            "[data-testimonial-marquee]"
+        );
+
+
+    if (!marquee) {
+        return;
+    }
+
+
+    const track =
+        marquee.querySelector(
+            ".reviews-marquee-track"
+        );
+
+
+    const originalGroup =
+        marquee.querySelector(
+            ".reviews-marquee-group"
+        );
+
+
+    if (!track || !originalGroup) {
+        return;
+    }
+
+
+    /*
+     * Create an exact visual duplicate.
+     * This guarantees the second half has
+     * exactly the same width as the first.
+     */
+
+    const duplicateGroup =
+        originalGroup.cloneNode(true);
+
+
+    duplicateGroup.setAttribute(
+        "aria-hidden",
+        "true"
     );
 
-if (testimonialMarquee) {
 
-    const pauseTestimonialMarquee = () => {
-        testimonialMarquee
-            .classList
-            .add("is-paused");
+    track.appendChild(
+        duplicateGroup
+    );
+
+
+    /*
+     * Only start moving once both
+     * identical halves exist.
+     */
+
+    marquee.classList.add(
+        "is-ready"
+    );
+
+
+    /*
+     * Touch / pen hold pauses motion.
+     */
+
+    const pauseMarquee = () => {
+
+        marquee.classList.add(
+            "is-paused"
+        );
+
     };
 
 
-    const resumeTestimonialMarquee = () => {
-        testimonialMarquee
-            .classList
-            .remove("is-paused");
+    const resumeMarquee = () => {
+
+        marquee.classList.remove(
+            "is-paused"
+        );
+
     };
 
 
-    testimonialMarquee.addEventListener(
+    marquee.addEventListener(
         "pointerdown",
-        (event) => {
+        event => {
 
             if (
                 event.pointerType === "touch" ||
                 event.pointerType === "pen"
             ) {
-                pauseTestimonialMarquee();
+
+                pauseMarquee();
+
             }
 
+        },
+        {
+            passive: true
         }
     );
 
 
     window.addEventListener(
         "pointerup",
-        resumeTestimonialMarquee
+        resumeMarquee,
+        {
+            passive: true
+        }
     );
 
 
     window.addEventListener(
         "pointercancel",
-        resumeTestimonialMarquee
+        resumeMarquee,
+        {
+            passive: true
+        }
     );
-
-}
-
-    });
 
 })();
