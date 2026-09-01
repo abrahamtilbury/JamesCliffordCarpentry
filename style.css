@@ -272,8 +272,8 @@ textarea {
     z-index: 1;
 }
 
-#approach,
 #services,
+#reviews,
 #project-enquiry,
 #contact {
     scroll-margin-top: 100px;
@@ -4400,5 +4400,23 @@ and (orientation: landscape) {
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
         scroll-behavior: auto !important;
+    }
+
+       .reviews-marquee-track {
+        animation: none !important;
+        transform: none !important;
+    }
+
+
+    .reviews-marquee-group[aria-hidden="true"] {
+        display: none;
+    }
+
+
+    .reviews-marquee {
+        overflow-x: auto;
+
+        -webkit-mask-image: none;
+        mask-image: none;
     }
 }
