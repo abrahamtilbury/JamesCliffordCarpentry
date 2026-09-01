@@ -1159,7 +1159,7 @@ textarea {
 ========================== */
 
 .reviews-marquee-section {
-    --reviews-marquee-duration: 84s;
+    --reviews-marquee-duration: 64s;
     --reviews-marquee-offset: -1344px;
 
     position: relative;
@@ -1787,7 +1787,7 @@ textarea {
 @media (max-width: 700px) {
 
     .reviews-marquee-section {
-        --reviews-marquee-duration: 84s;
+        --reviews-marquee-duration: 64s;
 
         padding-block:
             var(--space-32);
@@ -4695,28 +4695,21 @@ and (orientation: landscape) {
         scroll-behavior: auto !important;
     }
 
-          .reviews-marquee-track {
-        animation: none !important;
-        transform: none !important;
+   /*Testimonial marquee intentionally retains continuous motion. */
+
+    .reviews-marquee.is-ready
+    .reviews-marquee-track {
+        animation-name:
+            reviews-marquee-scroll !important;
+
+        animation-duration:
+            var(--reviews-marquee-duration) !important;
+
+        animation-timing-function:
+            linear !important;
+
+        animation-iteration-count:
+            infinite !important;
     }
 
-    .reviews-marquee-group[
-        data-marquee-clone
-    ] {
-        display: none;
-    }
-
-    .reviews-marquee {
-        overflow-x: auto;
-        overflow-y: hidden;
-
-        scrollbar-width: none;
-
-        -webkit-mask-image: none;
-        mask-image: none;
-    }
-
-    .reviews-marquee::-webkit-scrollbar {
-        display: none;
-    }
 }
