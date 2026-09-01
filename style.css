@@ -1674,7 +1674,7 @@ textarea {
     from {
         transform:
             translate3d(
-                0,
+                var(--reviews-marquee-offset),
                 0,
                 0
             );
@@ -1684,7 +1684,7 @@ textarea {
     to {
         transform:
             translate3d(
-                var(--reviews-marquee-offset),
+                0,
                 0,
                 0
             );
