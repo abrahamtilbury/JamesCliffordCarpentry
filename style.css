@@ -3696,8 +3696,8 @@ and (max-width: 900px) {
 
     .contact-hero-methods {
         grid-template-columns:
-            1.25fr
-            .75fr;
+            minmax(0, 1fr)
+            auto;
     }
 
     .contact-hero-method {
