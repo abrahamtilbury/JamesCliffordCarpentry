@@ -3734,8 +3734,9 @@ and (max-width: 900px) {
     }
 
     .service-detail-main h2 {
-        font-size: 38px;
-    }
+       gap: 10px;
+       font-size: clamp(31px, 8vw, 34px);
+   }
 
 
     .scope-items {
@@ -4620,9 +4621,9 @@ and (orientation: landscape) {
     
     .services-page
     .service-detail-main h2 {
-        margin-bottom: 12px;
-        font-size:
-            clamp(32px, 5vw, 42px);
+      margin-bottom: 12px;
+      font-size:
+        clamp(30px, 4.2vw, 34px);
     }
     
     .services-page
