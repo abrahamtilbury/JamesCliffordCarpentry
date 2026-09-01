@@ -678,7 +678,7 @@
 
     const originalGroup =
         marquee.querySelector(
-            ".reviews-marquee-group"
+            "[data-marquee-original]"
         );
 
 
@@ -688,41 +688,171 @@
 
 
     /*
-     * Create an exact visual duplicate.
-     * This guarantees the second half has
-     * exactly the same width as the first.
+     * Reduced-motion preference.
      */
 
-    const duplicateGroup =
-        originalGroup.cloneNode(true);
-
-
-    duplicateGroup.setAttribute(
-        "aria-hidden",
-        "true"
-    );
-
-
-    track.appendChild(
-        duplicateGroup
-    );
+    const reducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        );
 
 
     /*
-     * Only start moving once both
-     * identical halves exist.
+     * Remove generated copies.
      */
 
-    marquee.classList.add(
-        "is-ready"
-    );
+    const removeClones = () => {
+
+        track
+            .querySelectorAll(
+                "[data-marquee-clone]"
+            )
+            .forEach(clone => {
+
+                clone.remove();
+
+            });
+
+    };
 
 
     /*
-     * Touch / pen hold pauses motion.
+     * Build enough repeated groups to cover
+     * the viewport at all times.
+     *
+     * The animation always moves exactly the
+     * width of ONE original group.
      */
 
-    const pauseMarquee = () => {
+    const buildMarquee = () => {
+
+        marquee.classList.remove(
+            "is-ready"
+        );
+
+
+        removeClones();
+
+
+        /*
+         * If reduced motion is requested,
+         * leave only the original static row.
+         */
+
+        if (reducedMotion.matches) {
+
+            marquee.style.removeProperty(
+                "--reviews-marquee-offset"
+            );
+
+            return;
+        }
+
+
+        const groupWidth =
+            Math.ceil(
+                originalGroup
+                    .getBoundingClientRect()
+                    .width
+            );
+
+
+        const viewportWidth =
+            Math.ceil(
+                marquee
+                    .getBoundingClientRect()
+                    .width
+            );
+
+
+        if (
+            groupWidth <= 0 ||
+            viewportWidth <= 0
+        ) {
+            return;
+        }
+
+
+        /*
+         * The reset point equals exactly
+         * one complete testimonial sequence.
+         */
+
+        marquee.style.setProperty(
+            "--reviews-marquee-offset",
+            `-${groupWidth}px`
+        );
+
+
+        /*
+         * At least two complete copies are
+         * required. Add more on very wide
+         * displays so blank space can never
+         * enter the viewport.
+         */
+
+        const requiredWidth =
+            viewportWidth +
+            (groupWidth * 2);
+
+
+        while (
+            track.scrollWidth <
+            requiredWidth
+        ) {
+
+            const clone =
+                originalGroup.cloneNode(true);
+
+
+            clone.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+
+            clone.setAttribute(
+                "data-marquee-clone",
+                ""
+            );
+
+
+            track.appendChild(
+                clone
+            );
+
+        }
+
+
+        /*
+         * Restart animation on the next frame.
+         */
+
+        requestAnimationFrame(() => {
+
+            marquee.classList.add(
+                "is-ready"
+            );
+
+        });
+
+    };
+
+
+    /*
+     * Touch / pen:
+     * holding the rail pauses it.
+     */
+
+    const pauseMarquee = event => {
+
+        if (
+            event.pointerType !== "touch" &&
+            event.pointerType !== "pen"
+        ) {
+            return;
+        }
+
 
         marquee.classList.add(
             "is-paused"
@@ -742,18 +872,7 @@
 
     marquee.addEventListener(
         "pointerdown",
-        event => {
-
-            if (
-                event.pointerType === "touch" ||
-                event.pointerType === "pen"
-            ) {
-
-                pauseMarquee();
-
-            }
-
-        },
+        pauseMarquee,
         {
             passive: true
         }
@@ -776,5 +895,76 @@
             passive: true
         }
     );
+
+
+    /*
+     * Recalculate if the available marquee
+     * width changes.
+     */
+
+    if (
+        typeof ResizeObserver !==
+        "undefined"
+    ) {
+
+        const resizeObserver =
+            new ResizeObserver(() => {
+
+                buildMarquee();
+
+            });
+
+
+        resizeObserver.observe(
+            marquee
+        );
+
+    } else {
+
+        window.addEventListener(
+            "resize",
+            buildMarquee
+        );
+
+    }
+
+
+    /*
+     * React immediately if the OS
+     * motion preference changes.
+     */
+
+    const handleMotionChange = () => {
+
+        buildMarquee();
+
+    };
+
+
+    if (
+        typeof reducedMotion
+            .addEventListener ===
+        "function"
+    ) {
+
+        reducedMotion.addEventListener(
+            "change",
+            handleMotionChange
+        );
+
+    } else {
+
+        reducedMotion.addListener(
+            handleMotionChange
+        );
+
+    }
+
+
+    /*
+     * First build.
+     */
+
+    buildMarquee();
 
 })();
