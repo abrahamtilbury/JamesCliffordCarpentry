@@ -28,13 +28,39 @@
 
 /* Geometry */
 --radius-sm: 0;
---radius-md: 14px;
+--radius-md: 16px;
 --radius-lg: 28px;
 
 /* Layout */
 --max-width: 1440px;
---page-padding: clamp(20px, 4vw, 72px);
---section-space: clamp(75px, 8vw, 120px);
+
+--page-padding:
+    clamp(
+        20px,
+        4vw,
+        72px
+    );
+
+--section-space:
+    clamp(
+        80px,
+        8vw,
+        128px
+    );
+
+
+/* 8-point spatial system */
+--space-4: 4px;
+--space-8: 8px;
+--space-16: 16px;
+--space-24: 24px;
+--space-32: 32px;
+--space-40: 40px;
+--space-48: 48px;
+--space-64: 64px;
+--space-80: 80px;
+--space-96: 96px;
+--space-128: 128px;
 
 /* Motion */
 --ease: cubic-bezier(.22, 1, .36, 1);
@@ -225,7 +251,7 @@ select {
     color: var(--text);
     border: 1px solid var(--line-strong);
     border-radius: var(--radius-sm);
-    padding: 12px 14px;
+    padding: 12px 16px;
     font-family: inherit;
     font-size: 15px;
     appearance: none;
@@ -311,7 +337,7 @@ textarea {
 .site-logo {
     display: inline-flex;
     align-items: center;
-    gap: 11px;
+    gap: 12px;
     width: fit-content;
     padding: 0;
     background: transparent;
@@ -528,7 +554,7 @@ textarea {
     align-items: center;
     justify-content: center;
     min-height: 52px;
-    padding: 15px 28px;
+    padding: 16px 32px;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: .09em;
@@ -589,7 +615,7 @@ textarea {
 .text-link {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
+    gap: 8px;
     color: var(--text);
     font-size: 11px;
     font-weight: 700;
@@ -4582,8 +4608,22 @@ and (orientation: landscape) {
     }
 
        .reviews-marquee-track {
+        width: 100%;
+
+        display: block;
+
         animation: none !important;
+
         transform: none !important;
+    }
+
+
+    .reviews-marquee-group {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
     }
 
 
@@ -4593,9 +4633,28 @@ and (orientation: landscape) {
 
 
     .reviews-marquee {
-        overflow-x: auto;
+        overflow: hidden;
 
         -webkit-mask-image: none;
+
         mask-image: none;
+    }
+
+
+    .review-marquee-card {
+        width: 100%;
+
+        min-height: 0;
+
+        border-right: 0;
+
+        border-bottom:
+            1px solid
+            var(--line-strong);
+    }
+
+
+    .review-marquee-card:last-child {
+        border-bottom: 0;
     }
 }
