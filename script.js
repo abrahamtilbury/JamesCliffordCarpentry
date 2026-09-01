@@ -73,28 +73,6 @@
 })();
 
 (() => {
-    const reviewItems = document.querySelectorAll(".review-item");
-
-    if (reviewItems.length < 2) {
-        return;
-    }
-
-    reviewItems.forEach((item) => {
-        item.addEventListener("toggle", () => {
-            if (!item.open) {
-                return;
-            }
-
-            reviewItems.forEach((otherItem) => {
-                if (otherItem !== item && otherItem.open) {
-                    otherItem.open = false;
-                }
-            });
-        });
-    });
-})();
-
-(() => {
     const galleryCards =
         Array.from(
             document.querySelectorAll(
