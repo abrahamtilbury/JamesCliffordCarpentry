@@ -649,6 +649,59 @@
 
         }
 
+        /* =========================================
+   TESTIMONIAL MARQUEE — TOUCH PAUSE
+========================================= */
+
+const testimonialMarquee =
+    document.querySelector(
+        "[data-testimonial-marquee]"
+    );
+
+if (testimonialMarquee) {
+
+    const pauseTestimonialMarquee = () => {
+        testimonialMarquee
+            .classList
+            .add("is-paused");
+    };
+
+
+    const resumeTestimonialMarquee = () => {
+        testimonialMarquee
+            .classList
+            .remove("is-paused");
+    };
+
+
+    testimonialMarquee.addEventListener(
+        "pointerdown",
+        (event) => {
+
+            if (
+                event.pointerType === "touch" ||
+                event.pointerType === "pen"
+            ) {
+                pauseTestimonialMarquee();
+            }
+
+        }
+    );
+
+
+    window.addEventListener(
+        "pointerup",
+        resumeTestimonialMarquee
+    );
+
+
+    window.addEventListener(
+        "pointercancel",
+        resumeTestimonialMarquee
+    );
+
+}
+
     });
 
 })();
