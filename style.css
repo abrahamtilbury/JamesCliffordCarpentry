@@ -965,53 +965,6 @@ textarea {
    40.20 - HOME POSITIONING
 ========================================================= */
 
-.about {
-    background: var(--surface);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding-block:
-        clamp(65px, 7vw, 100px);
-}
-
-.about-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: clamp(40px, 7vw, 110px);
-    row-gap: 50px;
-}
-
-.about-heading {
-    max-width: 700px;
-}
-
-.about-heading h2 {
-    margin: 0;
-    font-family:
-        "DM Sans",
-        system-ui,
-        sans-serif;
-    font-size: clamp(46px, 6vw, 84px);
-    line-height: .9;
-    font-weight: 500;
-    letter-spacing: -.055em;
-}
-
-.about-heading h2 span {
-    display: block;
-    color: var(--text-muted);
-}
-
-.about-intro {
-    max-width: 560px;
-    color: var(--text-muted);
-    font-size: 17px;
-    line-height: 1.7;
-}
-
-.about-intro p {
-    margin: 0 0 20px;
-}
-
 .service-number {
     font-variant-numeric: tabular-nums;
 }
@@ -2559,10 +2512,9 @@ textarea {
 
 .form-grid {
     display: grid;
-
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    gap: var(--space-16);
 }
 
 .form-field {
@@ -2573,67 +2525,18 @@ textarea {
 .form-field-full {
     grid-column:
         1 / -1;
-    margin-top: 18px;
+}
+
+.project-enquiry-form > .form-field-full {
+    margin-top: var(--space-24);
 }
 
 .form-field > span,
-.form-fieldset legend {
     font-size: 10px;
     font-weight: 700;
     letter-spacing: .1em;
     text-transform: uppercase;
     color: var(--text-dim);
-}
-
-.form-fieldset {
-    margin:
-        26px
-        0;
-    padding: 0;
-    border: 0;
-}
-
-.form-fieldset legend {
-    margin-bottom: 10px;
-}
-
-.form-options {
-    display: grid;
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-    border-top:
-        1px solid
-        var(--line-strong);
-    border-left:
-        1px solid
-        var(--line-strong);
-}
-
-.form-options label {
-    min-height: 50px;
-    padding: 12px;
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    border-right:
-        1px solid
-        var(--line-strong);
-    border-bottom:
-        1px solid
-        var(--line-strong);
-    cursor: pointer;
-}
-
-.form-options input[type="checkbox"] {
-    width: 17px;
-    height: 17px;
-    flex:
-        0
-        0
-        17px;
-    margin: 0;
-    accent-color: var(--text);
-    cursor: pointer;
 }
 
 .project-enquiry-submit {
@@ -3085,14 +2988,6 @@ textarea {
             45px
             var(--page-padding)
             50px;
-    }
-
-    .about-container {
-        grid-template-columns: 1fr;
-    }
-
-    .about-intro {
-        max-width: 650px;
     }
 
     .footer-inner {
@@ -4016,11 +3911,6 @@ and (max-width: 900px) {
         grid-column: auto;
     }
 
-    .form-options {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
     .project-enquiry-submit {
         align-items: stretch;
 
@@ -4044,12 +3934,6 @@ and (max-width: 900px) {
 
     .service-detail {
         padding-block: 44px;
-    }
-
-    .about {
-        padding-block:
-            54px
-            48px;
     }
 
     .contact {
@@ -4288,16 +4172,6 @@ and (max-width: 900px) {
 
     .section-description {
         font-size: 15px;
-    }
-
-    /* ==========================
-       720px About
-    ========================== */
-
-    .about {
-        padding-block:
-            65px
-            55px;
     }
 
     /* ==========================
@@ -4634,10 +4508,6 @@ and (max-width: 900px) {
     }
 
     .footer-contact {
-        grid-template-columns: 1fr;
-    }
-
-    .form-options {
         grid-template-columns: 1fr;
     }
 
