@@ -2531,7 +2531,7 @@ textarea {
     margin-top: var(--space-24);
 }
 
-.form-field > span,
+.form-field > span {
     font-size: 10px;
     font-weight: 700;
     letter-spacing: .1em;
@@ -2821,9 +2821,10 @@ textarea {
         calc(100% - (var(--page-padding) * 2)),
         var(--max-width)
     );
-    margin: 45px auto 0;
-    padding-top: 16px;
+    margin: var(--space-48) auto 0;
+    padding-top: var(--space-16);
     border-top: 1px solid var(--line);
+    text-align: center;
 }
 
 .footer-licence {
