@@ -144,7 +144,7 @@ a {
 }
 
 a:hover {
-    color: var(--accent);
+    color: var(--accent-ink);
 }
 
 button {
@@ -2737,7 +2737,7 @@ textarea {
 }
 
 .footer-brand .site-logo {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
 .footer-brand > p {
@@ -2750,7 +2750,7 @@ textarea {
 .footer-contact {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 16px;
 }
 
 .footer-contact p {
@@ -2781,7 +2781,7 @@ textarea {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 8px;
 }
 
 .footer-links a {
@@ -2822,7 +2822,7 @@ textarea {
         var(--max-width)
     );
     margin: 45px auto 0;
-    padding-top: 18px;
+    padding-top: 16px;
     border-top: 1px solid var(--line);
 }
 
