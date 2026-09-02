@@ -909,15 +909,6 @@ textarea {
    z-index: var(--z-floating);
 }
 
-.hero-eyebrow {
-   margin-bottom: 18px;
-   color: rgba(255,255,255,.82);
-   font-size: 10px;
-   font-weight: 700;
-   letter-spacing: .15em;
-   text-transform: uppercase;
-}
-
 .hero h1 {
     max-width: 11.4ch;
     margin:
@@ -956,7 +947,6 @@ textarea {
     flex-wrap: wrap;
 }
 
-.hero-eyebrow,
 .service-number {
     display: none;
 }
@@ -1180,77 +1170,54 @@ textarea {
     flex-direction: column;
 
     justify-content: space-between;
-
     padding:
         var(--space-32);
-
     background:
         var(--surface);
-
     border-right:
         1px solid
         var(--line-strong);
 }
 
-
 .reviews-label {
     display: block;
-
     margin-bottom:
         var(--space-8);
-
     color:
         var(--accent-ink);
-
     font-size: 10px;
-
     font-weight: 700;
-
     letter-spacing: .12em;
-
     text-transform: uppercase;
 }
-
 
 .reviews-overview h2 {
     margin:
         0
         0
         var(--space-16);
-
     font-family:
         "DM Sans",
         system-ui,
         sans-serif;
-
     font-size: 40px;
-
     font-weight: 500;
-
     line-height: .94;
-
     letter-spacing: -.05em;
 }
 
-
 .reviews-overview h2 span {
     display: block;
-
     color:
         var(--text-muted);
 }
 
-
 .reviews-overview-copy > p {
     max-width: 29ch;
-
     margin: 0;
-
     color:
         var(--text-muted);
-
     font-size: 14px;
-
     line-height: 1.6;
 }
 
@@ -1261,27 +1228,20 @@ textarea {
 
 .reviews-profile {
     display: grid;
-
     grid-template-columns:
         72px
         minmax(0, 1fr);
-
     gap:
         var(--space-16);
-
     align-items: center;
-
     margin-top:
         var(--space-24);
-
     padding-top:
         var(--space-24);
-
     border-top:
         1px solid
         var(--line-strong);
 }
-
 
 .reviews-profile img {
     width: 72px;
@@ -1290,58 +1250,41 @@ textarea {
     object-fit: cover;
 }
 
-
 .reviews-profile-copy {
     min-width: 0;
 }
-
 
 .reviews-profile-copy strong,
 .reviews-profile-copy > span {
     display: block;
 }
 
-
 .reviews-profile-copy strong {
     margin-bottom:
         var(--space-4);
-
     font-size: 15px;
-
     font-weight: 700;
 }
-
 
 .reviews-profile-copy > span {
     margin-bottom:
         var(--space-8);
-
     color:
         var(--accent-ink);
-
     font-size: 9px;
-
     font-weight: 700;
-
     line-height: 1.4;
-
     letter-spacing: .08em;
-
     text-transform: uppercase;
 }
 
-
 .reviews-profile-copy p {
     margin: 0;
-
     color:
         var(--text-muted);
-
     font-size: 12px;
-
     line-height: 1.5;
 }
-
 
 /* ==========================
    Marquee viewport
@@ -1349,22 +1292,16 @@ textarea {
 
 .reviews-marquee {
     position: relative;
-
     min-width: 0;
     width: 100%;
-
     overflow: hidden;
-
     background:
         var(--surface);
-
     touch-action: pan-y;
-
     /*
        Soft clipping inspired by the
        Aceternity marquee, but restrained.
     */
-
     -webkit-mask-image:
         linear-gradient(
             90deg,
@@ -1373,7 +1310,6 @@ textarea {
             #000 calc(100% - 32px),
             transparent 100%
         );
-
     mask-image:
         linear-gradient(
             90deg,
@@ -1384,7 +1320,6 @@ textarea {
         );
 }
 
-
 /*
    Absolutely no browser scrollbar.
 */
@@ -1393,11 +1328,9 @@ textarea {
     scrollbar-width: none;
 }
 
-
 .reviews-marquee::-webkit-scrollbar {
     display: none;
 }
-
 
 /* ==========================
    Infinite moving strip
@@ -1405,19 +1338,15 @@ textarea {
 
 .reviews-marquee-track {
     display: flex;
-
     width: max-content;
-
     transform:
         translate3d(
             0,
             0,
             0
         );
-
     will-change: transform;
 }
-
 
 /*
    JS adds .is-ready once enough repeated
@@ -1433,13 +1362,10 @@ textarea {
         infinite;
 }
 
-
 .reviews-marquee-group {
     display: flex;
-
     flex: 0 0 auto;
 }
-
 
 /* ==========================
    Pause behaviour
@@ -1460,7 +1386,6 @@ textarea {
 
 }
 
-
 /*
    Finger / pen press.
 */
@@ -1471,36 +1396,27 @@ textarea {
         paused;
 }
 
-
 /* ==========================
    Review cells
 ========================== */
 
 .review-marquee-card {
     width: 424px;
-
     min-height: 320px;
-
     flex:
         0
         0
         448px;
-
     display: flex;
-
     flex-direction: column;
-
     padding:
         var(--space-32);
-
     background:
         var(--surface);
-
     border-right:
         1px solid
         var(--line-strong);
 }
-
 
 /* ==========================
    Source / stars
@@ -1508,44 +1424,30 @@ textarea {
 
 .review-marquee-top {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap:
         var(--space-24);
-
     margin-bottom:
         var(--space-16);
 }
 
-
 .review-marquee-source {
     color:
         var(--accent-ink);
-
     font-size: 9px;
-
     font-weight: 700;
-
     letter-spacing: .12em;
-
     text-transform: uppercase;
 }
 
-
 .review-marquee-stars {
     flex-shrink: 0;
-
     color:
         var(--accent-ink);
-
     font-size: 13px;
-
     letter-spacing: .05em;
 }
-
 
 /* ==========================
    Quote
@@ -1553,26 +1455,18 @@ textarea {
 
 .review-marquee-card blockquote {
     flex: 1;
-
     max-width: 41ch;
-
     margin:
         0
         0
         var(--space-16);
-
     color:
         var(--text);
-
     font-size: 16px;
-
     font-weight: 500;
-
     line-height: 1.55;
-
     text-wrap: pretty;
 }
-
 
 /* ==========================
    Attribution
@@ -1580,43 +1474,30 @@ textarea {
 
 .review-marquee-footer {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap:
         var(--space-24);
-
     padding-top:
         var(--space-16);
-
     border-top:
         1px solid
         var(--line);
 }
 
-
 .review-marquee-footer strong {
     font-size: 13px;
-
     font-weight: 700;
 }
-
 
 .review-marquee-footer > span {
     color:
         var(--text-muted);
-
     font-size: 9px;
-
     font-weight: 700;
-
     letter-spacing: .08em;
-
     text-transform: uppercase;
 }
-
 
 /* ==========================
    Infinite animation
@@ -1633,7 +1514,6 @@ textarea {
             );
     }
 
-
     to {
         transform:
             translate3d(
@@ -1644,7 +1524,6 @@ textarea {
     }
 
 }
-
 
 /* ==========================
    ≤1100px
@@ -1658,24 +1537,19 @@ textarea {
             minmax(0, 1fr);
     }
 
-
     .reviews-overview {
         padding:
             var(--space-24);
     }
 
-
     .review-marquee-card {
         width: 392px;
-
         flex-basis: 392px;
-
         padding:
             var(--space-24);
     }
 
 }
-
 
 /* ==========================
    ≤760px
@@ -1688,50 +1562,37 @@ textarea {
             1fr;
     }
 
-
     .reviews-overview {
         min-height: 0;
-
         display: grid;
-
         grid-template-columns:
             minmax(0, 1fr)
             minmax(280px, .8fr);
-
         gap:
             var(--space-32);
-
         align-items: end;
-
         padding:
             var(--space-32);
-
         border-right: 0;
-
         border-bottom:
             1px solid
             var(--line-strong);
     }
 
-
     .reviews-profile {
         margin-top: 0;
-
         padding:
             0
             0
             0
             var(--space-32);
-
         border-top: 0;
-
         border-left:
             1px solid
             var(--line-strong);
     }
 
 }
-
 
 /* ==========================
    ≤700px
@@ -1746,14 +1607,12 @@ textarea {
             var(--space-32);
     }
 
-
     .reviews-overview {
         display: block;
 
         padding:
             var(--space-24);
     }
-
 
     .reviews-overview h2 {
         font-size: 40px;
@@ -1763,14 +1622,11 @@ textarea {
     .reviews-profile {
         margin-top:
             var(--space-24);
-
         padding:
             var(--space-24)
             0
             0;
-
         border-left: 0;
-
         border-top:
             1px solid
             var(--line-strong);
@@ -1781,7 +1637,6 @@ textarea {
         width: 64px;
         height: 80px;
     }
-
 
     .reviews-marquee {
         -webkit-mask-image:
@@ -1801,7 +1656,6 @@ textarea {
             );
     }
 
-
     .review-marquee-card {
         width:
             min(
@@ -1814,9 +1668,7 @@ textarea {
                 86vw,
                 384px
             );
-
         min-height: 304px;
-
         padding:
             var(--space-24);
     }
@@ -1824,7 +1676,6 @@ textarea {
 
     .review-marquee-card blockquote {
         font-size: 15px;
-
         line-height: 1.6;
     }
 
@@ -2046,7 +1897,6 @@ textarea {
 
 :is(.home-page, .services-page-body) .service-gallery-expand:hover {
     background: rgba(18, 18, 18, .88);
-
     border-color: rgba(255, 255, 255, .7);
 }
 
@@ -2104,22 +1954,18 @@ textarea {
 .service-gallery-arrow {
     opacity: 1;
     visibility: visible;
-
     pointer-events: auto;
 }
 
 :is(.home-page, .services-page-body)
 .service-gallery-arrow:hover:not(:disabled) {
     background: rgba(18, 18, 18, .9);
-
     border-color: rgba(255, 255, 255, .72);
 }
 
 :is(.home-page, .services-page-body) .service-gallery-arrow:disabled {
     opacity: .25;
-
     cursor: default;
-
     pointer-events: none;
 }
 
@@ -2157,10 +2003,8 @@ textarea {
 .service-gallery-track {
     overflow-x: auto;
     overflow-y: hidden;
-
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-
     overscroll-behavior-inline: contain;
 }
 
@@ -2468,8 +2312,6 @@ textarea {
 .contact-profile-links .text-link {
     font-size: 10px;
 }
-
-
 
 /* =========================================================
    60.20 CONTACT — PROFILE IMAGE
@@ -3362,13 +3204,10 @@ and (max-width: 900px) {
     .home-page .header-cta {
         background:
             rgba(15, 15, 15, .62);
-
         border:
             1px solid
             rgba(255, 255, 255, .32);
-
         color: #fff;
-
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
     }
@@ -3376,10 +3215,8 @@ and (max-width: 900px) {
     .home-page .header-cta:hover {
         background:
             rgba(15, 15, 15, .86);
-
         border-color:
             rgba(255, 255, 255, .55);
-
         color: #fff;
     }
 
@@ -3549,7 +3386,6 @@ and (max-width: 900px) {
         gap: 14px;
     }
     
-    
     .contact-profile-image {
         width: 92px;
         box-shadow:
@@ -3558,7 +3394,6 @@ and (max-width: 900px) {
             0
             var(--dark);
     }
-    
     
     .contact-hero-copy h1 {
         font-family: var(--font-display);
@@ -3640,7 +3475,6 @@ and (max-width: 900px) {
     .services-page-body
     .services-page-hero-heading h1 {
         max-width: 10ch;
-
         font-family: var(--font-display);
         font-size: clamp(47px, 12.5vw, 57px);
         font-weight: 500;
@@ -3665,7 +3499,6 @@ and (max-width: 900px) {
 
    .contact-hero-grid {
         grid-template-columns: 1fr;
-
         gap: 24px;
     }
 
@@ -3694,7 +3527,6 @@ and (max-width: 900px) {
             1px solid
             var(--line);
     }
-
 
     .contact-hero-method strong {
         font-size: 12px;
@@ -3796,8 +3628,7 @@ and (max-width: 900px) {
         gap: 14px;
     }
 
-    .services-page-hero-intro > p,
-    .contact-page-hero-intro > p {
+    .services-page-hero-intro > p {
         margin-bottom: 16px;
         font-size: 15px;
         line-height: 1.55;
@@ -3877,28 +3708,6 @@ and (max-width: 900px) {
         scroll-margin-top: 20px;
     }
 
-     .home-page .about {
-        padding-block: 40px 42px;
-    }
-
-    .home-page .about-container {
-        row-gap: 22px;
-    }
-
-    .home-page .about-heading h2 {
-        font-size: clamp(38px, 10.5vw, 46px);
-        line-height: .94;
-    }
-
-    .home-page .about-intro {
-        font-size: 15px;
-        line-height: 1.55;
-    }
-
-    .home-page .about-intro p {
-        margin-bottom: 0;
-    }
-
    .beam-section::before,
    .beam-section::after {
       display: none;
@@ -3928,8 +3737,7 @@ and (max-width: 900px) {
             28px;
     }
 
-    .services-page-hero-grid,
-    .contact-page-hero-grid {
+    .services-page-hero-grid {
         gap: 24px;
     }
 
@@ -4032,7 +3840,6 @@ and (max-width: 900px) {
     .site-logo-mark {
         width: 44px;
         height: 44px;
-
         flex-basis: 44px;
     }
 
@@ -4132,12 +3939,6 @@ and (max-width: 900px) {
         width: auto;
     }
 
-    .hero-eyebrow {
-        margin-bottom: 12px;
-
-        font-size: 9px;
-    }
-
     .hero h1 {
         margin-bottom: 16px;
         font-size:
@@ -4165,8 +3966,7 @@ and (max-width: 900px) {
        720px General typography
     ========================== */
 
-   .section-heading h2,
-   .about-heading h2 {
+   .section-heading h2 {
         font-size:
             clamp(42px, 12vw, 60px);
     }
@@ -4363,7 +4163,6 @@ and (max-width: 900px) {
    .services-page-body .menu-button {
        grid-column: 3;
        grid-row: 1;
-   
        justify-self: end;
    }
 
@@ -4422,7 +4221,6 @@ and (max-width: 900px) {
     .home-page .hero h1 {
          max-width: 9.6ch;
         margin-bottom: 18px;
-
         font-family: var(--font-display);
         font-size: clamp(49px, 13.5vw, 59px);
         font-weight: 500;
@@ -4652,13 +4450,10 @@ and (orientation: landscape) {
     .reviews-marquee-track {
         animation-name:
             reviews-marquee-scroll !important;
-
         animation-duration:
             var(--reviews-marquee-duration) !important;
-
         animation-timing-function:
             linear !important;
-
         animation-iteration-count:
             infinite !important;
     }
