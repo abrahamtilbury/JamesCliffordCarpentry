@@ -397,15 +397,6 @@
                                 required
                             >
                         </label>
-
-                        <label class="form-field">
-                            <span>Company / builder</span>
-                            <input
-                                type="text"
-                                name="company"
-                                autocomplete="organization"
-                            >
-                        </label>
                         <label class="form-field">
                             <span>Email *</span>
                             <input
@@ -416,12 +407,11 @@
                             >
                         </label>
                         <label class="form-field">
-                            <span>Phone *</span>
+                            <span>Phone</span>
                             <input
                                 type="tel"
                                 name="phone"
                                 autocomplete="tel"
-                                required
                             >
                         </label>
                         <label class="form-field form-field-full">
@@ -433,101 +423,9 @@
                                 required
                             >
                         </label>
-                    </div>
-                    <fieldset class="form-fieldset">
-                        <legend>
-                            Carpentry required
-                        </legend>
-                        <div class="form-options">
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    name="carpentry[]"
-                                    value="Framing"
-                                >
-                                Framing
-                            </label>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    name="carpentry[]"
-                                    value="Fix Out"
-                                >
-                                Fix Out
-                            </label>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    name="carpentry[]"
-                                    value="Cladding"
-                                >
-                                Cladding
-                            </label>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    name="carpentry[]"
-                                    value="Timber / metal fencing"
-                                >
-                                Timber / metal fencing
-                            </label>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    name="carpentry[]"
-                                    value="Maintenance"
-                                >
-                                Maintenance
-                            </label>
-
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    name="carpentry[]"
-                                    value="Other"
-                                >
-                                Other
-                            </label>
-                        </div>
-                    </fieldset>
-                    <div class="form-grid">
-                        <label class="form-field">
-                            <span>Project type</span>
-                            <select name="project_type">
-                                <option value="">
-                                    Select project type
-                                </option>
-                                <option>New commercial build</option>
-                                <option>Refurbishment</option>
-                                <option>Fit-out</option>
-                                <option>Existing property</option>
-                                <option>Maintenance</option>
-                                <option>Other</option>
-                            </select>
-                        </label>
-                        <label class="form-field">
-                            <span>Project stage</span>
-                            <select name="project_stage">
-                                <option value="">
-                                    Select current stage
-                                </option>
-                                <option>Planning</option>
-                                <option>Tendering / quoting</option>
-                                <option>Approved / scheduled</option>
-                                <option>Already on site</option>
-                                <option>Maintenance required</option>
-                            </select>
-                        </label>
-                        <label class="form-field">
-                            <span>When is the work required?</span>
-                            <input
-                                type="text"
-                                name="required_date"
-                                placeholder="e.g. ASAP, October or flexible"
-                            >
-                        </label>
-                        <label class="form-field">
-                            <span>Plans / drawings link</span>
+                        <label class="form-field form-field-full">
+                            <span>Plans, drawings or photos link</span>
+                        
                             <input
                                 type="url"
                                 name="plans_link"
@@ -539,7 +437,7 @@
                         <span>Project details *</span>
                         <textarea
                             name="project_details"
-                            rows="7"
+                            rows="5"
                             minlength="20"
                             placeholder="Tell James about the work required and anything else that will help him understand the job." 
                             required
