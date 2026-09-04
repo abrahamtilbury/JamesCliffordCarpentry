@@ -169,6 +169,64 @@
         let scrollFrame = null;
 
         /* =============================
+            MOBILE REVIEW HEIGHT
+        ============================= */
+
+        const mobileReviewQuery =
+            isReviewGallery
+                ? window.matchMedia(
+                    "(max-width: 700px)"
+                )
+                : null;
+
+        const syncReviewTrackHeight = () => {
+
+            if (!isReviewGallery) {
+                return;
+            }
+
+            if (!mobileReviewQuery.matches) {
+
+                track.style.height = "";
+
+                return;
+            }
+
+            const activeSlide =
+                slides[currentIndex];
+
+            if (!activeSlide) {
+                return;
+            }
+
+            requestAnimationFrame(() => {
+
+                track.style.height =
+                    `${activeSlide.scrollHeight}px`;
+            });
+        };
+
+        const reviewHeightObserver =
+            isReviewGallery &&
+            "ResizeObserver" in window
+                ? new ResizeObserver(
+                    () => {
+                        syncReviewTrackHeight();
+                    }
+                )
+                : null;
+
+        if (reviewHeightObserver) {
+
+            slides.forEach(slide => {
+
+                reviewHeightObserver.observe(
+                    slide
+                );
+            });
+        }
+
+        /* =============================
             20.11 - LAZY GALLERY IMAGES
         ============================= */
 
@@ -262,6 +320,7 @@
                     }
                 }
             );
+            syncReviewTrackHeight();
         };
 
         /* ==========================
