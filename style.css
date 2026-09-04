@@ -2711,55 +2711,23 @@ summary {
 
 @media (max-width: 950px) {
 
+    /*
+       Keep Sian's review + photo side-by-side,
+       but let the photo shrink smoothly.
+    */
+
     .review-gallery-body--photos {
-        display: block;
+        grid-template-columns:
+            minmax(0, 1fr)
+            clamp(140px, 28%, 170px);
+
+        gap:
+            clamp(16px, 2.2vw, 22px);
     }
 
     .review-photo-module {
-        width: 150px;
-        margin:
-            10px
-            0
-            12px;
-    }
-
-    .review-photo-module.is-photo-open {
         width: 100%;
-        margin:
-            var(--space-16)
-            0
-            var(--space-16);
-    }
-
-    .review-photo-open {
-        aspect-ratio:
-            16 / 9;
-    }
-
-    .review-photo-module:not(.is-photo-open)::before {
-        content:
-            "PROJECT PHOTOS";
-        display: block;
-        margin:
-            0
-            0
-            5px;
-        color:
-            var(--accent-ink);
-        font-size: 8px;
-        font-weight: 700;
-        line-height: 1;
-        letter-spacing: .1em;
-        text-align: left;
-    }
-
-    /* Keep testimonial nav clear
-       of the project-photo teaser */
-
-    .home-page
-    .reviews-gallery
-    > .service-gallery-arrow--next {
-        top: 38%;
+        margin: 0;
     }
 
 }
@@ -4203,6 +4171,38 @@ and (max-width: 950px) {
 
 @media (max-width: 700px) {
 
+        /* Stack project evidence only in true mobile mode */
+
+    .review-gallery-body--photos {
+        display: block;
+    }
+
+    .review-photo-module:not(.is-photo-open)::before {
+        content:
+            "PROJECT PHOTOS";
+
+        display: block;
+
+        margin:
+            0
+            0
+            5px;
+
+        color:
+            var(--accent-ink);
+
+        font-size: 8px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: .1em;
+        text-align: left;
+    }
+
+    .review-photo-open {
+        aspect-ratio:
+            16 / 9;
+    }
+    
     /* Let the active mobile review control gallery height */
 
     .home-page
