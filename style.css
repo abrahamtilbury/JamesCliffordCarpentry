@@ -2832,26 +2832,6 @@ and (max-width: 950px) {
 
 @media (max-width: 900px) {
     
-    /* Contact hero */
-
-    .contact-hero-heading-row {
-        grid-template-columns:
-            1fr;
-
-        gap:
-            20px;
-    }
-
-    .contact-profile-image {
-        width:
-            min(
-                100%,
-                420px
-            );
-
-        justify-self: start;
-    }
-    
     .privacy-simple-grid {
         grid-template-columns: 1fr;
         gap: var(--space-48);
@@ -3385,6 +3365,26 @@ and (max-width: 950px) {
 ========================================================= */
 
 @media (max-width: 760px) {
+    /* Contact hero enters stacked layout */
+
+    .contact-hero-heading-row {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            20px;
+    }
+
+    .contact-profile-image {
+        width:
+            min(
+                100%,
+                360px
+            );
+
+        justify-self: start;
+    }
+    
     .reviews-layout {
         grid-template-columns:
             1fr;
