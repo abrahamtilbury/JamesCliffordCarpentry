@@ -221,12 +221,12 @@
                 </div>
             </div>
         </section>
-        <!-- =========================
+                <!-- =========================
              CLIENT TESTIMONIALS
         ========================== -->
         <section
             id="reviews"
-            class="reviews-marquee-section beam-section"
+            class="reviews-section beam-section"
             aria-labelledby="reviews-title"
         >
             <div class="container reviews-layout">
@@ -237,10 +237,6 @@
                 <aside class="reviews-overview">
 
                     <div class="reviews-overview-copy">
-
-                        <span class="reviews-label">
-                            Client feedback
-                        </span>
 
                         <h2 id="reviews-title">
                             Trusted by
@@ -289,146 +285,418 @@
 
 
                 <!-- =========================
-                     INFINITE TESTIMONIAL RAIL
+                     MANUAL TESTIMONIAL GALLERY
                 ========================== -->
                 <div
-                    class="reviews-marquee"
-                    data-testimonial-marquee
+                    class="reviews-gallery"
+                    data-review-gallery
+                    data-gallery-always-open
                 >
 
-                    <div class="reviews-marquee-track">
+                    <div
+                        id="reviews-gallery-track"
+                        class="reviews-gallery-track"
+                        data-gallery-track
+                        role="region"
+                        aria-label="Client testimonial gallery"
+                        tabindex="0"
+                    >
 
-                        <!--
-                            ORIGINAL GROUP ONLY.
-                            JavaScript creates as many invisible
-                            duplicates as required for a seamless loop.
-                        -->
-                        <div
-                            class="reviews-marquee-group"
-                            data-marquee-original
-                        >
+                        <!-- REVIEW 01 -->
+                        <article class="review-gallery-slide">
 
-                            <!-- REVIEW 01 -->
-                            <article class="review-marquee-card">
+                            <div class="review-gallery-top">
 
-                                <div class="review-marquee-top">
+                                <span class="review-gallery-source">
+                                    Google review · 3 months ago
+                                </span>
 
-                                    <span class="review-marquee-source">
-                                        Google review
-                                    </span>
+                                <span
+                                    class="review-gallery-stars"
+                                    role="img"
+                                    aria-label="5 out of 5 stars"
+                                >
+                                    ★★★★★
+                                </span>
 
-                                    <span
-                                        class="review-marquee-stars"
-                                        aria-label="5 out of 5 stars"
-                                    >
-                                        ★★★★★
-                                    </span>
+                            </div>
+                            <div class="review-gallery-body">
+                            <blockquote>
+                                <p>
+                                    James has recently done a large job for us at our
+                                    commercial site in Bundaberg.
+                                </p>
+                                <p>
+                                    He has provided, exceptional service and an outstanding
+                                    job - James is not only a highly skilled carpenter, he is
+                                    also very professional, and extremely reliable.
+                                </p>
+                                <details class="review-text-details">
+                                    <summary>
+                                        <span class="review-text-label review-text-label--closed">
+                                            Read full review
+                                        </span>
+                                        <span class="review-text-label review-text-label--open">
+                                            Collapse review
+                                        </span>
+                                        <span
+                                            class="review-text-details-icon"
+                                            aria-hidden="true"
+                                        >
+                                            +
+                                        </span>
+                                    </summary>
+                                    <div class="review-text-more">
+                                        <p>
+                                            We were replacing a roof and James initially quoted on
+                                            only replacing the Soffits, but the job just got bigger
+                                            with more issues found by the roofing guys. He was able
+                                            to slot us in and do all the other jobs that came up and
+                                            did not hold up the roofers.
+                                        </p>
+                                        <p>
+                                            James was very responsive, he recognised the urgency of
+                                            the job and completed the work within a few days.
+                                        </p>
+                                        <p>
+                                            He does quality work, with great attention to detail.
+                                            James was prompt, courteous, friendly, tidy, professional,
+                                            extremely accommodating and a pleasure to work with.
+                                        </p>
+                                        <p>
+                                            We highly recommend James Clifford Carpentry.
+                                        </p>
+                                    </div>
+                                </details>
+                            </blockquote>
+                            </div>
+                            <footer class="review-gallery-footer">
+                                <strong>
+                                    FJS Discount Tools
+                                </strong>
+                                <a
+                                    href="https://share.google/NBWro7AUjuY1tN9Tv"
+                                    class="review-gallery-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View original review
+                                    <span aria-hidden="true">↗</span>
+                                </a>
+                            </footer>
+                        </article>
+                        <!-- REVIEW 02 -->
+                        <article class="review-gallery-slide">
 
-                                </div>
+                            <div class="review-gallery-top">
 
+                                <span class="review-gallery-source">
+                                    Google review · 8 months ago
+                                </span>
+
+                                <span
+                                    class="review-gallery-stars"
+                                    role="img"
+                                    aria-label="5 out of 5 stars"
+                                >
+                                    ★★★★★
+                                </span>
+
+                            </div>
+                            <div class="review-gallery-body">
+                            <blockquote>
+
+                                <p>
+                                    After contacting numerous carpenters and builders and trying
+                                    to find someone who could get on with the work. James was the
+                                    only qualified carpenter that actually listened to what we
+                                    could afford and time frames and what we were trying to achieve.
+                                </p>
+
+                                <details class="review-text-details">
+
+                                    <summary>
+
+                                        <span class="review-text-label review-text-label--closed">
+                                            Read full review
+                                        </span>
+
+                                        <span class="review-text-label review-text-label--open">
+                                            Collapse review
+                                        </span>
+
+                                        <span
+                                            class="review-text-details-icon"
+                                            aria-hidden="true"
+                                        >
+                                            +
+                                        </span>
+
+                                    </summary>
+
+                                    <div class="review-text-more">
+
+                                        <p>
+                                            Rather than just thinking we must have endless funds to
+                                            build a granny flat in a shed for my Dad. James fitted
+                                            out framing for all internal walls, framing around
+                                            windows and for new doors and ceiling battens fitting
+                                            this work in amongst his other jobs and was not only
+                                            fast but professional and considerate. Would highly
+                                            recommend James and will be asking him to do some other
+                                            jobs coming up next.
+                                        </p>
+
+                                    </div>
+
+                                </details>
+
+                            </blockquote>
+                            </div>
+                            <footer class="review-gallery-footer">
+
+                                <strong>
+                                    Rick Nelson
+                                </strong>
+
+                                <a
+                                    href="https://share.google/tTCyUZrCqJZWD9Kpm"
+                                    class="review-gallery-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View original review
+                                    <span aria-hidden="true">↗</span>
+                                </a>
+
+                            </footer>
+
+                        </article>
+
+
+                        <!-- REVIEW 03 -->
+                        <article class="review-gallery-slide">
+
+                            <div class="review-gallery-top">
+
+                                <span class="review-gallery-source">
+                                    Localsearch review · 3 months ago
+                                </span>
+
+                                <span
+                                    class="review-gallery-stars"
+                                    role="img"
+                                    aria-label="5 out of 5 stars"
+                                >
+                                    ★★★★★
+                                </span>
+
+                            </div>
+                            <div class="review-gallery-body review-gallery-body--photos">
                                 <blockquote>
-                                    “James has recently done a large job for us at our
-                                    commercial site in Bundaberg… James is not only a
-                                    highly skilled carpenter, he is also very professional,
-                                    and extremely reliable.”
-                                </blockquote>
 
-                                <footer class="review-marquee-footer">
+                                <p>
+                                    James fixed some water and mould damage we had in one of our
+                                    rooms. His response to inquiries and turning up when he said
+                                    he would were 10/10.
+                                </p>
 
-                                    <strong>
-                                        FJS Discount Tools
-                                    </strong>
+                                <details class="review-text-details">
 
-                                    <span>
-                                        Google
-                                    </span>
+                                    <summary>
 
-                                </footer>
+                                        <span class="review-text-label review-text-label--closed">
+                                            Read full review
+                                        </span>
 
-                            </article>
+                                        <span class="review-text-label review-text-label--open">
+                                            Collapse review
+                                        </span>
 
+                                        <span
+                                            class="review-text-details-icon"
+                                            aria-hidden="true"
+                                        >
+                                            +
+                                        </span>
 
-                            <!-- REVIEW 02 -->
-                            <article class="review-marquee-card">
+                                    </summary>
 
-                                <div class="review-marquee-top">
+                                    <div class="review-text-more">
 
-                                    <span class="review-marquee-source">
-                                        Google review
-                                    </span>
+                                        <p>
+                                            He did an impeccably clean and neat job and made sure
+                                            to take all precautions in remedying the mould by
+                                            taping walls and sealing the air conditioner before
+                                            exposing the mould. I cannot recommend James enough,
+                                            so much so we have him coming back for more odd jobs
+                                            we need done.
+                                        </p>
 
-                                    <span
-                                        class="review-marquee-stars"
-                                        aria-label="5 out of 5 stars"
+                                        <p>
+                                            Thankyou James!
+                                        </p>
+
+                                    </div>
+                                </details>
+                            </blockquote>
+                            <div
+                                    class="review-photo-module"
+                                    data-review-photo-gallery
+                                >
+                                    <!-- COMPACT PHOTO TEASER -->
+                                    <button
+                                        type="button"
+                                        class="review-photo-open"
+                                        data-review-photo-open
+                                        aria-expanded="false"
+                                        aria-controls="sian-review-photo-viewer"
+                                        aria-label="Open 3 project photos from Sian H's review"
                                     >
-                                        ★★★★★
-                                    </span>
-
-                                </div>
-
-                                <blockquote>
-                                    “James was the only qualified carpenter that actually
-                                    listened to what we could afford and time frames and
-                                    what we were trying to achieve… fast but professional
-                                    and considerate.”
-                                </blockquote>
-
-                                <footer class="review-marquee-footer">
-
-                                    <strong>
-                                        Rick
-                                    </strong>
-
-                                    <span>
-                                        Google
-                                    </span>
-
-                                </footer>
-
-                            </article>
-
-
-                            <!-- REVIEW 03 -->
-                            <article class="review-marquee-card">
-
-                                <div class="review-marquee-top">
-
-                                    <span class="review-marquee-source">
-                                        Localsearch review
-                                    </span>
-
-                                    <span
-                                        class="review-marquee-stars"
-                                        aria-label="5 out of 5 stars"
+                                        <img
+                                            src="images/review-sian-01.webp"
+                                            class="review-photo-teaser-image"
+                                            alt=""
+                                            width="800"
+                                            height="600"
+                                            loading="lazy"
+                                            decoding="async"
+                                        >
+                                        <span
+                                            class="review-photo-teaser-counter"
+                                            aria-hidden="true"
+                                        >
+                                            1 / 3
+                                        </span>
+                                        <span
+                                            class="review-photo-teaser-expand"
+                                            aria-hidden="true"
+                                        >
+                                            +
+                                        </span>
+                                    </button>
+                                    <!-- EXPANDED PHOTO VIEWER -->
+                                    <div
+                                        id="sian-review-photo-viewer"
+                                        class="review-photo-viewer"
+                                        data-review-photo-viewer
+                                        role="region"
+                                        aria-label="Project photos from Sian H's review"
+                                        hidden
                                     >
-                                        ★★★★★
-                                    </span>
-
+                                        <div class="review-photo-viewer-track">
+                                            <figure
+                                                class="review-photo-slide is-active"
+                                                data-review-photo-slide
+                                            >
+                                                <img
+                                                    src="images/review-sian-01.webp"
+                                                    alt="Project photo attached to Sian H's review, 1 of 3"
+                                                    width="800"
+                                                    height="600"
+                                                    loading="lazy"
+                                                    decoding="async"
+                                                >
+                                            </figure>
+                                            <figure
+                                                class="review-photo-slide"
+                                                data-review-photo-slide
+                                                aria-hidden="true"
+                                            >
+                                                <img
+                                                    src="images/review-sian-02.webp"
+                                                    alt="Project photo attached to Sian H's review, 2 of 3"
+                                                    width="800"
+                                                    height="600"
+                                                    loading="lazy"
+                                                    decoding="async"
+                                                >
+                                            </figure>
+                                            <figure
+                                                class="review-photo-slide"
+                                                data-review-photo-slide
+                                                aria-hidden="true"
+                                            >
+                                                <img
+                                                    src="images/review-sian-03.webp"
+                                                    alt="Project photo attached to Sian H's review, 3 of 3"
+                                                    width="800"
+                                                    height="600"
+                                                    loading="lazy"
+                                                    decoding="async"
+                                                >
+                                            </figure>
+                                        </div>
+                                        <div
+                                            class="service-gallery-counter review-photo-counter"
+                                            aria-live="polite"
+                                        >
+                                            <span data-review-photo-current>1</span>
+                                            /
+                                            <span>3</span>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            class="service-gallery-expand review-photo-close"
+                                            data-review-photo-close
+                                            aria-label="Close project photos"
+                                        >
+                                            &times;
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="service-gallery-arrow service-gallery-arrow--prev review-photo-arrow"
+                                            data-review-photo-prev
+                                            aria-label="Previous project photo"
+                                        >
+                                            ←
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="service-gallery-arrow service-gallery-arrow--next review-photo-arrow"
+                                            data-review-photo-next
+                                            aria-label="Next project photo"
+                                        >
+                                            →
+                                        </button>
+                                    </div>
                                 </div>
+                            </div>
+                            <footer class="review-gallery-footer">
 
-                                <blockquote>
-                                    “His response to inquiries and turning up when he
-                                    said he would were 10/10. He did an impeccably clean
-                                    and neat job… I cannot recommend James enough.”
-                                </blockquote>
+                                <strong>
+                                    Sian H
+                                </strong>
 
-                                <footer class="review-marquee-footer">
+                                <a
+                                    href="https://www.localsearch.com.au/profile/james-clifford-carpentry/cmm73go0h000102juecjab94r"
+                                    class="review-gallery-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View original review
+                                    <span aria-hidden="true">↗</span>
+                                </a>
 
-                                    <strong>
-                                        Sian
-                                    </strong>
-
-                                    <span>
-                                        Localsearch
-                                    </span>
-
-                                </footer>
-
-                            </article>
-
-                        </div>
-
+                            </footer>
+                        </article>
                     </div>
+                    <div
+                        class="service-gallery-counter"
+                        aria-live="polite"
+                    >
+                        <span data-gallery-current>1</span>
+                        /
+                        <span data-gallery-total>3</span>
+                    </div>
+                    <button
+                        type="button"
+                        class="service-gallery-arrow service-gallery-arrow--next"
+                        data-gallery-next
+                        aria-label="Next client review"
+                    >
+                        →
+                    </button>
 
                 </div>
 
@@ -462,7 +730,7 @@
                             class="text-link"
                         >
                             View all services
-                            <span>↗</span>
+                            <span aria-hidden="true">↗</span>
                         </a>
                     </div>
         
@@ -1194,7 +1462,6 @@
                     <strong>
                         Project enquiries
                     </strong>
-                    <br>
                     <a href="mailto:admin@jamescliffordcarpentry.com.au?subject=Commercial%20Project%20Enquiry">
                         admin@jamescliffordcarpentry.com.au
                     </a>

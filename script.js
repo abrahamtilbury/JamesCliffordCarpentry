@@ -1,5 +1,9 @@
 "use strict";
 
+/* =========================================================
+   10.10 - MOBILE NAVIGATION
+========================================================= */
+
 (() => {
     const menuButton = document.querySelector(".menu-button");
     const mobileMenu = document.getElementById("mobile-menu");
@@ -72,11 +76,17 @@
     }
 })();
 
+/* =========================================================
+   20.10 - SHARED GALLERY SYSTEM
+   Service images + client reviews
+========================================================= */
+
 (() => {
+
     const galleryCards =
         Array.from(
             document.querySelectorAll(
-                "[data-service-gallery]"
+                "[data-service-gallery], [data-review-gallery]"
             )
         );
 
@@ -84,15 +94,12 @@
         return;
     }
 
-
     const reducedMotion =
         window.matchMedia(
             "(prefers-reduced-motion: reduce)"
         );
 
-
     const galleries = [];
-
 
     galleryCards.forEach(card => {
 
@@ -101,14 +108,12 @@
                 "[data-gallery-track]"
             );
 
-
         const slides =
             Array.from(
                 card.querySelectorAll(
-                    ".service-gallery-slide"
+                    ".service-gallery-slide, .review-gallery-slide"
                 )
             );
-
 
         const toggles =
             Array.from(
@@ -122,36 +127,36 @@
                 "data-gallery-always-open"
             );
 
+        const isReviewGallery =
+            card.hasAttribute(
+                "data-review-gallery"
+            );
 
         const previousButton =
             card.querySelector(
                 "[data-gallery-prev]"
             );
 
-
         const nextButton =
             card.querySelector(
                 "[data-gallery-next]"
             );
-
 
         const currentCounter =
             card.querySelector(
                 "[data-gallery-current]"
             );
 
-
         const totalCounter =
             card.querySelector(
                 "[data-gallery-total]"
             );
 
-
         if (
             !track ||
             !slides.length ||
             (!alwaysOpen && !toggles.length) ||
-            !previousButton ||
+            (!isReviewGallery && !previousButton) ||
             !nextButton ||
             !currentCounter ||
             !totalCounter
@@ -163,12 +168,18 @@
 
         let scrollFrame = null;
 
+        /* =============================
+            20.11 - LAZY GALLERY IMAGES
+        ============================= */
 
         /*
-         * Large gallery assets are only
-         * requested once this particular
-         * service has been expanded.
-         */
+        * Large service-gallery assets are only
+        * requested once that service is expanded.
+        *
+        * Review galleries contain no gallery
+        * images, so this safely does nothing there.
+        */
+
         const loadGalleryImages = () => {
 
             const images =
@@ -176,12 +187,10 @@
                     "img[data-gallery-src]"
                 );
 
-
             images.forEach(image => {
 
                 const source =
                     image.dataset.gallerySrc;
-
 
                 if (!source) {
                     return;
@@ -192,10 +201,12 @@
                 image.removeAttribute(
                     "data-gallery-src"
                 );
-
             });
-
         };
+        
+        /* ==========================
+            20.12 - INTERFACE STATE
+        ========================== */
 
         const updateInterface = () => {
 
@@ -203,7 +214,6 @@
                 String(
                     currentIndex + 1
                 );
-
 
             totalCounter.textContent =
                 String(
@@ -220,12 +230,43 @@
                             ? "false"
                             : "true"
                     );
+                    
+                    if (
+                        isReviewGallery &&
+                        index !== currentIndex
+                    ) {
 
+                        slide
+                            .querySelectorAll(
+                                ".review-text-details[open]"
+                            )
+                            .forEach(details => {
+
+                                details.removeAttribute(
+                                    "open"
+                                );
+                            });
+
+                        slide
+                            .querySelectorAll(
+                                "[data-review-photo-gallery].is-photo-open"
+                            )
+                            .forEach(photoGallery => {
+
+                                photoGallery.dispatchEvent(
+                                    new Event(
+                                        "review-photo-close"
+                                    )
+                                );
+                            });
+                    }
                 }
             );
-
         };
 
+        /* ==========================
+            20.13 - GALLERY STATE
+        ========================== */
 
         const setExpanded =
             expanded => {
@@ -235,14 +276,12 @@
                     expanded
                 );
 
-
                 toggles.forEach(toggle => {
 
                     toggle.setAttribute(
                         "aria-expanded",
                         String(expanded)
                     );
-
 
                     if (
                         toggle.tagName ===
@@ -254,22 +293,16 @@
                                 ? toggle.dataset.labelClose
                                 : toggle.dataset.labelOpen;
 
-
                         if (label) {
 
                             toggle.setAttribute(
                                 "aria-label",
                                 label
                             );
-
                         }
-
                     }
-
                 });
-
             };
-
 
         const goToSlide = (
             index,
@@ -285,73 +318,61 @@
                     slides.length
                 ) %
                 slides.length;
-
             track.scrollTo({
                 left:
                     currentIndex *
                     track.clientWidth,
-
                 behavior
             });
-
             updateInterface();
-
         };
 
         const closeGallery = () => {
-
             if (alwaysOpen) {
                 return;
             }
-
             setExpanded(false);
 
-
             currentIndex = 0;
-
 
             track.scrollTo({
                 left: 0,
                 behavior: "auto"
             });
 
-
             updateInterface();
 
         };
 
-
         const openGallery = () => {
 
             /*
-             * Preserve the clicked module's
-             * position in the viewport.
-             */
+            * Preserve the clicked module's
+            * position in the viewport.
+            */
+
             const originalTop =
                 card.getBoundingClientRect().top;
 
-
             /*
-             * Only one service is expanded.
-             */
-            galleries.forEach(gallery => {
+            * Only one expandable service gallery
+            * is open at a time.
+            *
+            * Always-open galleries, such as
+            * testimonials, are not added here.
+            */
 
+            galleries.forEach(gallery => {
                 if (
                     gallery.card !== card
                 ) {
-
                     gallery.close();
-
                 }
-
             });
-
 
             loadGalleryImages();
 
-
             setExpanded(true);
-
 
             requestAnimationFrame(() => {
 
@@ -360,101 +381,86 @@
                     "auto"
                 );
 
-
                 const newTop =
                     card.getBoundingClientRect().top;
 
-
                 const movement =
                     newTop - originalTop;
-
-
                 if (
                     Math.abs(movement) > 1
                 ) {
-
                     window.scrollBy({
                         top: movement,
                         behavior: "auto"
                     });
-
                 }
-
             });
-
         };
 
+        /* ==========================
+            20.14 - BUTTON CONTROLS
+        ========================== */
 
         toggles.forEach(toggle => {
 
             toggle.addEventListener(
                 "click",
                 event => {
-
                     /*
-                     * The Services-page href
-                     * remains a valid no-JS
-                     * fallback.
-                     */
+                    * The Services-page href
+                    * remains a valid no-JS
+                    * fallback.
+                    */
                     if (
                         toggle.tagName ===
                         "A"
                     ) {
-
                         event.preventDefault();
 
                     }
-
-
                     const isOpen =
                         card.classList.contains(
                             "is-gallery-open"
                         );
-
-
                     if (isOpen) {
-
                         closeGallery();
-
                     } else {
-
                         openGallery();
-
                     }
-
                 }
             );
-
         });
 
+        if (previousButton) {
 
-        previousButton.addEventListener(
-            "click",
-            () => {
-
-                goToSlide(
-                    currentIndex - 1
-                );
-
-            }
-        );
-
+            previousButton.addEventListener(
+                "click",
+                () => {
+                    goToSlide(
+                        currentIndex - 1
+                    );
+                }
+            );
+        }
 
         nextButton.addEventListener(
             "click",
             () => {
-
                 goToSlide(
                     currentIndex + 1
                 );
-
             }
         );
 
+        /* ==========================
+            20.15 - SWIPE / SCROLL
+        ========================== */
 
         /*
-         * Finger swipe counter update.
-         */
+        * Keep the counter and active slide
+        * synchronized after manual swiping.
+        */
+
         track.addEventListener(
             "scroll",
             () => {
@@ -464,20 +470,15 @@
                         "is-gallery-open"
                     )
                 ) {
-
                     return;
-
                 }
-
 
                 if (scrollFrame) {
 
                     cancelAnimationFrame(
                         scrollFrame
                     );
-
                 }
-
 
                 scrollFrame =
                     requestAnimationFrame(
@@ -486,11 +487,9 @@
                             const width =
                                 track.clientWidth;
 
-
                             if (!width) {
                                 return;
                             }
-
 
                             currentIndex =
                                 Math.max(
@@ -503,23 +502,19 @@
                                         slides.length - 1
                                     )
                                 );
-
-
                             updateInterface();
-
                         }
                     );
-
             },
             {
                 passive: true
             }
         );
 
+        /* ==========================
+            20.16 - KEYBOARD NAVIGATION
+        ========================== */
 
-        /*
-         * Keyboard navigation.
-         */
         track.addEventListener(
             "keydown",
             event => {
@@ -529,11 +524,8 @@
                         "is-gallery-open"
                     )
                 ) {
-
                     return;
-
                 }
-
 
                 if (
                     event.key ===
@@ -542,72 +534,62 @@
 
                     event.preventDefault();
 
-
                     goToSlide(
                         currentIndex - 1
                     );
-
                 }
-
 
                 if (
                     event.key ===
                     "ArrowRight"
                 ) {
-
                     event.preventDefault();
-
 
                     goToSlide(
                         currentIndex + 1
                     );
-
                 }
-
 
                 if (
                     event.key ===
                         "Escape" &&
                     !alwaysOpen
                 ) {
-
                     event.preventDefault();
-
                     closeGallery();
-
                 }
-
             }
         );
 
+        /* ==========================
+            20.17 - RESIZE HANDLING
+        ========================== */
 
         /*
-         * Realign after orientation or
-         * browser-size changes.
-         */
+        * Realign the active slide after
+        * orientation or viewport changes.
+        */
+
         window.addEventListener(
             "resize",
             () => {
-
                 if (
                     !card.classList.contains(
                         "is-gallery-open"
                     )
                 ) {
-
                     return;
-
                 }
-
-
                 goToSlide(
                     currentIndex,
                     "auto"
                 );
-
             }
         );
 
+        /* ==========================
+            20.18 - INITIALISATION
+        ========================== */
 
         if (alwaysOpen) {
             card.classList.add(
@@ -617,272 +599,252 @@
 
         updateInterface();
 
-
         if (!alwaysOpen) {
-
             galleries.push({
                 card,
                 close: closeGallery
             });
-
         }
-
     });
-
 })();
 
-/* =========================================
-   TESTIMONIAL MARQUEE
-========================================= */
+/* =========================================================
+   30.10 - REVIEW PHOTO VIEWER
+========================================================= */
 
 (() => {
 
-    const marquee =
-        document.querySelector(
-            "[data-testimonial-marquee]"
-        );
-
-
-    if (!marquee) {
-        return;
-    }
-
-
-    const track =
-        marquee.querySelector(
-            ".reviews-marquee-track"
-        );
-
-
-    const originalGroup =
-        marquee.querySelector(
-            "[data-marquee-original]"
-        );
-
-
-    if (!track || !originalGroup) {
-        return;
-    }
-
-    /*
-     * Remove generated copies.
-     */
-
-    const removeClones = () => {
-
-        track
-            .querySelectorAll(
-                "[data-marquee-clone]"
+    const photoGalleries =
+        Array.from(
+            document.querySelectorAll(
+                "[data-review-photo-gallery]"
             )
-            .forEach(clone => {
-
-                clone.remove();
-
-            });
-
-    };
-
-
-    /*
-     * Build enough repeated groups to cover
-     * the viewport at all times.
-     *
-     * The animation always moves exactly the
-     * width of ONE original group.
-     */
-
-    const buildMarquee = () => {
-
-        marquee.classList.remove(
-            "is-ready"
         );
 
+    if (!photoGalleries.length) {
+        return;
+    }
 
-        removeClones();
+    photoGalleries.forEach(gallery => {
 
-        const groupWidth =
-            Math.ceil(
-                originalGroup
-                    .getBoundingClientRect()
-                    .width
+        const openButton =
+            gallery.querySelector(
+                "[data-review-photo-open]"
             );
 
-
-        const viewportWidth =
-            Math.ceil(
-                marquee
-                    .getBoundingClientRect()
-                    .width
+        const viewer =
+            gallery.querySelector(
+                "[data-review-photo-viewer]"
             );
 
+        const closeButton =
+            gallery.querySelector(
+                "[data-review-photo-close]"
+            );
+
+        const previousButton =
+            gallery.querySelector(
+                "[data-review-photo-prev]"
+            );
+
+        const nextButton =
+            gallery.querySelector(
+                "[data-review-photo-next]"
+            );
+
+        const currentCounter =
+            gallery.querySelector(
+                "[data-review-photo-current]"
+            );
+
+        const slides =
+            Array.from(
+                gallery.querySelectorAll(
+                    "[data-review-photo-slide]"
+                )
+            );
+
+        const reviewGallery =
+            gallery.closest(
+                "[data-review-gallery]"
+            );
 
         if (
-            groupWidth <= 0 ||
-            viewportWidth <= 0
+            !openButton ||
+            !viewer ||
+            !closeButton ||
+            !previousButton ||
+            !nextButton ||
+            !currentCounter ||
+            !slides.length
         ) {
             return;
         }
 
+        let currentIndex = 0;
 
-        /*
-         * The reset point equals exactly
-         * one complete testimonial sequence.
-         */
+        const updateViewer = () => {
+            slides.forEach(
+                (slide, index) => {
 
-        marquee.style.setProperty(
-            "--reviews-marquee-offset",
-            `-${groupWidth}px`
-        );
+                    const isActive =
+                        index === currentIndex;
 
+                    slide.classList.toggle(
+                        "is-active",
+                        isActive
+                    );
 
-        /*
-         * At least two complete copies are
-         * required. Add more on very wide
-         * displays so blank space can never
-         * enter the viewport.
-         */
+                    slide.setAttribute(
+                        "aria-hidden",
+                        String(!isActive)
+                    );
+                }
+            );
 
-        const requiredWidth =
-            viewportWidth +
-            (groupWidth * 2);
+            currentCounter.textContent =
+                String(
+                    currentIndex + 1
+                );
+        };
 
+        const goToPhoto = index => {
+            currentIndex =
+                (
+                    index +
+                    slides.length
+                ) %
+                slides.length;
 
-        while (
-            track.scrollWidth <
-            requiredWidth
-        ) {
+            updateViewer();
+        };
 
-            const clone =
-                originalGroup.cloneNode(true);
+        const openViewer = () => {
 
+            currentIndex = 0;
 
-            clone.setAttribute(
-                "aria-hidden",
+            updateViewer();
+
+            viewer.hidden = false;
+
+            gallery.classList.add(
+                "is-photo-open"
+            );
+
+            openButton.setAttribute(
+                "aria-expanded",
                 "true"
             );
 
-
-            clone.setAttribute(
-                "data-marquee-clone",
-                ""
-            );
-
-
-            track.appendChild(
-                clone
-            );
-
-        }
-
-
-        /*
-         * Restart animation on the next frame.
-         */
-
-        requestAnimationFrame(() => {
-
-            marquee.classList.add(
-                "is-ready"
-            );
-
-        });
-
-    };
-
-
-    /*
-     * Touch / pen:
-     * holding the rail pauses it.
-     */
-
-    const pauseMarquee = event => {
-
-        if (
-            event.pointerType !== "touch" &&
-            event.pointerType !== "pen"
-        ) {
-            return;
-        }
-
-
-        marquee.classList.add(
-            "is-paused"
-        );
-
-    };
-
-
-    const resumeMarquee = () => {
-
-        marquee.classList.remove(
-            "is-paused"
-        );
-
-    };
-
-
-    marquee.addEventListener(
-        "pointerdown",
-        pauseMarquee,
-        {
-            passive: true
-        }
-    );
-
-
-    window.addEventListener(
-        "pointerup",
-        resumeMarquee,
-        {
-            passive: true
-        }
-    );
-
-
-    window.addEventListener(
-        "pointercancel",
-        resumeMarquee,
-        {
-            passive: true
-        }
-    );
-
-
-    /*
-     * Recalculate if the available marquee
-     * width changes.
-     */
-
-    if (
-        typeof ResizeObserver !==
-        "undefined"
-    ) {
-
-        const resizeObserver =
-            new ResizeObserver(() => {
-
-                buildMarquee();
-
+            closeButton.focus({
+                preventScroll: true
             });
+        };
 
+        const closeViewer =
+            ({
+                returnFocus = true
+            } = {}) => {
+                
+                gallery.classList.remove(
+                    "is-photo-open"
+                );
 
-        resizeObserver.observe(
-            marquee
+                viewer.hidden = true;
+                openButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                if (returnFocus) {
+                    openButton.focus({
+                        preventScroll: true
+                    });
+                }
+            };
+
+        openButton.addEventListener(
+            "click",
+            openViewer
         );
 
-    } else {
-
-        window.addEventListener(
-            "resize",
-            buildMarquee
+        closeButton.addEventListener(
+            "click",
+            () => {
+                closeViewer();
+            }
         );
 
-    }
+        gallery.addEventListener(
+            "review-photo-close",
+            () => {
 
-    /*
-     * First build.
-     */
+                const focusWasInside =
+                    viewer.contains(
+                        document.activeElement
+                    );
 
-    buildMarquee();
+                closeViewer({
+                    returnFocus: false
+                });
 
+                if (focusWasInside) {
+
+                    reviewGallery
+                        ?.querySelector(
+                            "[data-gallery-track]"
+                        )
+                        ?.focus({
+                            preventScroll: true
+                        });
+                }
+            }
+        );
+
+        previousButton.addEventListener(
+            "click",
+            () => {
+                goToPhoto(
+                    currentIndex - 1
+                );
+            }
+        );
+
+        nextButton.addEventListener(
+            "click",
+            () => {
+                goToPhoto(
+                    currentIndex + 1
+                );
+            }
+        );
+
+        viewer.addEventListener(
+            "keydown",
+            event => {
+
+                if (event.key === "ArrowLeft") {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    goToPhoto(
+                        currentIndex - 1
+                    );
+                }
+
+                if (event.key === "ArrowRight") {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    goToPhoto(
+                        currentIndex + 1
+                    );
+                }
+                if (event.key === "Escape") {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    closeViewer();
+                }
+            }
+        );
+        updateViewer();
+    });
 })();
