@@ -2154,6 +2154,12 @@ summary {
    60.10 - CONTACT — INTRO
 ========================================================= */
 
+.form-field-note {
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
 .contact-page-hero--combined {
     padding-block:
         clamp(38px, 4.5vw, 58px);
