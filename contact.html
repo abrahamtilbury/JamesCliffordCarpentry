@@ -377,6 +377,7 @@
                     class="project-enquiry-form"
                     action="https://formsubmit.co/admin@jamescliffordcarpentry.com.au"
                     method="POST"
+                    enctype="multipart/form-data"
                 >
                     <input
                         type="hidden"
@@ -448,6 +449,20 @@
                                 name="plans_link"
                                 placeholder="Google Drive, Dropbox, OneDrive etc."
                             >
+                        </label>
+                        <label class="form-field form-field-full">
+                            <span>Project photos</span>
+                        
+                            <input
+                                type="file"
+                                name="attachment"
+                                accept="image/jpeg,image/png,image/webp"
+                            >
+                        
+                            <small class="form-field-note">
+                                Optional — attach a project photo up to 10 MB.
+                                For larger files or multiple photos, use the link field above.
+                            </small>
                         </label>
                     </div>
                     <label class="form-field form-field-full">
