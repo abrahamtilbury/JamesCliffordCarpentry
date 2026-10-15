@@ -303,10 +303,10 @@ textarea {
     position: relative;
     width: 100%;
     z-index: var(--z-header);
-    background: rgba(231, 227, 220, .96);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--line);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 0;
 }
 
 .header-inner {
@@ -3838,7 +3838,7 @@ and (max-width: 950px) {
     ========================== */
 
     .site-header {
-        background: rgba(231, 227, 220, .97);
+        background: none;
     }
 
     .site-logo-mark {
